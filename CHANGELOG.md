@@ -8,15 +8,34 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ## Unreleased
 
+No unreleased changes currently recorded.
+
+---
+
+## Version 1.2.0 - Phase 1 Foundation (2026-07-27)
+
 ### Added
 
-- Private vulnerability-reporting policy
-- GitHub issue and pull-request governance templates
+- Phase 1 full-wipe and clean-slate rebuild completion record
+- Sanitized Phase 1 validation evidence
+- Documented Ubuntu Server 24.04.4 LTS baseline for Atlas (`coc-srv-01`)
+- Broadcom BCM4352 wireless-driver recovery and troubleshooting record
+- OpenSSH installation and remote-access validation
+- Laptop lid, idle, suspend, hibernate, and hybrid-sleep controls
 
 ### Changed
 
-- Aligned README version and repository tree with the Phase 0 baseline
-- Expanded contributor guidance and governance cross-references
+- Marked Phase 1 complete in the engineering roadmap
+- Advanced the current milestone to Phase 2 — Base Hardening
+- Corrected the prior-environment timeline from one year to several months
+- Retained the minimized Ubuntu Server profile as the approved baseline
+
+### Security
+
+- Kept the external backup HDD physically outside the destructive wipe scope
+- Sanitized live IP addresses, MAC addresses, identifiers, serials, credentials, and reflective screenshots from public evidence
+- Recorded SSH password authentication as a temporary bootstrap condition pending Phase 2 key-based hardening
+- Documented public DNS fallback and delayed Pi-hole cutback as controlled deferred work
 
 ---
 
