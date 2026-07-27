@@ -6,6 +6,28 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 1.1.0 - Phase 0 Governance Foundation (2026-07-27)
+
+### Added
+
+- Data governance and public sanitization policy
+- Device inventory schema
+- Secrets, certificate, and key management standard
+- Operational governance mapping for runbooks, playbooks, and campaign sequences
+- ADR framework and ADR-001 through ADR-006
+- Formal Phase 0 completion and Phase 1 entry gate
+
+### Changed
+
+- Centralized known technical, operational, privacy, evidence, and recovery risks
+- Promoted runbook/playbook operating rules into enforceable program governance
+
+### Security
+
+- Established classification, retention, evidence integrity, secret rotation, redaction, authorized-testing, and stop-condition requirements
+
+---
+
 ## Version 1.0.0 - Repository Foundation
 
 ### Added
