@@ -233,6 +233,38 @@ When documentation changes significantly:
 
 ---
 
+# Operational Records
+
+Runbooks, playbooks, and campaign sequences must inherit the controls in
+[Operational Governance Mapping](docs/OPERATIONAL-GOVERNANCE-MAPPING.md).
+
+## Incident Case
+
+Record the case ID, owner, severity, status, UTC timestamps, local time and offset in human reports, affected assets, authorized scope, evidence and hashes, decisions, actions, approvals, communications, containment, eradication, recovery validation, remaining risk, lessons, and follow-ups.
+
+## Change Record
+
+Record the change ID, purpose, scope, risk, dependencies, backup, test plan, implementation, verification, rollback, owner, date, result, and exceptions. Detection, firewall, automation, patch, identity, and retention changes must be staged before broad deployment.
+
+## Test or Campaign Record
+
+Record authorization, target list or range, objective, start and stop times, expected telemetry, operation log, MITRE mapping where relevant, stop conditions, screenshots or exports, cleanup, credential revocation, restored-state validation, and lessons.
+
+## Evidence Handling
+
+- Preserve originals and work from copies.
+- Use stable descriptive filenames such as `phase-step-description-YYYYMMDD.ext`.
+- Record source, collection time, timezone, collector, case or change ID, and cryptographic hash where appropriate.
+- Redact before annotation or export, then inspect the final artifact at full resolution.
+- Store evidence in a phase validation or evidence directory; never use evidence folders as secret stores.
+- Link architectural choices to ADRs and operational limitations, exceptions, residual risks, and visibility gaps to the risk register.
+
+## Status and Review
+
+Use Planned, In Progress, Testing, Complete, or Requires Rework. A planned technology is not described as deployed until implementation and validation evidence exist. Documents should identify an owner, status/version where useful, last review, next review or trigger, and related ADRs, risks, runbooks, playbooks, and evidence.
+
+---
+
 # Quality Checklist
 
 Before marking documentation complete, confirm:

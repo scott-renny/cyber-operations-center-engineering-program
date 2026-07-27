@@ -58,7 +58,7 @@ If one of these items is incomplete, the phase remains in progress.
 
 | Phase | Status | Description |
 |--------|--------|-------------|
-| Phase 0 | ⬜ Planned | Program Governance |
+| Phase 0 | 🟩 Complete | Program Governance |
 | Phase 1 | ⬜ Planned | Foundation |
 | Phase 2 | ⬜ Planned | Base Hardening |
 | Phase 3 | ⬜ Planned | Container Platform |

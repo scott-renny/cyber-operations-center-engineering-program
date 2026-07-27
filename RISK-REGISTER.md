@@ -94,10 +94,37 @@ The combination of likelihood and impact determines the overall risk rating.
 | R-018 | Third-party services or software become unavailable, abandoned, or incompatible     | Dependency     | Medium     | Medium   | Medium   | Monitoring |
 | R-019 | Limited hardware resources reduce the reliability of security monitoring tools      | Infrastructure | High       | Medium   | High     | Open       |
 | R-020 | Project documentation becomes outdated after infrastructure changes                 | Documentation  | High       | Medium   | High     | Mitigating |
+| R-021 | A clean-slate wipe destroys undocumented configuration or evidence                  | Recovery       | Medium     | Critical | Critical | Mitigating |
+| R-022 | Automated response affects the wrong target or interrupts legitimate service        | Operations     | Medium     | High     | High     | Mitigating |
+| R-023 | Pi-hole group-API enforcement fails or applies to incorrect group membership         | Security       | Medium     | High     | High     | Monitoring |
+| R-024 | Non-root backup synchronization cannot preserve all ownership or permission metadata  | Recovery       | Medium     | High     | High     | Accepted   |
+| R-025 | Backup-repository compromise removes or exposes recovery capability                  | Resilience     | Medium     | Critical | Critical | Mitigating |
+| R-026 | Samba guest mapping permits unintended access                                        | Access Control | Medium     | High     | High     | Accepted   |
+| R-027 | Forensic evidence loses integrity or chain-of-custody context                        | Evidence       | Medium     | High     | High     | Mitigating |
+| R-028 | Intentionally vulnerable lab systems affect household or production devices          | Lab Safety     | Medium     | Critical | Critical | Mitigating |
+| R-029 | Time drift corrupts event sequencing and investigation timelines                     | Evidence       | Medium     | High     | High     | Monitoring |
 
 ---
 
 # Risk Details and Mitigations
+
+## Phase 0 Operational Risk Controls
+
+The Phase 0 risks above supplement the detailed baseline risks below:
+
+- **R-021:** Inventory assets and services, export configurations and evidence, validate backups and restores, record the wipe scope, and satisfy the Phase 1 entry gate before destructive work.
+- **R-022:** Scope actions narrowly, stage changes, require approval for high-impact actions, retain a manual override, log decisions, and stop when target identity or cleanup is uncertain.
+- **R-023:** Prefer scoped group changes over global disable, validate membership and results, retain manual recovery, expire temporary changes, and log the action.
+- **R-024:** Accept narrower privileges only with documented limitations and successful restore tests; add only the minimum specific privilege demonstrated to be necessary.
+- **R-025:** Restrict and encrypt backup access, separate recovery credentials, monitor integrity, retain an offline or immutable copy where feasible, and test restores.
+- **R-026:** Limit shares, deny sensitive paths, segment access, log authentication, and replace guest behavior with explicit identities when feasible.
+- **R-027:** Preserve originals, hash evidence, name a custodian, encrypt storage, and log transfers and disposition.
+- **R-028:** Require explicit authorization and target scope, isolation, synthetic data, telemetry, stop conditions, credential revocation, cleanup, and restored-state proof.
+- **R-029:** Monitor NTP, use UTC telemetry, include local offset in human reports, document corrections, and record affected time ranges.
+
+Accepted risks require an owner, affected assets, rationale, compensating controls, review or expiry date, validation evidence, and closure criteria. Critical residual risk blocks deployment unless a time-bounded exception is explicitly approved. Scope loss, uncontrolled testing, real-data exposure, backup compromise, privileged-identity compromise, or program-wide telemetry loss requires an immediate stop and incident handling.
+
+---
 
 ## R-001 — Accidental Exposure of Secrets
 

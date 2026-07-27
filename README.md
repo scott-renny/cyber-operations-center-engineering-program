@@ -102,6 +102,13 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [SECURITY-PRINCIPLES.md](SECURITY-PRINCIPLES.md) | Security engineering principles |
 | [DOCUMENTATION-STANDARDS.md](DOCUMENTATION-STANDARDS.md) | Documentation requirements and expectations |
 | [RISK-REGISTER.md](RISK-REGISTER.md) | Program risks, mitigations, ownership, and review practices |
+| [Data Governance](docs/DATA-GOVERNANCE.md) | Data classification, retention, evidence, and sanitization controls |
+| [Device Inventory](docs/DEVICE-INVENTORY.md) | Authoritative asset-inventory and lifecycle schema |
+| [Secrets Management](docs/SECRETS-MANAGEMENT.md) | Secrets, certificates, key rotation, and exposure-response standard |
+| [Portfolio Policy](docs/PORTFOLIO-POLICY.md) | Public-release classification and sanitization requirements |
+| [Operational Governance Mapping](docs/OPERATIONAL-GOVERNANCE-MAPPING.md) | Governance controls inherited by runbooks, playbooks, and campaign sequences |
+| [Architecture Decision Records](docs/decisions/README.md) | Decision process and ADR index |
+| [Phase 0 Completion Record](phases/phase-00-program-governance/README.md) | Completion evidence and Phase 1 entry gate |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -110,25 +117,23 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program is currently finalizing the **Repository Foundation** before beginning Phase 0 documentation.
+The program has completed **Phase 0 — Program Governance** and is ready for the **Phase 1 — Foundation** entry gate.
 
-Current work includes:
+Phase 0 established:
 
-- Repository governance
-- Engineering documentation
-- Architecture planning
-- Security principles
-- Documentation standards
-- Risk management
-- Version control
-- Branch strategy
-- Project structure
+- Program governance and documentation controls
+- Data classification, retention, evidence, and sanitization requirements
+- Asset inventory and lifecycle standards
+- Secrets, certificate, and key-management requirements
+- Architecture Decision Records
+- Risk and exception management
+- Operational controls for runbooks, playbooks, and authorized campaign sequences
 
 The next milestone is:
 
-> **Phase 0 — Program Governance**
+> **Phase 1 — Foundation**
 
-Phase 0 will establish the program charter, scope, requirements, asset inventory, decision-management process, risk-review process, and completion criteria used throughout the remaining engineering phases.
+Phase 1 may begin only after the inventory, export, backup/restore, secret-recovery, wipe-scope, and rollback requirements in the [Phase 0 completion record](phases/phase-00-program-governance/README.md) are satisfied.
 
 ---
 
@@ -136,12 +141,12 @@ Phase 0 will establish the program charter, scope, requirements, asset inventory
 
 | Area | Status |
 |---|---|
-| Repository Foundation | 🚧 Finalizing |
+| Repository Foundation | ✅ Complete |
 | Documentation Framework | ✅ Complete |
 | Architecture Planning | ✅ Complete |
 | Security Principles | ✅ Complete |
 | Initial Risk Register | ✅ Complete |
-| Phase 0 Documentation | ⏳ Planned |
+| Phase 0 Documentation | ✅ Complete |
 | Infrastructure Deployment | ⏳ Planned |
 | Security Stack | ⏳ Planned |
 | Detection Engineering | ⏳ Planned |
