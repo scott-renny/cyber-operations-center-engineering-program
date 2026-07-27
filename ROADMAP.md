@@ -1,7 +1,7 @@
 # Cyber Operations Center Engineering Program Roadmap
 
 > **Status:** Active Development  
-> **Version:** 1.0  
+> **Version:** 1.1  
 > **Repository:** Cyber Operations Center Engineering Program
 
 ---
@@ -47,7 +47,7 @@ A phase is considered complete only when all of the following have been finished
 - Validation performed
 - Security considerations documented
 - Lessons learned recorded
-- Screenshots captured
+- Screenshots captured or an approved sanitized evidence substitute recorded
 - Repository documentation updated
 
 If one of these items is incomplete, the phase remains in progress.
@@ -58,8 +58,8 @@ If one of these items is incomplete, the phase remains in progress.
 
 | Phase | Status | Description |
 |--------|--------|-------------|
-| Phase 0 | 🟩 Complete | Program Governance |
-| Phase 1 | ⬜ Planned | Foundation |
+| Phase 0 | 🟩 Complete | [Program Governance](phases/phase-00-program-governance/README.md) |
+| Phase 1 | 🟩 Complete | [Foundation: Full Wipe & Clean-Slate Rebuild](phases/phase-01-foundation/README.md) |
 | Phase 2 | ⬜ Planned | Base Hardening |
 | Phase 3 | ⬜ Planned | Container Platform |
 | Phase 4 | ⬜ Planned | Core Network & Security Services |
@@ -84,6 +84,14 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 23 | ⬜ Planned | Cloud Laboratory |
 | Phase 24 | ⬜ Planned | VPS VPN Infrastructure |
 | Phase 25 | ⬜ Planned | Media Services Platform |
+
+---
+
+# Current milestone
+
+Phase 1 established a clean Ubuntu Server 24.04 LTS foundation on Atlas (`coc-srv-01`) with validated storage, networking, updates, SSH access, and server-appropriate power behavior.
+
+The next milestone is **Phase 2 — Base Hardening**.
 
 ---
 
