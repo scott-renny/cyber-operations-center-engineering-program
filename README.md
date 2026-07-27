@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 3.1  
+> **Version:** 1.1.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -315,27 +315,28 @@ cyber-operations-center-engineering-program/
 ├── RISK-REGISTER.md
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
+├── SECURITY.md
 │
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   ├── config.yml
+│   │   └── feature_request.md
 │   └── PULL_REQUEST_TEMPLATE.md
 │
 ├── docs/
+│   ├── DATA-GOVERNANCE.md
+│   ├── DEVICE-INVENTORY.md
+│   ├── OPERATIONAL-GOVERNANCE-MAPPING.md
+│   ├── PORTFOLIO-POLICY.md
+│   ├── SECRETS-MANAGEMENT.md
 │   ├── decisions/
-│   ├── diagrams/
-│   ├── validation/
-│   └── screenshots/
 │
-├── phases/
-│   ├── phase-00-program-governance/
-│   ├── phase-01-foundation/
-│   ├── phase-02-base-hardening/
-│   └── ...
-│
-└── assets/
+└── phases/
+    └── phase-00-program-governance/
 ```
 
-Directories shown above may be introduced incrementally as the corresponding documentation and implementation work begins.
+This tree shows the current governance baseline. Phase implementation, validation, evidence, diagram, screenshot, and asset directories will be added when their corresponding work begins.
 
 ---
 

@@ -278,6 +278,8 @@ Continuous Improvement
 
 Major architectural decisions should be documented using Architecture Decision Records (ADRs).
 
+The current decision process, template, and accepted records are indexed in [docs/decisions/README.md](docs/decisions/README.md).
+
 Examples include:
 
 - Technology selections

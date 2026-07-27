@@ -35,11 +35,15 @@ Every proposed change should strengthen the overall engineering quality of the p
 
 Please review the following documentation before submitting suggestions or changes:
 
-- README.md
-- ROADMAP.md
-- ARCHITECTURE.md
-- SECURITY-PRINCIPLES.md
-- DOCUMENTATION-STANDARDS.md
+- [README.md](README.md)
+- [ROADMAP.md](ROADMAP.md)
+- [ARCHITECTURE.md](ARCHITECTURE.md)
+- [SECURITY-PRINCIPLES.md](SECURITY-PRINCIPLES.md)
+- [DOCUMENTATION-STANDARDS.md](DOCUMENTATION-STANDARDS.md)
+- [DATA-GOVERNANCE.md](docs/DATA-GOVERNANCE.md)
+- [SECRETS-MANAGEMENT.md](docs/SECRETS-MANAGEMENT.md)
+- [PORTFOLIO-POLICY.md](docs/PORTFOLIO-POLICY.md)
+- [Architecture Decision Records](docs/decisions/README.md)
 
 Understanding the project's architecture and engineering philosophy helps ensure that proposed changes align with the project's long-term vision.
 
@@ -105,6 +109,9 @@ Contributions should:
 - Preserve architectural consistency.
 - Avoid unnecessary complexity.
 - Include validation where appropriate.
+- Record consequential architectural decisions through an ADR.
+- Record operational limitations, accepted exceptions, and residual risks in the risk register.
+- Apply the public sanitization gate before committing screenshots, logs, exports, configurations, or evidence.
 
 ---
 
@@ -124,9 +131,9 @@ Documentation should remain consistent with the project's established standards.
 
 # Security
 
-Security vulnerabilities should not be disclosed publicly through issues.
+Security vulnerabilities must not be disclosed publicly through issues.
 
-Instead, responsible disclosure is encouraged.
+Follow the private reporting process in [SECURITY.md](SECURITY.md). Do not include credentials, exploit details, private infrastructure identifiers, or personal data in a public issue or pull request.
 
 The repository should prioritize protecting users and infrastructure over public discussion of exploitable issues.
 
