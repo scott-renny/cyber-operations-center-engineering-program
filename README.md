@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.1.0
+> **Version:** 1.2.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -108,7 +108,9 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Portfolio Policy](docs/PORTFOLIO-POLICY.md) | Public-release classification and sanitization requirements |
 | [Operational Governance Mapping](docs/OPERATIONAL-GOVERNANCE-MAPPING.md) | Governance controls inherited by runbooks, playbooks, and campaign sequences |
 | [Architecture Decision Records](docs/decisions/README.md) | Decision process and ADR index |
-| [Phase 0 Completion Record](phases/phase-00-program-governance/README.md) | Completion evidence and Phase 1 entry gate |
+| [Phase 0 Completion Record](phases/phase-00-program-governance/README.md) | Governance completion evidence and Phase 1 entry gate |
+| [Phase 1 Completion Record](phases/phase-01-foundation/README.md) | Clean-slate foundation implementation, validation, and lessons learned |
+| [Phase 1 Validation Evidence](phases/phase-01-foundation/evidence/README.md) | Sanitized operating-system, storage, network, SSH, and power evidence |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -117,23 +119,25 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 0 — Program Governance** and is ready for the **Phase 1 — Foundation** entry gate.
+The program has completed **Phase 1 — Foundation**.
 
-Phase 0 established:
+Phase 1 established:
 
-- Program governance and documentation controls
-- Data classification, retention, evidence, and sanitization requirements
-- Asset inventory and lifecycle standards
-- Secrets, certificate, and key-management requirements
-- Architecture Decision Records
-- Risk and exception management
-- Operational controls for runbooks, playbooks, and authorized campaign sequences
+- a checksum-verified Ubuntu Server 24.04.4 LTS installation;
+- a clean full-disk LVM baseline on Atlas (`coc-srv-01`);
+- validated Broadcom wireless networking;
+- updated packages and reboot persistence;
+- working OpenSSH remote administration;
+- server-appropriate lid and sleep behavior; and
+- a sanitized public evidence record.
+
+Review the [Phase 1 completion record](phases/phase-01-foundation/README.md) and [validation evidence](phases/phase-01-foundation/evidence/README.md).
 
 The next milestone is:
 
-> **Phase 1 — Foundation**
+> **Phase 2 — Base Hardening**
 
-Phase 1 may begin only after the inventory, export, backup/restore, secret-recovery, wipe-scope, and rollback requirements in the [Phase 0 completion record](phases/phase-00-program-governance/README.md) are satisfied.
+Phase 2 will establish stable address assignment, SSH key authentication, firewall policy, intrusion prevention, auditing, and mandatory-access-control validation.
 
 ---
 
@@ -147,7 +151,8 @@ Phase 1 may begin only after the inventory, export, backup/restore, secret-recov
 | Security Principles | ✅ Complete |
 | Initial Risk Register | ✅ Complete |
 | Phase 0 Documentation | ✅ Complete |
-| Infrastructure Deployment | ⏳ Planned |
+| Phase 1 Foundation | ✅ Complete |
+| Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | ⏳ Planned |
 | Detection Engineering | ⏳ Planned |
 | Incident Response | ⏳ Planned |
@@ -333,10 +338,14 @@ cyber-operations-center-engineering-program/
 │   ├── decisions/
 │
 └── phases/
-    └── phase-00-program-governance/
+    ├── phase-00-program-governance/
+    └── phase-01-foundation/
+        ├── README.md
+        └── evidence/
+            └── README.md
 ```
 
-This tree shows the current governance baseline. Phase implementation, validation, evidence, diagram, screenshot, and asset directories will be added when their corresponding work begins.
+This tree shows the current governance and Phase 1 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 
