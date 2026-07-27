@@ -6,6 +6,20 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Unreleased
+
+### Added
+
+- Private vulnerability-reporting policy
+- GitHub issue and pull-request governance templates
+
+### Changed
+
+- Aligned README version and repository tree with the Phase 0 baseline
+- Expanded contributor guidance and governance cross-references
+
+---
+
 ## Version 1.1.0 - Phase 0 Governance Foundation (2026-07-27)
 
 ### Added
