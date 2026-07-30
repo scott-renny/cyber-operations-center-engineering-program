@@ -12,6 +12,36 @@ No unreleased changes currently recorded.
 
 ---
 
+## Version 1.4.0 - Phase 3 Container Platform and Service Management (2026-07-30)
+
+### Added
+
+- Phase 3 implementation and completion record
+- Sanitized validation evidence for Docker, Compose, Dockge, Caddy, UFW, and log rotation
+- Reusable frontend/backend network example
+- Sanitized Docker daemon log-rotation configuration
+- Sanitized Caddy reverse-proxy example for Dockge
+- Container naming, labeling, and Compose secrets standards
+
+### Changed
+
+- Advanced the current milestone to Phase 4 — Core Network and Security Services
+- Updated the architecture with the implemented container management plane
+- Marked Phase 3 complete in the engineering roadmap
+- Bound Dockge's native HTTP listener to localhost
+- Routed Dockge access through the existing private Caddy HTTPS gateway
+
+### Security
+
+- Limited the Dockge HTTPS endpoint to the trusted LAN
+- Treated Docker group membership and Docker socket access as privileged administration
+- Applied bounded container log retention to reduce disk-exhaustion risk
+- Defined an internal backend network for private-only container communication
+- Kept Swarm disabled to avoid mixing orchestration models solely for secret storage
+- Excluded credentials, secrets, live addresses, certificate details, image digests, and raw screenshots from the public record
+
+---
+
 ## Version 1.3.0 - Phase 2 Base Hardening and Operations Portal (2026-07-30)
 
 ### Added

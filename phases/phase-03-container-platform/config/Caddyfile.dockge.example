@@ -1,0 +1,15 @@
+# Sanitized example only.
+# Dockge's native Compose mapping should bind to localhost:
+#   127.0.0.1:5001:5001
+
+dockge.internal.example:8443 {
+	tls internal
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:5001
+
+	header {
+		-Server
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+	}
+}

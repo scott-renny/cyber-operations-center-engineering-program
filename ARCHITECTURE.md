@@ -1,6 +1,6 @@
 # Cyber Operations Center Engineering Program Architecture
 
-> **Version:** 1.1  
+> **Version:** 1.2  
 > **Status:** Active Development
 
 ---
@@ -138,6 +138,33 @@ The access layer is protected by the host baseline:
 - a private asset registry outside the public web root.
 
 The portal uses Caddy's internal certificate authority. Trust is distributed only after fingerprint verification and does not imply public exposure.
+
+---
+
+# Implemented Container Platform
+
+Phase 3 introduced Docker Engine, Docker Compose, and Dockge on `coc-srv-01`.
+
+Dockge's native HTTP service is bound to `127.0.0.1` and is reachable from the trusted LAN only through a dedicated Caddy HTTPS endpoint. The firewall permits that endpoint only from the trusted local network. Dockge has access to the Docker socket and is treated as a privileged administrative control plane.
+
+Every later Compose stack follows these network conventions:
+
+```yaml
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+    internal: true
+```
+
+User-facing services use `frontend`. Private dependencies such as databases use only `backend`. Dual-homed services require review because they can relay traffic between networks.
+
+Stack directories, service names, and explicit container names use descriptive lowercase kebab-case. Operational labels identify the program, deployment phase, and workload role.
+
+Docker uses the `json-file` logging driver with a 10 MB maximum file size and three retained files per container. Compose file-backed secrets are used when applications support `/run/secrets/<name>`; source files require mode `0600` and remain outside version control. These secrets reduce environment-variable exposure but are not encrypted at rest.
+
+Docker Swarm remains disabled because Dockge manages ordinary Compose stacks. A second orchestration model will be introduced only through an explicit architecture decision.
 
 ---
 

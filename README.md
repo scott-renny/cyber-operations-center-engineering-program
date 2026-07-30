@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.3.0
+> **Version:** 1.4.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -113,6 +113,8 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 1 Validation Evidence](phases/phase-01-foundation/evidence/README.md) | Sanitized operating-system, storage, network, SSH, and power evidence |
 | [Phase 2 Completion Record](phases/phase-02-base-hardening/README.md) | Hardened baseline and private HTTPS operations portal |
 | [Phase 2 Validation Evidence](phases/phase-02-base-hardening/evidence/README.md) | Sanitized access-control, firewall, audit, update, and portal evidence |
+| [Phase 3 Completion Record](phases/phase-03-container-platform/README.md) | Docker, Dockge, segmentation, logging, and secrets conventions |
+| [Phase 3 Validation Evidence](phases/phase-03-container-platform/evidence/README.md) | Sanitized container-platform and management-plane evidence |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -121,25 +123,26 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 2 — Base Hardening and Operations Portal**.
+The program has completed **Phase 3 — Container Platform and Service Management**.
 
-Phase 2 established:
+Phase 3 established:
 
-- Ed25519 key-only SSH administration with root login disabled;
-- a persistent default-deny UFW policy;
-- Fail2Ban protection for SSH;
-- validated AppArmor and Auditd controls;
-- automated security updates and a fully patched host;
-- a private Caddy HTTPS gateway and operations portal; and
-- a protected asset-ID registry with sanitized public examples.
+- Docker Engine and Docker Compose on Atlas;
+- non-root administrative Docker access;
+- Dockge as the Compose stack management plane;
+- private HTTPS access through Caddy with a localhost-only Dockge listener;
+- per-stack frontend/backend network segmentation;
+- consistent container naming and operational labels;
+- bounded container log retention; and
+- a Compose-compatible secrets standard.
 
-Review the [Phase 2 completion record](phases/phase-02-base-hardening/README.md) and [validation evidence](phases/phase-02-base-hardening/evidence/README.md).
+Review the [Phase 3 completion record](phases/phase-03-container-platform/README.md) and [validation evidence](phases/phase-03-container-platform/evidence/README.md).
 
 The next milestone is:
 
-> **Phase 3 — Container Platform**
+> **Phase 4 — Core Network and Security Services**
 
-Phase 3 will establish the controlled container runtime and deployment conventions required by later application and security-service phases.
+Phase 4 will deploy the first services on the controlled container foundation established in Phase 3.
 
 ---
 
@@ -156,6 +159,7 @@ Phase 3 will establish the controlled container runtime and deployment conventio
 | Phase 1 Foundation | ✅ Complete |
 | Phase 2 Base Hardening | ✅ Complete |
 | Private Operations Portal | ✅ Complete |
+| Container Platform | ✅ Complete |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | ⏳ Planned |
 | Detection Engineering | ⏳ Planned |
@@ -347,14 +351,18 @@ cyber-operations-center-engineering-program/
     │   ├── README.md
     │   └── evidence/
     │       └── README.md
-    └── phase-02-base-hardening/
+    ├── phase-02-base-hardening/
+    │   ├── README.md
+    │   ├── config/
+    │   ├── evidence/
+    │   └── portal/
+    └── phase-03-container-platform/
         ├── README.md
         ├── config/
-        ├── evidence/
-        └── portal/
+        └── evidence/
 ```
 
-This tree shows the current governance and completed Phase 1–2 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree shows the current governance and completed Phase 1–3 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 

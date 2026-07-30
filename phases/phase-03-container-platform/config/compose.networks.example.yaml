@@ -1,0 +1,29 @@
+# Reusable per-stack network convention.
+# Compose scopes these network names to the project unless explicit names are set.
+
+services:
+  app:
+    image: example/application:stable
+    networks:
+      - frontend
+      - backend
+    labels:
+      coc.program: "cyber-operations-center"
+      coc.phase: "phase-xx"
+      coc.role: "application"
+
+  database:
+    image: example/database:stable
+    networks:
+      - backend
+    labels:
+      coc.program: "cyber-operations-center"
+      coc.phase: "phase-xx"
+      coc.role: "database"
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+    internal: true
