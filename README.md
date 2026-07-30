@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.4.0
+> **Version:** 1.4.1
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -107,6 +107,15 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Secrets Management](docs/SECRETS-MANAGEMENT.md) | Secrets, certificates, key rotation, and exposure-response standard |
 | [Portfolio Policy](docs/PORTFOLIO-POLICY.md) | Public-release classification and sanitization requirements |
 | [Operational Governance Mapping](docs/OPERATIONAL-GOVERNANCE-MAPPING.md) | Governance controls inherited by runbooks, playbooks, and campaign sequences |
+| [Severity Standard](docs/SEVERITY-STANDARD.md) | Incident severity, priority, escalation, and closure standard |
+| [Evidence Handling Standard](docs/EVIDENCE-HANDLING-STANDARD.md) | Evidence integrity, custody, retention, and sanitization requirements |
+| [Change Management Standard](docs/CHANGE-MANAGEMENT-STANDARD.md) | Change planning, validation, rollback, and closure requirements |
+| [Adversary-Emulation Standard](docs/ADVERSARY-EMULATION-STANDARD.md) | Authorization, stop conditions, cleanup, and publication controls |
+| [Operational Document Migration Map](docs/DOCUMENT-MIGRATION-MAP.md) | Promotion path from legacy material to governed documents |
+| [Runbook Index](runbooks/README.md) | Planned and validated repeatable operational procedures |
+| [Playbook Index](playbooks/README.md) | Planned and validated incident-response procedures |
+| [Campaign Index](campaigns/README.md) | Authorized adversary-emulation campaign roadmap |
+| [Operational Templates](templates/README.md) | Reusable procedure, case, evidence, validation, and review templates |
 | [Architecture Decision Records](docs/decisions/README.md) | Decision process and ADR index |
 | [Phase 0 Completion Record](phases/phase-00-program-governance/README.md) | Governance completion evidence and Phase 1 entry gate |
 | [Phase 1 Completion Record](phases/phase-01-foundation/README.md) | Clean-slate foundation implementation, validation, and lessons learned |
@@ -343,7 +352,22 @@ cyber-operations-center-engineering-program/
 │   ├── OPERATIONAL-GOVERNANCE-MAPPING.md
 │   ├── PORTFOLIO-POLICY.md
 │   ├── SECRETS-MANAGEMENT.md
+│   ├── SEVERITY-STANDARD.md
+│   ├── EVIDENCE-HANDLING-STANDARD.md
+│   ├── CHANGE-MANAGEMENT-STANDARD.md
+│   ├── ADVERSARY-EMULATION-STANDARD.md
+│   ├── DOCUMENT-MIGRATION-MAP.md
 │   ├── decisions/
+│
+├── runbooks/
+│   └── README.md
+├── playbooks/
+│   └── README.md
+├── campaigns/
+│   └── README.md
+├── templates/
+│   ├── README.md
+│   └── operational record templates
 │
 └── phases/
     ├── phase-00-program-governance/
