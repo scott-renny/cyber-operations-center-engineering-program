@@ -51,6 +51,16 @@ Each runbook, playbook, and campaign sequence must include or inherit:
 - remaining risk and follow-up ownership;
 - review date and version.
 
+## Operational library
+
+- [Runbook Index](../runbooks/README.md)
+- [Playbook Index](../playbooks/README.md)
+- [Campaign Index](../campaigns/README.md)
+- [Operational Templates](../templates/README.md)
+- [Document Migration Map](DOCUMENT-MIGRATION-MAP.md)
+
+Technical documents remain `Planned` until their corresponding capability exists and a controlled validation record supports promotion.
+
 ## Compliance rule
 
 A procedure is not approved for COC use when it lacks an accountable owner, validation evidence, safe rollback or containment, sanitized publication handling, or a documented exception in the risk register.
