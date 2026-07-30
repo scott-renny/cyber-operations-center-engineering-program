@@ -61,7 +61,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 0 | 🟩 Complete | [Program Governance](phases/phase-00-program-governance/README.md) |
 | Phase 1 | 🟩 Complete | [Foundation: Full Wipe & Clean-Slate Rebuild](phases/phase-01-foundation/README.md) |
 | Phase 2 | 🟩 Complete | [Base Hardening and Operations Portal](phases/phase-02-base-hardening/README.md) |
-| Phase 3 | ⬜ Planned | Container Platform |
+| Phase 3 | 🟩 Complete | [Container Platform and Service Management](phases/phase-03-container-platform/README.md) |
 | Phase 4 | ⬜ Planned | Core Network & Security Services |
 | Phase 5 | ⬜ Planned | Backup & Recovery |
 | Phase 6 | ⬜ Planned | NET-WATCH |
@@ -89,9 +89,9 @@ If one of these items is incomplete, the phase remains in progress.
 
 # Current milestone
 
-Phase 2 established key-only administration, a persistent default-deny host firewall, SSH intrusion prevention, auditing, mandatory-access-control validation, automated security updates, and a private HTTPS operations portal on Atlas (`coc-srv-01`).
+Phase 3 established Docker Engine, Docker Compose, Dockge, private HTTPS management through Caddy, frontend/backend container-network conventions, bounded logging, consistent naming and labels, and a Compose-compatible secrets standard on Atlas (`coc-srv-01`).
 
-The next milestone is **Phase 3 — Container Platform**.
+The next milestone is **Phase 4 — Core Network and Security Services**.
 
 ---
 
