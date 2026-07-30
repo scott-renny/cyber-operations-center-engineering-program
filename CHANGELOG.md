@@ -12,6 +12,35 @@ No unreleased changes currently recorded.
 
 ---
 
+## Version 1.3.0 - Phase 2 Base Hardening and Operations Portal (2026-07-30)
+
+### Added
+
+- Phase 2 implementation and completion record
+- Sanitized validation evidence for SSH, UFW, Fail2Ban, AppArmor, Auditd, updates, and Caddy
+- Private Caddy HTTPS operations portal
+- Sanitized Caddy and asset-registry configuration examples
+- Standardized asset IDs for the server, workstation, and planned laptop
+
+### Changed
+
+- Advanced the current milestone to Phase 3 — Container Platform
+- Updated the repository structure and documentation index for Phase 2
+- Replaced SSH password administration with Ed25519 key authentication
+- Applied all pending operating-system and security updates
+
+### Security
+
+- Disabled SSH password authentication, keyboard-interactive authentication, and root login
+- Applied a persistent default-deny inbound UFW policy
+- Enabled a one-hour Fail2Ban SSH ban policy
+- Enabled Auditd and validated AppArmor enforcement state
+- Kept the operational asset registry outside the public web root
+- Verified the local Caddy CA fingerprint before current-user trust installation
+- Excluded live addresses, private keys, certificate fingerprints, and raw screenshots from the public record
+
+---
+
 ## Version 1.2.0 - Phase 1 Foundation (2026-07-27)
 
 ### Added
