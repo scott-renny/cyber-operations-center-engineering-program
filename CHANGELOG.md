@@ -12,6 +12,30 @@ No unreleased changes currently recorded.
 
 ---
 
+## Version 1.4.1 - Operational Documentation Foundation (2026-07-30)
+
+### Added
+
+- Standalone severity, evidence-handling, change-management, and adversary-emulation standards
+- Governed runbook, playbook, and campaign indexes with phase-based validation gates
+- Operational-document migration and status-promotion rules
+- Reusable runbook, playbook, campaign, incident-case, evidence-log, validation-record, Rules of Engagement, and post-incident-review templates
+
+### Changed
+
+- Expanded the repository documentation index and structure
+- Distinguished planned procedures from lab-validated and operational procedures
+- Mapped future operational documents to the phases that provide their required capabilities
+
+### Security
+
+- Required explicit authorization and stop conditions for adversary emulation
+- Required evidence integrity, custody, sanitization, and publication review
+- Prevented untested procedures and campaigns from being represented as validated
+- Required rollback, recovery, and residual-risk ownership for operational changes
+
+---
+
 ## Version 1.4.0 - Phase 3 Container Platform and Service Management (2026-07-30)
 
 ### Added
