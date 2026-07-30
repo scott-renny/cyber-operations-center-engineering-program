@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "assets": {
+    "coc-srv-01": {
+      "hostname": "coc-srv-01",
+      "type": "ubuntu-server",
+      "role": "core-lab-host",
+      "address": "192.168.1.x",
+      "status": "active"
+    },
+    "coc-ws-01": {
+      "hostname": "COC-WS-01",
+      "type": "windows-workstation",
+      "role": "primary-workstation",
+      "address": "192.168.1.x",
+      "status": "active"
+    },
+    "coc-lt-01": {
+      "hostname": "COC-LT-01",
+      "type": "windows-laptop",
+      "role": "mobile-endpoint",
+      "address": null,
+      "status": "planned"
+    }
+  }
+}

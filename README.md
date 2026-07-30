@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.2.0
+> **Version:** 1.3.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -111,6 +111,8 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 0 Completion Record](phases/phase-00-program-governance/README.md) | Governance completion evidence and Phase 1 entry gate |
 | [Phase 1 Completion Record](phases/phase-01-foundation/README.md) | Clean-slate foundation implementation, validation, and lessons learned |
 | [Phase 1 Validation Evidence](phases/phase-01-foundation/evidence/README.md) | Sanitized operating-system, storage, network, SSH, and power evidence |
+| [Phase 2 Completion Record](phases/phase-02-base-hardening/README.md) | Hardened baseline and private HTTPS operations portal |
+| [Phase 2 Validation Evidence](phases/phase-02-base-hardening/evidence/README.md) | Sanitized access-control, firewall, audit, update, and portal evidence |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -119,25 +121,25 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 1 — Foundation**.
+The program has completed **Phase 2 — Base Hardening and Operations Portal**.
 
-Phase 1 established:
+Phase 2 established:
 
-- a checksum-verified Ubuntu Server 24.04.4 LTS installation;
-- a clean full-disk LVM baseline on Atlas (`coc-srv-01`);
-- validated Broadcom wireless networking;
-- updated packages and reboot persistence;
-- working OpenSSH remote administration;
-- server-appropriate lid and sleep behavior; and
-- a sanitized public evidence record.
+- Ed25519 key-only SSH administration with root login disabled;
+- a persistent default-deny UFW policy;
+- Fail2Ban protection for SSH;
+- validated AppArmor and Auditd controls;
+- automated security updates and a fully patched host;
+- a private Caddy HTTPS gateway and operations portal; and
+- a protected asset-ID registry with sanitized public examples.
 
-Review the [Phase 1 completion record](phases/phase-01-foundation/README.md) and [validation evidence](phases/phase-01-foundation/evidence/README.md).
+Review the [Phase 2 completion record](phases/phase-02-base-hardening/README.md) and [validation evidence](phases/phase-02-base-hardening/evidence/README.md).
 
 The next milestone is:
 
-> **Phase 2 — Base Hardening**
+> **Phase 3 — Container Platform**
 
-Phase 2 will establish stable address assignment, SSH key authentication, firewall policy, intrusion prevention, auditing, and mandatory-access-control validation.
+Phase 3 will establish the controlled container runtime and deployment conventions required by later application and security-service phases.
 
 ---
 
@@ -152,6 +154,8 @@ Phase 2 will establish stable address assignment, SSH key authentication, firewa
 | Initial Risk Register | ✅ Complete |
 | Phase 0 Documentation | ✅ Complete |
 | Phase 1 Foundation | ✅ Complete |
+| Phase 2 Base Hardening | ✅ Complete |
+| Private Operations Portal | ✅ Complete |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | ⏳ Planned |
 | Detection Engineering | ⏳ Planned |
@@ -339,13 +343,18 @@ cyber-operations-center-engineering-program/
 │
 └── phases/
     ├── phase-00-program-governance/
-    └── phase-01-foundation/
+    ├── phase-01-foundation/
+    │   ├── README.md
+    │   └── evidence/
+    │       └── README.md
+    └── phase-02-base-hardening/
         ├── README.md
-        └── evidence/
-            └── README.md
+        ├── config/
+        ├── evidence/
+        └── portal/
 ```
 
-This tree shows the current governance and Phase 1 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree shows the current governance and completed Phase 1–2 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 

@@ -1,6 +1,6 @@
 # Cyber Operations Center Engineering Program Architecture
 
-> **Version:** 1.0  
+> **Version:** 1.1  
 > **Status:** Active Development
 
 ---
@@ -104,6 +104,8 @@ Examples include:
                     │                     │
              Ubuntu Server         Windows Devices
                     │
+         Caddy HTTPS Gateway
+                    │
         Docker Container Platform
                     │
  ┌──────────────────┼────────────────────┐
@@ -119,6 +121,23 @@ Examples include:
                  Cortex
                  Velociraptor
 ```
+
+---
+
+# Implemented Operations Access Layer
+
+Phase 2 introduced Caddy as the private HTTPS entry point on `coc-srv-01`. It currently serves a static operations portal and will provide reverse-proxy routing for later internal services.
+
+The access layer is protected by the host baseline:
+
+- Ed25519 key-only SSH administration;
+- default-deny UFW policy;
+- Fail2Ban SSH monitoring;
+- AppArmor and Auditd;
+- automatic security updates; and
+- a private asset registry outside the public web root.
+
+The portal uses Caddy's internal certificate authority. Trust is distributed only after fingerprint verification and does not imply public exposure.
 
 ---
 
