@@ -1,7 +1,7 @@
 # Cyber Operations Center Engineering Program Roadmap
 
 > **Status:** Active Development  
-> **Version:** 1.1  
+> **Version:** 1.2  
 > **Repository:** Cyber Operations Center Engineering Program
 
 ---
@@ -60,7 +60,7 @@ If one of these items is incomplete, the phase remains in progress.
 |--------|--------|-------------|
 | Phase 0 | 🟩 Complete | [Program Governance](phases/phase-00-program-governance/README.md) |
 | Phase 1 | 🟩 Complete | [Foundation: Full Wipe & Clean-Slate Rebuild](phases/phase-01-foundation/README.md) |
-| Phase 2 | ⬜ Planned | Base Hardening |
+| Phase 2 | 🟩 Complete | [Base Hardening and Operations Portal](phases/phase-02-base-hardening/README.md) |
 | Phase 3 | ⬜ Planned | Container Platform |
 | Phase 4 | ⬜ Planned | Core Network & Security Services |
 | Phase 5 | ⬜ Planned | Backup & Recovery |
@@ -89,9 +89,9 @@ If one of these items is incomplete, the phase remains in progress.
 
 # Current milestone
 
-Phase 1 established a clean Ubuntu Server 24.04 LTS foundation on Atlas (`coc-srv-01`) with validated storage, networking, updates, SSH access, and server-appropriate power behavior.
+Phase 2 established key-only administration, a persistent default-deny host firewall, SSH intrusion prevention, auditing, mandatory-access-control validation, automated security updates, and a private HTTPS operations portal on Atlas (`coc-srv-01`).
 
-The next milestone is **Phase 2 — Base Hardening**.
+The next milestone is **Phase 3 — Container Platform**.
 
 ---
 
