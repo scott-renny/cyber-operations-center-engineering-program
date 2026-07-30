@@ -22,6 +22,12 @@ Establish the governance scaffolding required to operate the Cyber Operations Ce
 - ADR process, template, and ADR-001 through ADR-006
 - Phase completion and Phase 1 entry gates
 
+## Operational documentation foundation
+
+The governed operational library is indexed under [runbooks](../../runbooks/README.md), [playbooks](../../playbooks/README.md), and [campaigns](../../campaigns/README.md). Future technical procedures remain `Planned` until their corresponding capability and validation evidence exist.
+
+Reusable records and procedure structures are available under [templates](../../templates/README.md). Standalone severity, evidence-handling, change-management, and adversary-emulation standards supplement the original governance controls.
+
 ## Verification checklist
 
 - [x] Repository governance documents exist
