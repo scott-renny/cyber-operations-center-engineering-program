@@ -24,7 +24,7 @@ Assess a Wazuh security alert consistently, determine whether it is a true posit
 - Wazuh services and relevant log source confirmed healthy;
 - server and analyst clocks understood;
 - severity standard available;
-- case or triage record opened;
+- a governed triage record opened; TheHive is not required at this phase;
 - affected asset and telemetry source identified;
 - raw evidence retained privately before sanitization.
 
@@ -37,7 +37,7 @@ Assess a Wazuh security alert consistently, determine whether it is a true posit
 5. Establish the relevant time window and search for related events on the same asset or identity.
 6. Check for known maintenance, approved testing, baseline behavior, and documented false-positive conditions.
 7. Classify the alert as true positive, benign true positive, false positive, or inconclusive.
-8. For a true or inconclusive security event, identify immediate containment needs and activate the applicable playbook when available.
+8. For a true or inconclusive security event, record immediate containment needs and use the current approved manual response path; do not claim later-phase playbook coverage.
 9. For a false positive, document the reason and whether detection tuning is warranted.
 10. Record evidence, visibility gaps, decision, owner, and follow-up.
 
@@ -71,7 +71,7 @@ Stop automated or intrusive follow-up on scope ambiguity, telemetry loss, suspec
 
 - Disposition supported by evidence;
 - severity and ownership recorded;
-- true positive handed to an applicable response path;
+- true positive escalated through the current manual response path;
 - false-positive reasoning and tuning need documented;
 - evidence sanitized before any public use;
 - unresolved visibility gap assigned.
