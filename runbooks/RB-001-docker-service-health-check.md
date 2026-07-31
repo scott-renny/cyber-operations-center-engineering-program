@@ -14,7 +14,7 @@ Determine whether Docker and the approved COC containers are operating correctly
 
 ## Trigger and scope
 
-- **Trigger:** unavailable containerized service, unhealthy container, Docker alert, or scheduled platform check;
+- **Trigger:** unavailable containerized service, unhealthy state observed in Docker or Dockge, or an approved manual health check;
 - **Authorized systems:** Docker Engine and approved COC stacks on Atlas;
 - **Exclusions:** deleting volumes, images, or persistent data as a first response;
 - **Required access:** approved Docker administrator access.
@@ -25,7 +25,7 @@ Determine whether Docker and the approved COC containers are operating correctly
 - Preserve a working administrative session and local recovery path.
 - Open a change or incident record when service impact is material.
 - Identify dependent services before restarting Docker.
-- Confirm that no backup, restore, or evidence-collection job will be interrupted.
+- Confirm that no active maintenance, evidence collection, or service transition will be interrupted.
 
 ## Procedure
 
@@ -35,7 +35,7 @@ Determine whether Docker and the approved COC containers are operating correctly
 4. Confirm that the Docker client can communicate with the daemon.
 5. List running and stopped containers and note unhealthy or restarting states.
 6. Inspect the affected stack through Dockge or Docker Compose.
-7. Review bounded recent logs for the affected container and Docker service.
+7. Review bounded recent logs using [RB-003 — Container Log Inspection](RB-003-container-log-inspection.md).
 8. Check container exit state, health-check output, network attachment, mounts, and restart count.
 9. Restart only the affected container or stack when the fault is isolated.
 10. Restart the Docker service only when the daemon itself is the confirmed fault and the impact is approved.
