@@ -1,7 +1,7 @@
 # Cyber Operations Center Engineering Program Roadmap
 
 > **Status:** Active Development  
-> **Version:** 1.2  
+> **Version:** 1.3  
 > **Repository:** Cyber Operations Center Engineering Program
 
 ---
@@ -63,7 +63,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 2 | 🟩 Complete | [Base Hardening and Operations Portal](phases/phase-02-base-hardening/README.md) |
 | Phase 3 | 🟩 Complete | [Container Platform and Service Management](phases/phase-03-container-platform/README.md) |
 | Phase 4 | 🟩 Complete | [Core Network & Security Services](phases/phase-04-core-network-security/README.md) |
-| Phase 5 | ⬜ Planned | Backup & Recovery |
+| Phase 5 | 🟨 In Progress | [Backup & Recovery](phases/phase-05-backup-recovery/README.md) |
 | Phase 6 | ⬜ Planned | NET-WATCH |
 | Phase 7 | ⬜ Planned | Telemetry Platform |
 | Phase 8 | ⬜ Planned | Endpoint Engineering |
@@ -89,12 +89,11 @@ If one of these items is incomplete, the phase remains in progress.
 
 # Current milestone
 
-Phase 4 established persistent private addressing, router hardening, WireGuard remote access, Wazuh monitoring, controlled Pi-hole DNS filtering, ClamAV malware detection, scheduled scanning, and scoped LAN/VPN firewall access on Atlas (`coc-srv-01`).
+Phase 5 has validated the server-side backup foundation: external storage preparation, mount-safe rsync, encrypted Restic snapshots, retention, repository checking, a real restore test, authenticated Samba access, and Wazuh backup-health alerts.
 
-Suricata is installed and prepared but intentionally disabled until Project Olympus provides wired Ethernet and a validated capture path.
+The phase remains in progress while Windows 10 desktop and Windows 11 laptop automation and endpoint restore testing are completed. The laptop WireGuard fallback remains dependent on the required endpoint profile.
 
-The next milestone is **Phase 5 — Backup and Recovery**.
-
+See the [Phase 5 progress record](phases/phase-05-backup-recovery/README.md) and [sanitized validation evidence](phases/phase-05-backup-recovery/evidence/README.md).
 
 ---
 
