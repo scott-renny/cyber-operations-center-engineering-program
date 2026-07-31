@@ -1,6 +1,6 @@
 # Cyber Operations Center Engineering Program Architecture
 
-> **Version:** 1.2  
+> **Version:** 1.3  
 > **Status:** Active Development
 
 ---
@@ -266,15 +266,25 @@ Examples include:
 
 ---
 
-## Backup
+## Backup and Recovery
 
-Ensures recoverability.
+Phase 5 introduced the first validated recovery architecture on Atlas.
 
-Future capabilities include:
+Implemented server-side capabilities include:
 
-- Automated backups
-- Configuration backups
-- Disaster recovery testing
+- a dedicated external ext4 backup filesystem mounted persistently by UUID;
+- an unprivileged rsync mirror with a mounted-filesystem safety gate;
+- encrypted, compressed, deduplicated Restic snapshots;
+- scheduled retention and repository integrity checks;
+- a successful real restore with byte-for-byte validation;
+- an authenticated Samba target restricted to trusted LAN and VPN sources; and
+- Wazuh alerts for backup success and failure from named stable logs.
+
+The rsync mirror favors rapid local access but is not encrypted at rest. Restic provides the encrypted and versioned recovery path. Root- and container-owned exclusions are documented as a least-privilege tradeoff rather than hidden by root-level automation.
+
+Windows endpoint coverage remains in progress. The Windows 10 desktop and Windows 11 laptop will use explicit source paths, direct UNC destinations, local stable logs, and correct Robocopy exit-code handling. Laptop LAN operation can be implemented before WireGuard; VPN fallback is not considered complete until it is tested through the endpoint tunnel.
+
+Backblaze B2 remains a later additional offsite leg through Restic copy and does not replace the local architecture.
 
 ---
 
