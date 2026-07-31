@@ -8,7 +8,22 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ## Unreleased
 
-No unreleased changes currently recorded.
+### Added
+
+- Draft Docker service-health, Dockge deployment, and bounded container-log inspection runbooks for the completed Phase 3 platform
+- Draft firewall rollback and Wazuh alert-triage runbooks for controls implemented in Phase 4
+
+### Changed
+
+- Linked implemented Phase 3–4 capabilities to standalone governed procedures
+- Kept each new runbook at Draft until its dedicated positive, failure, and rollback validation gate passes
+- Kept Phase 5 and later operational documents Planned
+
+### Security
+
+- Limited public procedures to sanitized examples and approved asset identifiers
+- Kept live addresses, credentials, secrets, repository details, and private operational values outside the public documents
+- Preserved Suricata as a planned runtime capability while the sensor remains intentionally disabled
 
 ---
 
