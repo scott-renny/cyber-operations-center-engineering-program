@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.5.0
+> **Version:** 1.5.1
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -126,6 +126,8 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 3 Validation Evidence](phases/phase-03-container-platform/evidence/README.md) | Sanitized container-platform and management-plane evidence |
 | [Phase 4 Completion Record](phases/phase-04-core-network-security/README.md) | Core network, VPN, DNS filtering, monitoring, and malware protection |
 | [Phase 4 Validation Evidence](phases/phase-04-core-network-security/evidence/README.md) | Sanitized Phase 4 service and security-control evidence |
+| [Phase 5 Progress Record](phases/phase-05-backup-recovery/README.md) | Server backup, encrypted recovery, Samba, Wazuh, and pending endpoint work |
+| [Phase 5 Validation Evidence](phases/phase-05-backup-recovery/evidence/README.md) | Sanitized backup, restore, share, and monitoring evidence |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -134,25 +136,20 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 4 — Core Network and Security Services**.
+The program is implementing **Phase 5 — Backup and Recovery**.
 
-Phase 4 established:
+Validated server-side capabilities now include:
 
-- persistent private addressing for Atlas;
-- hardened ISP-router and wireless settings;
-- WireGuard remote access;
-- Wazuh security monitoring;
-- Pi-hole DNS filtering for controlled pilot clients;
-- ClamAV malware detection and scheduled scanning;
-- LAN- and VPN-scoped management firewall rules; and
-- a documented safe deferral of Suricata until wired Ethernet is available.
+- a rebuilt external backup filesystem with UUID-based persistent mounting;
+- mount-safe, unprivileged rsync mirrors;
+- encrypted and deduplicated Restic snapshots with retention and integrity checking;
+- a successful real restore with byte-for-byte comparison;
+- an authenticated Samba target restricted to trusted networks; and
+- Wazuh success and failure alerting from named stable logs.
 
-Review the [Phase 4 completion record](phases/phase-04-core-network-security/README.md) and [validation evidence](phases/phase-04-core-network-security/evidence/README.md).
+Windows 10 desktop and Windows 11 laptop automation remain in progress. Laptop LAN and disconnected behavior can be implemented now; WireGuard fallback remains pending until the required laptop profile exists.
 
-The next milestone is:
-
-> **Phase 5 — Backup and Recovery**
-
+Review the [Phase 5 progress record](phases/phase-05-backup-recovery/README.md) and [validation evidence](phases/phase-05-backup-recovery/evidence/README.md).
 
 ## Repository Status
 
@@ -169,6 +166,7 @@ The next milestone is:
 | Private Operations Portal | ✅ Complete |
 | Container Platform | ✅ Complete |
 | Core Network and Security Services | ✅ Complete |
+| Backup and Recovery | 🚧 In Progress |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -281,6 +279,7 @@ The following technologies are planned or currently available within the environ
 - Ubuntu Server
 - Windows 11 Pro
 - Windows 11 Home
+- Windows 10 (temporary endpoint pending upgrade)
 - Docker
 - Docker Compose
 - WireGuard
@@ -384,7 +383,10 @@ cyber-operations-center-engineering-program/
     │   ├── README.md
     │   ├── config/
     │   └── evidence/
-    └── phase-04-core-network-security/
+    ├── phase-04-core-network-security/
+    │   ├── README.md
+    │   └── evidence/
+    └── phase-05-backup-recovery/
         ├── README.md
         └── evidence/
 ```
