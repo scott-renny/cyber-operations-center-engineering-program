@@ -10,17 +10,27 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ### Added
 
+- Phase 5 in-progress implementation and sanitized validation records
+- Mount-safe rsync mirrors and encrypted Restic snapshots with retention and integrity checking
+- Authenticated Samba backup target restricted to trusted LAN and VPN sources
+- Wazuh backup-health rules validated for both success and failure outcomes
 - Draft Docker service-health, Dockge deployment, and bounded container-log inspection runbooks for the completed Phase 3 platform
 - Draft firewall rollback and Wazuh alert-triage runbooks for controls implemented in Phase 4
 
 ### Changed
 
+- Advanced Phase 5 from planned to in progress after server-side recovery validation
+- Documented Windows 10 desktop and Windows 11 laptop work as pending endpoint coverage
+- Corrected the backup-monitoring design to match pre-decoded syslog program names rather than the unrelated process-monitoring parent rule
 - Linked implemented Phase 3–4 capabilities to standalone governed procedures
 - Kept each new runbook at Draft until its dedicated positive, failure, and rollback validation gate passes
 - Clarified the distinction between a completed capability and a validated operational procedure
 
 ### Security
 
+- Preserved restrictive ownership on the Wazuh credential archive instead of elevating backup automation to root
+- Limited Samba to authenticated access from trusted network sources
+- Excluded live addresses, filesystem UUIDs, disk serials, repository identifiers, secrets, raw backups, and unredacted screenshots from Phase 5 public evidence
 - Limited public procedures to sanitized examples and approved asset identifiers
 - Kept live addresses, credentials, secrets, repository details, and private operational values outside the public documents
 
