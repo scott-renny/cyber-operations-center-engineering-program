@@ -41,7 +41,7 @@ Deploy or update an approved Docker Compose stack through the Dockge management 
 8. Confirm expected containers are running and health checks stabilize.
 9. Verify bind addresses, published ports, network membership, mounts, and bounded logging.
 10. Test the service through its intended private HTTPS or application path.
-11. Review recent logs for startup errors or unexpected disclosure.
+11. Review recent logs using [RB-003 — Container Log Inspection](RB-003-container-log-inspection.md).
 12. Close the change only after effective-state validation.
 
 Representative validation:
