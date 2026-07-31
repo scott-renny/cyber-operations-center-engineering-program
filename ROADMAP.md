@@ -62,7 +62,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 1 | 🟩 Complete | [Foundation: Full Wipe & Clean-Slate Rebuild](phases/phase-01-foundation/README.md) |
 | Phase 2 | 🟩 Complete | [Base Hardening and Operations Portal](phases/phase-02-base-hardening/README.md) |
 | Phase 3 | 🟩 Complete | [Container Platform and Service Management](phases/phase-03-container-platform/README.md) |
-| Phase 4 | ⬜ Planned | Core Network & Security Services |
+| Phase 4 | 🟩 Complete | [Core Network & Security Services](phases/phase-04-core-network-security/README.md) |
 | Phase 5 | ⬜ Planned | Backup & Recovery |
 | Phase 6 | ⬜ Planned | NET-WATCH |
 | Phase 7 | ⬜ Planned | Telemetry Platform |
@@ -89,9 +89,12 @@ If one of these items is incomplete, the phase remains in progress.
 
 # Current milestone
 
-Phase 3 established Docker Engine, Docker Compose, Dockge, private HTTPS management through Caddy, frontend/backend container-network conventions, bounded logging, consistent naming and labels, and a Compose-compatible secrets standard on Atlas (`coc-srv-01`).
+Phase 4 established persistent private addressing, router hardening, WireGuard remote access, Wazuh monitoring, controlled Pi-hole DNS filtering, ClamAV malware detection, scheduled scanning, and scoped LAN/VPN firewall access on Atlas (`coc-srv-01`).
 
-The next milestone is **Phase 4 — Core Network and Security Services**.
+Suricata is installed and prepared but intentionally disabled until Project Olympus provides wired Ethernet and a validated capture path.
+
+The next milestone is **Phase 5 — Backup and Recovery**.
+
 
 ---
 
