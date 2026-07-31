@@ -1,6 +1,6 @@
 # Runbook Index
 
-This directory defines repeatable operational procedures for the COC Engineering Program. A listed runbook is **Planned** until its capability has been implemented, tested, reversed or recovered where applicable, and supported by sanitized evidence.
+This directory defines repeatable operational procedures for the COC Engineering Program. New entries begin **Planned**. When the underlying capability exists and procedure content has been written, the document may move to **Draft**. Promotion to **Lab Validated** requires a controlled procedure test, rollback or recovery testing where applicable, and sanitized evidence.
 
 ## Status model
 
