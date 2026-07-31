@@ -57,7 +57,7 @@ Exact rules and operational addresses remain in the private change record.
 | Rollback restores access but broadens exposure | Apply a temporary bounded rule and open corrective work |
 | UFW state is correct but service remains unavailable | Investigate bind address, reverse proxy, container publishing, and service health |
 | WireGuard entry path is affected | Preserve LAN/local administration and validate the VPN service separately |
-| Current state cannot be reconstructed | Stop and rebuild from the approved private baseline |
+| Current state cannot be reconstructed | Stop and restore the last documented working UFW state through local access |
 
 ## Validation
 
@@ -69,7 +69,7 @@ Exact rules and operational addresses remain in the private change record.
 
 ## Rollback and recovery
 
-This runbook is itself the rollback procedure. If the attempted rollback worsens state, stop, use local console access, and restore the approved private UFW baseline.
+This runbook is itself the rollback procedure. If the attempted rollback worsens state, stop, use local console access, and restore the last documented working UFW state.
 
 ## Stop conditions
 
