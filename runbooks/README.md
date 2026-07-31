@@ -1,6 +1,6 @@
 # Runbook Index
 
-This directory defines repeatable operational procedures for the COC Engineering Program. A listed runbook is **Planned** until its capability has been implemented, tested, reversed or recovered where applicable, and supported by sanitized evidence.
+This directory defines repeatable operational procedures for the COC Engineering Program. New entries begin **Planned**. When the underlying capability exists and procedure content has been written, the document may move to **Draft**. Promotion to **Lab Validated** requires a controlled procedure test, rollback or recovery testing where applicable, and sanitized evidence.
 
 ## Status model
 
@@ -12,16 +12,16 @@ This directory defines repeatable operational procedures for the COC Engineering
 | Operational | Approved for repeated COC use |
 | Retired | Superseded or no longer applicable |
 
-## Planned runbooks
+## Runbooks
 
 | Runbook | Target phase | Status | Validation gate |
 |---|---:|---|---|
-| Docker Service Health Check | 3 | Planned | daemon failure and recovery tested |
-| Dockge Stack Deployment | 3 | Planned | disposable stack deployed, stopped, and removed |
-| Container Log Inspection | 3 | Planned | known event traced through bounded logs |
+| [Docker Service Health Check](RB-001-docker-service-health-check.md) | 3 | Draft | daemon failure and recovery tested |
+| [Dockge Stack Deployment](RB-002-dockge-stack-deployment.md) | 3 | Draft | disposable stack deployed, stopped, and removed |
+| [Container Log Inspection](RB-003-container-log-inspection.md) | 3 | Draft | known event traced through bounded logs |
 | Container Image Update and Rollback | 3 | Planned | update and rollback performed without data loss |
-| Firewall Rollback | 4 | Planned | rule change reversed with access preserved |
-| Alert Triage | 4 | Planned | two controlled alerts investigated |
+| [Firewall Rollback](RB-005-firewall-rollback.md) | 4 | Draft | rule change reversed with access preserved |
+| [Alert Triage](RB-006-alert-triage.md) | 4 | Draft | two controlled alerts investigated |
 | Wazuh Agent Troubleshooting | 4 | Planned | agent failure and recovery tested |
 | Suricata Sensor Health | 4 | Planned | sensor interruption detected and restored |
 | Logging Pipeline Troubleshooting | 4 | Planned | broken stage isolated and recovered |
