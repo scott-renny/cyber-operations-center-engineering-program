@@ -12,6 +12,36 @@ No unreleased changes currently recorded.
 
 ---
 
+## Version 1.5.0 - Phase 4 Core Network and Security Services (2026-07-31)
+
+### Added
+
+- Phase 4 implementation and completion record
+- Sanitized validation evidence for addressing, WireGuard, Wazuh, Pi-hole, ClamAV, UFW, and service health
+- WireGuard remote-access VPN with mobile-peer validation
+- Wazuh all-in-one monitoring and local security telemetry
+- Pi-hole DNS filtering for controlled workstation and VPN pilots
+- ClamAV malware detection with a scheduled targeted scan
+- Prepared Suricata rules and Wazuh EVE JSON integration
+
+### Changed
+
+- Advanced the current milestone to Phase 5 — Backup and Recovery
+- Restricted SSH, Caddy, Dockge, Wazuh, and Pi-hole access to trusted LAN and VPN sources
+- Replaced stale local name-resolution overrides with Pi-hole local DNS
+- Documented Project Olympus as the controlled path for wired Ethernet, VLANs, DHCP migration, and household-wide DNS
+
+### Security
+
+- Disabled UPnP, WPS, DMZ, guest networking, smart-device networking, and dynamic DNS
+- Enabled router SPI, anti-DoS protection, high firewall policy, and WAN ping discard
+- Removed stale port forwarding and retained only the WireGuard UDP rule
+- Validated ClamAV-to-Wazuh malware alerting with the harmless EICAR test
+- Kept Suricata inactive after Wi-Fi capture disrupted connectivity
+- Excluded credentials, keys, endpoints, live addresses, MAC addresses, and raw screenshots from the public record
+
+---
+
 ## Version 1.4.1 - Operational Documentation Foundation (2026-07-30)
 
 ### Added

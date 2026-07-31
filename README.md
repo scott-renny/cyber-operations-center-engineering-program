@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.4.1
+> **Version:** 1.5.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -124,6 +124,8 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 2 Validation Evidence](phases/phase-02-base-hardening/evidence/README.md) | Sanitized access-control, firewall, audit, update, and portal evidence |
 | [Phase 3 Completion Record](phases/phase-03-container-platform/README.md) | Docker, Dockge, segmentation, logging, and secrets conventions |
 | [Phase 3 Validation Evidence](phases/phase-03-container-platform/evidence/README.md) | Sanitized container-platform and management-plane evidence |
+| [Phase 4 Completion Record](phases/phase-04-core-network-security/README.md) | Core network, VPN, DNS filtering, monitoring, and malware protection |
+| [Phase 4 Validation Evidence](phases/phase-04-core-network-security/evidence/README.md) | Sanitized Phase 4 service and security-control evidence |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -132,28 +134,25 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 3 — Container Platform and Service Management**.
+The program has completed **Phase 4 — Core Network and Security Services**.
 
-Phase 3 established:
+Phase 4 established:
 
-- Docker Engine and Docker Compose on Atlas;
-- non-root administrative Docker access;
-- Dockge as the Compose stack management plane;
-- private HTTPS access through Caddy with a localhost-only Dockge listener;
-- per-stack frontend/backend network segmentation;
-- consistent container naming and operational labels;
-- bounded container log retention; and
-- a Compose-compatible secrets standard.
+- persistent private addressing for Atlas;
+- hardened ISP-router and wireless settings;
+- WireGuard remote access;
+- Wazuh security monitoring;
+- Pi-hole DNS filtering for controlled pilot clients;
+- ClamAV malware detection and scheduled scanning;
+- LAN- and VPN-scoped management firewall rules; and
+- a documented safe deferral of Suricata until wired Ethernet is available.
 
-Review the [Phase 3 completion record](phases/phase-03-container-platform/README.md) and [validation evidence](phases/phase-03-container-platform/evidence/README.md).
+Review the [Phase 4 completion record](phases/phase-04-core-network-security/README.md) and [validation evidence](phases/phase-04-core-network-security/evidence/README.md).
 
 The next milestone is:
 
-> **Phase 4 — Core Network and Security Services**
+> **Phase 5 — Backup and Recovery**
 
-Phase 4 will deploy the first services on the controlled container foundation established in Phase 3.
-
----
 
 ## Repository Status
 
@@ -169,8 +168,9 @@ Phase 4 will deploy the first services on the controlled container foundation es
 | Phase 2 Base Hardening | ✅ Complete |
 | Private Operations Portal | ✅ Complete |
 | Container Platform | ✅ Complete |
+| Core Network and Security Services | ✅ Complete |
 | Infrastructure Deployment | 🚧 In Progress |
-| Security Stack | ⏳ Planned |
+| Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
 | Incident Response | ⏳ Planned |
 | Cloud Integration | ⏳ Planned |
@@ -380,13 +380,16 @@ cyber-operations-center-engineering-program/
     │   ├── config/
     │   ├── evidence/
     │   └── portal/
-    └── phase-03-container-platform/
+    ├── phase-03-container-platform/
+    │   ├── README.md
+    │   ├── config/
+    │   └── evidence/
+    └── phase-04-core-network-security/
         ├── README.md
-        ├── config/
         └── evidence/
 ```
 
-This tree shows the current governance and completed Phase 1–3 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree shows the current governance and completed Phase 1–4 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 
