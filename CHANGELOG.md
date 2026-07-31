@@ -17,13 +17,12 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 - Linked implemented Phase 3–4 capabilities to standalone governed procedures
 - Kept each new runbook at Draft until its dedicated positive, failure, and rollback validation gate passes
-- Kept Phase 5 and later operational documents Planned
+- Clarified the distinction between a completed capability and a validated operational procedure
 
 ### Security
 
 - Limited public procedures to sanitized examples and approved asset identifiers
 - Kept live addresses, credentials, secrets, repository details, and private operational values outside the public documents
-- Preserved Suricata as a planned runtime capability while the sensor remains intentionally disabled
 
 ---
 
