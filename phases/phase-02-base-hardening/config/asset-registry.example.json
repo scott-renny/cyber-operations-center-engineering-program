@@ -19,8 +19,8 @@
       "hostname": "COC-LT-01",
       "type": "windows-laptop",
       "role": "mobile-endpoint",
-      "address": null,
-      "status": "planned"
+      "address": "192.168.1.x",
+      "status": "active"
     }
   }
 }
