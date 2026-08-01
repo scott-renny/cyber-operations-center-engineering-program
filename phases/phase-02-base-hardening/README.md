@@ -134,7 +134,7 @@ The actual fingerprint is retained in the private operational record rather than
 |---|---|---|---|
 | `coc-srv-01` | Ubuntu server | Core lab host | Active |
 | `coc-ws-01` | Windows workstation | Primary workstation | Active |
-| `coc-lt-01` | Windows laptop | Mobile endpoint | Planned |
+| `coc-lt-01` | Windows laptop | Mobile endpoint | Active |
 
 The public registry example contains no live addresses, serial numbers, MAC addresses, or private ownership details.
 
@@ -204,7 +204,7 @@ The initial PowerShell window was not elevated. A verified administrator PowerSh
 - Confirm there are no router port-forwarding rules for administrative or portal ports.
 - Review the Transmission AppArmor profiles before moving them from complain to enforce mode.
 - Move infrastructure services to wired networking when practical.
-- Enroll `coc-lt-01` and verify the local CA fingerprint again before trusting it.
+- Complete local CA fingerprint verification and trust installation on `coc-lt-01`.
 - Phase 3 will introduce the container platform; the security services remain planned for Phase 4.
 
 ## Evidence
