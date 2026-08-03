@@ -11,17 +11,20 @@ The project follows the principles of keeping changes transparent, traceable, an
 ### Added
 
 - Draft Docker service-health, Dockge deployment, and bounded container-log inspection runbooks for the completed Phase 3 platform
+- Managed Windows laptop onboarding validation for local DNS and dedicated Ed25519 SSH access
 - Draft firewall rollback and Wazuh alert-triage runbooks for controls implemented in Phase 4
 
 ### Changed
 
 - Linked implemented Phase 3–4 capabilities to standalone governed procedures
+- Recorded explicit OpenSSH client identity mapping for the managed laptop's non-default key filename
 - Kept each new runbook at Draft until its dedicated positive, failure, and rollback validation gate passes
 - Clarified the distinction between a completed capability and a validated operational procedure
 
 ### Security
 
 - Limited public procedures to sanitized examples and approved asset identifiers
+- Withheld laptop addresses, public-key material, source ports, and raw authentication logs from published evidence
 - Kept live addresses, credentials, secrets, repository details, and private operational values outside the public documents
 
 ---
