@@ -22,7 +22,8 @@ Phase 4 delivered:
 - ClamAV malware detection with scheduled targeted scanning;
 - UFW restrictions for LAN and VPN administration;
 - prepared Suricata configuration and rules, with activation deliberately deferred; and
-- validation of service health, DNS filtering, remote VPN access, malware alerting, memory, and storage.
+- validation of service health, DNS filtering, remote VPN access, malware alerting, memory, and storage; and
+- onboarding of the managed Windows laptop with Pi-hole name resolution and dedicated Ed25519 SSH access.
 
 The phase prioritized stability over maximum feature activation. Controls that were unsafe on the temporary Wi-Fi uplink or dependent on unfinished Project Olympus infrastructure were documented and deferred.
 
@@ -178,6 +179,8 @@ Broad IPv4 and unnecessary IPv6 management rules were removed after replacement 
 - [x] UFW broad management rules removed after scoped-rule validation
 - [x] Suricata inactive and disabled by design
 - [x] Memory and storage capacity remain healthy
+- [x] Managed laptop resolves the Atlas local hostname through Pi-hole
+- [x] Managed laptop SSH public-key authentication validated with a dedicated key
 - [x] Public documentation sanitized
 
 ## Troubleshooting record
@@ -191,6 +194,10 @@ Local console access was used to restart the Netplan-managed WPA supplicant. Con
 ### Bookmarked dashboards stopped resolving after the address change
 
 The administrative workstation contained a static hosts-file entry for the server's former address. Updating and later removing the stale entry restored access after Pi-hole assumed local-name resolution.
+
+### Laptop SSH required explicit key selection
+
+The managed Windows laptop could reach Atlas, but the short SSH command initially failed because its dedicated private key used a non-default filename. A per-user OpenSSH client configuration now maps the Atlas host aliases to the correct identity. Server logs confirmed successful public-key authentication, and the client/server key fingerprints matched.
 
 ### WireGuard service showed inactive after manual startup
 
@@ -220,6 +227,7 @@ The container's BusyBox `find` implementation did not support GNU `-printf`. A p
 - Systemd should own long-running interfaces and services intended to start at boot.
 - Harmless test artifacts can validate an end-to-end malware detection pipeline without using real malware.
 - Public evidence should prove control state without exposing operational identifiers.
+- Dedicated endpoint keys with non-default filenames should be mapped explicitly in the client SSH configuration.
 
 ## Known limitations and Project Olympus deferrals
 
