@@ -31,6 +31,8 @@ This record contains outcome-level evidence only. The following were intentional
 | WireGuard service | Interface active and listening on the approved UDP port | Pass |
 | WireGuard persistence | systemd unit active and enabled | Pass |
 | Mobile VPN | Recent cellular handshake and bidirectional transfer observed | Pass |
+| Managed laptop DNS | Atlas local hostname resolved through the approved Pi-hole resolver | Pass |
+| Managed laptop SSH | Dedicated Ed25519 key accepted; client and server fingerprints matched | Pass |
 | Caddy | Service active | Pass |
 | Docker | Service active | Pass |
 | Dockge | Container healthy | Pass |
@@ -82,6 +84,12 @@ The server reported:
 - the peer-specific tunnel address.
 
 Keys, endpoint details, and exact addressing were withheld.
+
+### Managed laptop administration
+
+The managed Windows laptop resolved Atlas through the approved local DNS service and completed SSH public-key authentication using its dedicated Ed25519 identity. The client-side public-key fingerprint matched the authorized key recorded on Atlas, and the server journal recorded an accepted public-key login.
+
+The live laptop address, public-key material, username, source port, and raw authentication log were withheld.
 
 ### Malware detection
 
