@@ -2,6 +2,7 @@
 
 **Status:** In Progress  
 **Server-side validation date:** 2026-07-31  
+**Windows 10 validation date:** 2026-08-04  
 **Budget:** $0  
 **Asset ID:** `coc-srv-01`  
 **Friendly name:** Atlas
@@ -19,16 +20,17 @@ Completed and validated now:
 - unprivileged rsync mirrors for approved server and Docker data;
 - encrypted, deduplicated Restic snapshots with retention and integrity checks;
 - an authenticated Samba backup share restricted to trusted LAN and VPN sources;
-- real Restic restore and byte-comparison testing; and
-- Wazuh collection and alerting for stable backup logs.
+- real Restic restore and byte-comparison testing;
+- a scheduled Windows 10 SMB mirror split into core, Downloads, and powered-off VirtualBox modes;
+- encrypted and deduplicated server-side snapshots of the Windows mirror with a successful restore; and
+- Wazuh collection and alerting for Linux, Windows, and encrypted-network backup logs.
 
 Still in progress:
 
-- Windows 10 desktop automation;
 - Windows 11 laptop LAN automation;
 - laptop no-connection behavior;
 - laptop WireGuard fallback after the required profile is available; and
-- endpoint restore testing.
+- Windows 11 laptop restore testing.
 
 ## Architecture
 
@@ -45,7 +47,7 @@ Approved server data
                          ▼                                     ▼
                 Authenticated SMB share                 Stable job logs
                          │                                     │
-              Windows endpoints (pending)                    Wazuh
+       Windows SMB mirrors and encrypted snapshots             Wazuh
                                                                │
                                                      success/failure alerts
 ```
@@ -92,7 +94,7 @@ Docker data is copied while containers remain active. Live database and write-ah
 
 ## Restic snapshots
 
-Restic provides encrypted, compressed, deduplicated, versioned home-directory snapshots.
+Restic provides encrypted, compressed, deduplicated, versioned snapshots for the approved server home data and the Windows network-backup mirror.
 
 Controls include:
 
@@ -106,6 +108,8 @@ Controls include:
 - stable Wazuh-compatible logging.
 
 Backup, retention, and integrity-check modes were tested manually under the same unprivileged account used by scheduling. The integrity check reported no repository errors.
+
+The first encrypted snapshot of the Windows mirror processed approximately 76 GiB in 1 hour 6 minutes. A representative file was restored from that repository and matched the SMB mirror byte for byte.
 
 ## Restore validation
 
@@ -148,7 +152,7 @@ The global `map to guest = Bad User` setting remains a documented compatibility 
 
 ## Wazuh monitoring
 
-Wazuh monitors two named, stable backup log files. Wildcard paths are intentionally prohibited for accumulating backup logs because tracking a growing collection of timestamped files can saturate the event queue.
+Wazuh monitors four named, stable backup log files covering the rsync mirror, server-home Restic repository, Windows backup summaries, and encrypted Windows-mirror repository. Wildcard paths are intentionally prohibited for accumulating backup logs because tracking a growing collection of timestamped files can saturate the event queue.
 
 Custom rules provide:
 
@@ -174,17 +178,26 @@ Exact times and operational identifiers remain in the private configuration.
 
 ### Windows 10 desktop
 
-Desktop implementation will proceed on Windows 10 using corrected automation that can later move to Windows 11.
+The Windows 10 desktop implementation is complete and validated on the trusted LAN.
 
-The original draft will be corrected because:
+Controls include:
 
-- `%USERNAME%` resolves to the task identity when running as SYSTEM;
-- mapped drive letters are scoped to user sessions;
-- interactive-user credentials are not automatically available to SYSTEM;
-- Robocopy codes 0 through 7 are acceptable outcomes; and
-- `/MIR` propagates deletions and requires explicit safeguards.
+- an explicit user-profile source and direct UNC destination;
+- separate Core, Downloads, VirtualBox, and All modes;
+- incremental Robocopy behavior without deletion propagation;
+- acceptable handling of Robocopy codes 0 through 7;
+- an exclusive lock that prevents overlapping jobs;
+- a VirtualBox-running safety check;
+- locale-independent syslog timestamps;
+- restricted script and local-log permissions;
+- Task Scheduler execution as the signed-in user while the screen is locked; and
+- stable remote summaries collected by Wazuh.
 
-The corrected design will use an explicit source path, a direct UNC destination, safe credential handling, local stable logs, connection checks, and tested exit-code interpretation.
+The Core task runs during each overnight work shift. Downloads and powered-off VirtualBox data run on separate weekly schedules to avoid long competing transfers. All three scheduled tasks returned successful results in validation.
+
+A direct SMB restore matched the Windows source by SHA-256. The server then created an encrypted snapshot of the Windows mirror, restored the same representative file, and produced another byte-for-byte match. Temporary restore directories were removed after evidence collection.
+
+The mirror uses additive `/E` behavior rather than `/MIR`; deleting a Windows source file does not automatically delete the recovery copy. Version history is provided by the encrypted server-side Restic repository.
 
 Windows 10 is beyond ordinary support and must receive applicable extended security coverage or remain a temporary lab endpoint pending upgrade.
 
@@ -220,8 +233,8 @@ WireGuard fallback remains pending until the required laptop profile exists. The
 - [x] Wazuh failure rule validated
 - [x] Wazuh success rule validated
 - [x] End-to-end Wazuh dashboard evidence captured
-- [ ] Windows 10 desktop scheduled backup validated
-- [ ] Windows 10 desktop restore validated
+- [x] Windows 10 desktop scheduled backup validated
+- [x] Windows 10 desktop restore validated
 - [ ] Windows 11 laptop LAN backup validated
 - [ ] Windows 11 laptop no-connection behavior validated
 - [ ] Windows 11 laptop WireGuard backup validated
@@ -234,6 +247,6 @@ Sanitized outcome-level evidence is recorded in [evidence/README.md](evidence/RE
 
 ## Outcome
 
-Atlas now has validated local rsync and encrypted Restic recovery paths, an authenticated network-backup target, scheduled maintenance, a successful restore test, and Wazuh visibility into backup health.
+Atlas now has validated local rsync and encrypted Restic recovery paths, an authenticated network-backup target, scheduled Windows 10 protection, successful direct and encrypted restore tests, and Wazuh visibility into backup health.
 
-Phase 5 remains **in progress** until the approved Windows endpoint scenarios and endpoint restore tests are complete.
+The Windows 10 portion is complete. Phase 5 remains **in progress** until the approved Windows 11 laptop LAN, disconnected, restore, and later WireGuard scenarios are complete.
