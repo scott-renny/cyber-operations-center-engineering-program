@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.7.0
+> **Version:** 1.8.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -128,6 +128,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 4 Validation Evidence](phases/phase-04-core-network-security/evidence/README.md) | Sanitized Phase 4 service and security-control evidence |
 | [Phase 5 Completion Record](phases/phase-05-backup-recovery/README.md) | Backup automation, encrypted retention, restore validation, and monitoring |
 | [Phase 6 Completion Record](phases/phase-06-netwatch/README.md) | NET-WATCH discovery, policy enforcement, Pi-hole integration, HTTPS, and Wazuh visibility |
+| [Phase 7 Completion Record](phases/phase-07-telemetry-backbone/README.md) | Zeek metadata, Prometheus metrics, Grafana dashboards, and Graylog aggregation |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -136,27 +137,23 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 6 — NET-WATCH**.
+The program has completed **Phase 7 — Telemetry Backbone**.
 
-Phase 5 established the backup-and-recovery baseline: automated file protection, encrypted snapshot retention, restore verification, monitored backup operations, and documented recovery procedures.
+Phase 7 established the observability layer beneath the existing security stack. The completed deployment includes:
 
-Phase 6 redeployed and hardened NET-WATCH as an operational network-visibility and access-control platform. The completed deployment includes:
+- Zeek connection, DNS, and TLS metadata alongside Suricata;
+- Prometheus collection from node_exporter and cAdvisor;
+- Grafana host, container, Pi-hole, Wazuh-volume, backup-health, and collector-health views;
+- Graylog 7 aggregation for non-Wazuh operational logs;
+- persistent NET-WATCH journal forwarding into Graylog;
+- isolated Graylog search services that do not conflict with Wazuh; and
+- private Caddy HTTPS access and updated operations-portal tiles.
 
-- continuous discovery of real network devices;
-- device naming, classification, assignment, and profile views;
-- profile schedules and daily usage budgets;
-- Pi-hole v6 group-based DNS enforcement without globally disabling filtering;
-- separate per-profile content policies;
-- Wazuh alerts with MITRE ATT&CK context;
-- a Gunicorn-managed API behind private Caddy HTTPS;
-- systemd startup, protected runtime configuration, and health diagnostics; and
-- validated enforcement for the Matthew and Sophia device profiles.
-
-Review the [Phase 5 completion record](phases/phase-05-backup-recovery/README.md), [Phase 6 completion record](phases/phase-06-netwatch/README.md), and the [NET-WATCH source repository](https://github.com/scott-renny/netwatch).
+Review the [Phase 6 completion record](phases/phase-06-netwatch/README.md), [Phase 7 completion record](phases/phase-07-telemetry-backbone/README.md), and the [NET-WATCH source repository](https://github.com/scott-renny/netwatch).
 
 The next milestone is:
 
-> **Phase 7 — Telemetry Platform**
+> **Phase 8 — Endpoint Engineering**
 
 ## Repository Status
 
@@ -175,6 +172,7 @@ The next milestone is:
 | Core Network and Security Services | ✅ Complete |
 | Backup and Recovery | ✅ Complete |
 | NET-WATCH Network Visibility | ✅ Complete |
+| Telemetry Backbone | ✅ Complete |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -395,7 +393,7 @@ cyber-operations-center-engineering-program/
         └── evidence/
 ```
 
-This tree shows the governance baseline and completed implementation through Phase 6. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree shows the governance baseline and completed implementation through Phase 7. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 
