@@ -107,6 +107,10 @@ Phase 7 was validated by:
 - validating the Caddy configuration; and
 - confirming the private Grafana, Graylog, and Prometheus HTTPS endpoints responded correctly.
 
+## Validation evidence
+
+Selected sanitized screenshots are indexed in the [Phase 7 validation evidence](evidence/README.md) directory.
+
 ## Security considerations
 
 - Native Grafana, Graylog, Prometheus, MongoDB, exporter, and search-backend listeners are restricted to localhost where practical.
