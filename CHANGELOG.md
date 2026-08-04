@@ -96,12 +96,18 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ### Added
 
+- Draft backup-failure, repository-integrity, file-restore, full-system-restore, NET-WATCH health, logging-pipeline, and end-to-end telemetry runbooks for completed Phases 5–7
+- Draft DNS disruption, denial-of-service, ransomware, and backup-repository-compromise playbooks with explicit exercise gates
+- Prioritized validation queues for the runbook and playbook libraries
 - Draft Docker service-health, Dockge deployment, and bounded container-log inspection runbooks for the completed Phase 3 platform
 - Managed Windows laptop onboarding validation for local DNS and dedicated Ed25519 SSH access
 - Draft firewall rollback and Wazuh alert-triage runbooks for controls implemented in Phase 4
 
 ### Changed
 
+- Added stable document IDs across the full runbook and playbook roadmaps
+- Advanced implemented Phase 5–7 procedures from Planned to Draft without overstating standalone validation
+- Clarified that completed phase capability evidence does not automatically promote a standalone procedure or incident playbook
 - Linked implemented Phase 3–4 capabilities to standalone governed procedures
 - Recorded explicit OpenSSH client identity mapping for the managed laptop's non-default key filename
 - Kept each new runbook at Draft until its dedicated positive, failure, and rollback validation gate passes
