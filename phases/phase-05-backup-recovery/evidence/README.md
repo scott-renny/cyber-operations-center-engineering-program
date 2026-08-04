@@ -1,8 +1,8 @@
 # Phase 5 Validation Evidence
 
-**Status:** Server-side controls validated; endpoint controls pending  
+**Status:** Server and Windows 10 controls validated; Windows 11 pending  
 **Evidence classification:** Public, sanitized  
-**Validation date:** 2026-07-31  
+**Validation dates:** 2026-07-31 through 2026-08-04  
 **Asset:** Atlas (`coc-srv-01`)
 
 ## Publication decision
@@ -46,11 +46,15 @@ This record contains outcome-level evidence only. The following were intentional
 | Samba read-back | Downloaded test content matched the source | Pass |
 | Anonymous Samba | Access denied | Pass |
 | Firewall | Samba limited to trusted LAN and VPN sources | Pass |
-| Wazuh log paths | Two named stable log files registered | Pass |
+| Wazuh log paths | Four named stable log files registered without backup wildcards | Pass |
 | Wazuh failure rule | Expected level-7 rule selected and alerted | Pass |
 | Wazuh success rule | Expected level-5 rule selected and alerted | Pass |
 | Dashboard | Both sanitized test outcomes visible for Atlas | Pass |
-| Windows desktop | Implementation not yet performed | Pending |
+| Windows desktop scheduling | Core, Downloads, and powered-off VirtualBox tasks completed with successful results | Pass |
+| Windows desktop direct restore | Source, SMB copy, and restored file had identical SHA-256 hashes | Pass |
+| Encrypted Windows snapshot | Initial snapshot processed approximately 76 GiB successfully | Pass |
+| Encrypted Windows restore | Representative restored file matched the SMB mirror byte for byte | Pass |
+| Windows backup monitoring | Scheduled and encrypted-snapshot success events generated expected Wazuh alerts | Pass |
 | Windows laptop LAN | Implementation not yet performed | Pending |
 | Windows laptop VPN | WireGuard profile and test not yet available | Pending |
 
@@ -82,9 +86,17 @@ A test file was uploaded through SMB authentication, listed, downloaded, compare
 
 ### Wazuh
 
-The log collector registered exactly two named backup log paths. No backup wildcard was used.
+The log collector registered four named backup log paths. No backup wildcard was used.
 
-Rule testing proved the expected pre-decoding and rule selection for both status markers. End-to-end synthetic events written to the stable files produced the expected level-7 and level-5 alerts in the Wazuh dashboard.
+Rule testing proved the expected pre-decoding and rule selection for both status markers. End-to-end events from the Linux jobs, Windows scheduler, and encrypted Windows-mirror snapshot produced the expected alerts, including a rotated archived success alert for the first large snapshot.
+
+### Windows 10
+
+The Windows desktop copied approved profile folders to a dedicated SMB destination. The first full transfer completed successfully; subsequent Core and Downloads runs demonstrated incremental behavior. Core, Downloads, and powered-off VirtualBox Task Scheduler jobs each returned result 0.
+
+The script uses explicit paths, a direct UNC destination, safe Robocopy exit-code interpretation, an overlap lock, a VirtualBox-running guard, and invariant syslog timestamps. It intentionally uses additive copy behavior, so source deletions do not automatically remove recovery copies.
+
+A representative document matched across the Windows source, SMB mirror, and direct restore. The server-side encrypted repository then captured the Windows mirror, restored the same representative file, and produced an identical hash and byte comparison. Temporary restore data was removed after validation.
 
 ## Recovery objectives
 
@@ -99,7 +111,7 @@ Rule testing proved the expected pre-decoding and rule selection for both status
 - Live container databases may require application-aware export or quiescing for guaranteed consistency.
 - The Restic recovery password must be retained outside the protected server.
 - The Samba guest-mapping compatibility setting remains globally available, although the backup share itself denies guest access and requires a named account.
-- Windows desktop and laptop automation remain incomplete.
+- Windows 10 automation is complete; Windows 11 laptop automation remains incomplete.
 - Laptop WireGuard fallback cannot be validated until the required profile exists.
 
 ## Evidence integrity
