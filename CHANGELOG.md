@@ -6,6 +6,56 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 1.7.0 - Phase 6 NET-WATCH (2026-08-03)
+
+### Added
+
+- Phase 6 NET-WATCH completion record
+- Production device discovery, classification, assignment, and profile management
+- Per-profile schedules, daily budgets, manual kill switches, and DNS content policies
+- Pi-hole v6 group-based enforcement using a dedicated safety control group and managed deny-all rule
+- Wazuh alert visibility with MITRE ATT&CK context
+- Private Caddy HTTPS access, local DNS, Gunicorn, systemd, and health diagnostics
+
+### Changed
+
+- Advanced the current milestone to Phase 7 — Telemetry Platform
+- Replaced development-server operation with a hardened Gunicorn service
+- Preserved the existing Caddy management plane instead of introducing a competing Nginx listener
+- Enabled Pi-hole as the network DNS service and connected NET-WATCH to per-profile enforcement
+- Added assigned/unassigned and device-type filtering plus expanded device icons
+
+### Security
+
+- Kept the API bound to localhost behind private HTTPS
+- Protected runtime settings in a root-managed environment file
+- Scoped DNS blocking to explicit Pi-hole profile groups instead of globally disabling Pi-hole
+- Added reconciliation diagnostics, safe failure behavior, and checks for missing, disabled, default, or foreign groups
+- Excluded credentials, device identifiers, addresses, and private certificate material from public documentation
+
+---
+
+## Version 1.6.0 - Phase 5 Backup and Recovery (2026-08-01)
+
+### Added
+
+- Phase 5 backup-and-recovery completion record
+- Automated file protection and encrypted snapshot retention
+- Restore verification and documented recovery procedures
+- Backup monitoring and security-event visibility
+
+### Changed
+
+- Advanced the current milestone to Phase 6 — NET-WATCH
+- Promoted recovery testing from an assumed capability to a validated engineering requirement
+
+### Security
+
+- Kept backup credentials and recovery secrets outside the public repository
+- Documented sanitization requirements for backup evidence and restore records
+
+---
+
 ## Unreleased
 
 ### Added

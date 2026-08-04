@@ -1,7 +1,7 @@
 # Cyber Operations Center Engineering Program Roadmap
 
 > **Status:** Active Development  
-> **Version:** 1.2  
+> **Version:** 1.4  
 > **Repository:** Cyber Operations Center Engineering Program
 
 ---
@@ -63,8 +63,8 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 2 | 🟩 Complete | [Base Hardening and Operations Portal](phases/phase-02-base-hardening/README.md) |
 | Phase 3 | 🟩 Complete | [Container Platform and Service Management](phases/phase-03-container-platform/README.md) |
 | Phase 4 | 🟩 Complete | [Core Network & Security Services](phases/phase-04-core-network-security/README.md) |
-| Phase 5 | ⬜ Planned | Backup & Recovery |
-| Phase 6 | ⬜ Planned | NET-WATCH |
+| Phase 5 | 🟩 Complete | [Backup & Recovery](phases/phase-05-backup-recovery/README.md) |
+| Phase 6 | 🟩 Complete | [NET-WATCH](phases/phase-06-netwatch/README.md) |
 | Phase 7 | ⬜ Planned | Telemetry Platform |
 | Phase 8 | ⬜ Planned | Endpoint Engineering |
 | Phase 9 | ⬜ Planned | Nextcloud Platform |
@@ -89,12 +89,11 @@ If one of these items is incomplete, the phase remains in progress.
 
 # Current milestone
 
-Phase 4 established persistent private addressing, router hardening, WireGuard remote access, Wazuh monitoring, controlled Pi-hole DNS filtering, ClamAV malware detection, scheduled scanning, and scoped LAN/VPN firewall access on Atlas (`coc-srv-01`).
+Phase 5 completed the program's backup-and-recovery baseline with automated protection, encrypted retention, restore validation, monitoring, and documented recovery procedures.
 
-Suricata is installed and prepared but intentionally disabled until Project Olympus provides wired Ethernet and a validated capture path.
+Phase 6 completed the production NET-WATCH deployment. The platform now provides device discovery, profile assignment, schedules, daily budgets, Pi-hole v6 group-based enforcement, Wazuh alert visibility, private HTTPS access through Caddy, and systemd-managed Gunicorn operation.
 
-The next milestone is **Phase 5 — Backup and Recovery**.
-
+The next milestone is **Phase 7 — Telemetry Platform**.
 
 ---
 
