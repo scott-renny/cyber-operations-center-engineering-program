@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.5.0
+> **Version:** 1.7.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -126,6 +126,8 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 3 Validation Evidence](phases/phase-03-container-platform/evidence/README.md) | Sanitized container-platform and management-plane evidence |
 | [Phase 4 Completion Record](phases/phase-04-core-network-security/README.md) | Core network, VPN, DNS filtering, monitoring, and malware protection |
 | [Phase 4 Validation Evidence](phases/phase-04-core-network-security/evidence/README.md) | Sanitized Phase 4 service and security-control evidence |
+| [Phase 5 Completion Record](phases/phase-05-backup-recovery/README.md) | Backup automation, encrypted retention, restore validation, and monitoring |
+| [Phase 6 Completion Record](phases/phase-06-netwatch/README.md) | NET-WATCH discovery, policy enforcement, Pi-hole integration, HTTPS, and Wazuh visibility |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -134,25 +136,27 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 4 — Core Network and Security Services**.
+The program has completed **Phase 6 — NET-WATCH**.
 
-Phase 4 established:
+Phase 5 established the backup-and-recovery baseline: automated file protection, encrypted snapshot retention, restore verification, monitored backup operations, and documented recovery procedures.
 
-- persistent private addressing for Atlas;
-- hardened ISP-router and wireless settings;
-- WireGuard remote access;
-- Wazuh security monitoring;
-- Pi-hole DNS filtering for controlled pilot clients;
-- ClamAV malware detection and scheduled scanning;
-- LAN- and VPN-scoped management firewall rules; and
-- a documented safe deferral of Suricata until wired Ethernet is available.
+Phase 6 redeployed and hardened NET-WATCH as an operational network-visibility and access-control platform. The completed deployment includes:
 
-Review the [Phase 4 completion record](phases/phase-04-core-network-security/README.md) and [validation evidence](phases/phase-04-core-network-security/evidence/README.md).
+- continuous discovery of real network devices;
+- device naming, classification, assignment, and profile views;
+- profile schedules and daily usage budgets;
+- Pi-hole v6 group-based DNS enforcement without globally disabling filtering;
+- separate per-profile content policies;
+- Wazuh alerts with MITRE ATT&CK context;
+- a Gunicorn-managed API behind private Caddy HTTPS;
+- systemd startup, protected runtime configuration, and health diagnostics; and
+- validated enforcement for the Matthew and Sophia device profiles.
+
+Review the [Phase 5 completion record](phases/phase-05-backup-recovery/README.md), [Phase 6 completion record](phases/phase-06-netwatch/README.md), and the [NET-WATCH source repository](https://github.com/scott-renny/netwatch).
 
 The next milestone is:
 
-> **Phase 5 — Backup and Recovery**
-
+> **Phase 7 — Telemetry Platform**
 
 ## Repository Status
 
@@ -169,6 +173,8 @@ The next milestone is:
 | Private Operations Portal | ✅ Complete |
 | Container Platform | ✅ Complete |
 | Core Network and Security Services | ✅ Complete |
+| Backup and Recovery | ✅ Complete |
+| NET-WATCH Network Visibility | ✅ Complete |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -389,7 +395,7 @@ cyber-operations-center-engineering-program/
         └── evidence/
 ```
 
-This tree shows the current governance and completed Phase 1–4 implementation baseline. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree shows the governance baseline and completed implementation through Phase 6. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 
