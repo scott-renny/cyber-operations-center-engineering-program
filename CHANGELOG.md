@@ -6,6 +6,42 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 1.8.0 - Phase 7 Telemetry Backbone (2026-08-04)
+
+### Added
+
+- Phase 7 telemetry-backbone completion record
+- Zeek connection, DNS, and TLS metadata alongside Suricata
+- Prometheus collection from node_exporter and cAdvisor
+- Grafana Node Exporter Full and cAdvisor dashboards
+- Custom Pi-hole, Wazuh alert-volume, backup-age, and collector-health metrics
+- COC Operations Overview Grafana dashboard
+- Graylog 7, MongoDB, and a dedicated Graylog Data Node
+- Dedicated COC General Logs index set and Syslog UDP input
+- Persistent NET-WATCH journal forwarding into Graylog
+- Private Caddy HTTPS endpoints and portal tiles for the observability services
+
+### Changed
+
+- Advanced the current milestone to Phase 8 — Endpoint Engineering
+- Replaced phase-number-focused portal labels with operational service categories
+- Bound native observability and search services locally where practical
+- Isolated Graylog search-backend ports from Wazuh
+- Configured single-node Graylog index sets with one primary shard and zero replicas
+- Promoted backup success, DNS statistics, and Wazuh alert volume into visible operational metrics
+
+### Security
+
+- Preserved Caddy as the private HTTPS management plane
+- Limited management access to approved LAN and VPN networks
+- Kept Pi-hole credentials in a protected Docker secret
+- Ran the custom metrics collector as a constrained systemd oneshot service
+- Used atomic Prometheus textfile metric publication
+- Added no new detection or automated-response logic during the telemetry phase
+- Excluded credentials, live addresses, private certificates, device identifiers, and raw logs from public documentation
+
+---
+
 ## Version 1.7.0 - Phase 6 NET-WATCH (2026-08-03)
 
 ### Added

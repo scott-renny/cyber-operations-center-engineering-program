@@ -1,7 +1,7 @@
 # Cyber Operations Center Engineering Program Roadmap
 
 > **Status:** Active Development  
-> **Version:** 1.4  
+> **Version:** 1.5  
 > **Repository:** Cyber Operations Center Engineering Program
 
 ---
@@ -65,7 +65,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 4 | 🟩 Complete | [Core Network & Security Services](phases/phase-04-core-network-security/README.md) |
 | Phase 5 | 🟩 Complete | [Backup & Recovery](phases/phase-05-backup-recovery/README.md) |
 | Phase 6 | 🟩 Complete | [NET-WATCH](phases/phase-06-netwatch/README.md) |
-| Phase 7 | ⬜ Planned | Telemetry Platform |
+| Phase 7 | 🟩 Complete | [Telemetry Backbone](phases/phase-07-telemetry-backbone/README.md) |
 | Phase 8 | ⬜ Planned | Endpoint Engineering |
 | Phase 9 | ⬜ Planned | Nextcloud Platform |
 | Phase 10 | ⬜ Planned | Identity Services |
@@ -89,11 +89,11 @@ If one of these items is incomplete, the phase remains in progress.
 
 # Current milestone
 
-Phase 5 completed the program's backup-and-recovery baseline with automated protection, encrypted retention, restore validation, monitoring, and documented recovery procedures.
+Phase 6 completed the production NET-WATCH deployment with device discovery, profile controls, Pi-hole enforcement, Wazuh visibility, private HTTPS access, and systemd-managed operation.
 
-Phase 6 completed the production NET-WATCH deployment. The platform now provides device discovery, profile assignment, schedules, daily budgets, Pi-hole v6 group-based enforcement, Wazuh alert visibility, private HTTPS access through Caddy, and systemd-managed Gunicorn operation.
+Phase 7 completed the telemetry backbone. Zeek now provides rich network metadata; Prometheus, node_exporter, and cAdvisor provide host and container metrics; Grafana consolidates operational dashboards; and Graylog provides searchable aggregation for non-Wazuh logs.
 
-The next milestone is **Phase 7 — Telemetry Platform**.
+The next milestone is **Phase 8 — Endpoint Engineering**.
 
 ---
 
