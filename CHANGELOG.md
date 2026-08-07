@@ -6,6 +6,32 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 1.9.0 - Phase 8 COC-LT-01 Workstream (2026-08-07)
+
+### Added
+
+- COC-LT-01 Phase 8 endpoint-hardening and completion records
+- Trusted and untrusted WireGuard profile documentation
+- Windows 11 Home, Wazuh, Firefox, identity, firewall, and validation records
+- ADR-007 through ADR-009 for VPN-only administration, Windows 11 Home compensating controls, and workstation-associated hardware security keys
+
+### Changed
+
+- Marked the COC-LT-01 workstream complete while retaining Phase 8 as In Progress
+- Recorded the Windows 10 PC, mobile phone, and tablet workstreams as planned
+- Kept Phase 8 as the current milestone
+- Removed unnecessary public HTTP/HTTPS forwarding from the documented remote-access architecture
+- Established WireGuard as the remote-administration boundary
+
+### Security
+
+- Documented verified TPM 2.0, Secure Boot, Defender, Tamper Protection, Smart App Control, Controlled Folder Access, and Windows Firewall controls
+- Documented validated Wazuh connectivity, real-time FIM, Security Configuration Assessment, and MITRE ATT&CK context
+- Recorded completed hardware-key enrollment for Microsoft and Bitwarden without overstating deferred account enrollment
+- Excluded live addresses, keys, recovery material, account identifiers, and raw screenshots from the public record
+
+---
+
 ## Version 1.8.0 - Phase 7 Telemetry Backbone (2026-08-04)
 
 ### Added
