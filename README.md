@@ -129,7 +129,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 5 Completion Record](phases/phase-05-backup-recovery/README.md) | Backup automation, encrypted retention, restore validation, and monitoring |
 | [Phase 6 Completion Record](phases/phase-06-netwatch/README.md) | NET-WATCH discovery, policy enforcement, Pi-hole integration, HTTPS, and Wazuh visibility |
 | [Phase 7 Completion Record](phases/phase-07-telemetry-backbone/README.md) | Zeek metadata, Prometheus metrics, Grafana dashboards, and Graylog aggregation |
-| [Phase 8 Completion Record](phases/phase-08-endpoint-engineering/README.md) | COC-LT-01 endpoint hardening, secure remote access, monitoring, and identity controls |
+| [Phase 8 Progress Record](phases/phase-08-endpoint-engineering/README.md) | Endpoint Engineering progress, including the completed COC-LT-01 workstream |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -138,7 +138,9 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program has completed **Phase 8 — Endpoint Engineering** for **COC-LT-01**.
+The program is currently implementing **Phase 8 — Endpoint Engineering**.
+
+The **COC-LT-01 workstream is complete**, while the Windows 10 PC, mobile phone, and tablet workstreams remain planned.
 
 The completed laptop baseline includes:
 
@@ -150,11 +152,11 @@ The completed laptop baseline includes:
 - hardware-key enrollment for Microsoft and Bitwarden; and
 - VPN-only remote administration with unnecessary public HTTP/HTTPS forwarding removed.
 
-Review the [Phase 8 completion record](phases/phase-08-endpoint-engineering/README.md) and the [COC-LT-01 completion report](phases/phase-08-endpoint-engineering/COC-LT-01/PHASE-08-COMPLETION.md).
+Review the [Phase 8 progress record](phases/phase-08-endpoint-engineering/README.md) and the [COC-LT-01 completion report](phases/phase-08-endpoint-engineering/COC-LT-01/PHASE-08-COMPLETION.md).
 
-The next milestone is:
+The current milestone remains:
 
-> **Phase 9 — Nextcloud Platform**
+> **Phase 8 — Complete the Windows 10 PC, mobile phone, and tablet workstreams**
 
 ## Repository Status
 
@@ -174,7 +176,11 @@ The next milestone is:
 | Backup and Recovery | ✅ Complete |
 | NET-WATCH Network Visibility | ✅ Complete |
 | Telemetry Backbone | ✅ Complete |
-| COC-LT-01 Endpoint Engineering | ✅ Complete |
+| Phase 8 Endpoint Engineering | 🚧 In Progress |
+| └─ COC-LT-01 workstream | ✅ Complete |
+| └─ Windows 10 PC workstream | ⏳ Planned |
+| └─ Mobile phone workstream | ⏳ Planned |
+| └─ Tablet workstream | ⏳ Planned |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -395,7 +401,7 @@ cyber-operations-center-engineering-program/
         └── evidence/
 ```
 
-This tree shows the governance baseline and completed implementation through Phase 8 for COC-LT-01. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree shows the governance baseline completed through Phase 7 and the Phase 8 documentation currently in progress. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
 
 ---
 
