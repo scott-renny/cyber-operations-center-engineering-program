@@ -1,15 +1,26 @@
 # Phase 8 — Endpoint Engineering
 
-> **Status:** Complete for COC-LT-01  
-> **Completed:** 2026-08-07  
-> **Scope:** COC-LT-01 only  
-> **Next phase:** Phase 9 — Nextcloud Platform
+> **Status:** In Progress  
+> **Current completed workstream:** COC-LT-01  
+> **Phase completion date:** Not yet complete  
+> **Next phase:** Phase 9 — Nextcloud Platform (not started)
 
 ## Purpose
 
-Establish and validate a defense-in-depth endpoint baseline for COC-LT-01, a roaming Windows 11 Home laptop used to administer and observe the Cyber Operations Center.
+Establish and validate defense-in-depth security baselines for the program's user endpoints. Phase 8 is complete only after the Windows 10 PC, mobile phone, and tablet workstreams join the completed COC-LT-01 workstream.
 
-## Completed capabilities
+## Workstream status
+
+| Workstream | Status | Documentation |
+|---|---|---|
+| COC-LT-01 | Complete | [Completed laptop record](COC-LT-01/README.md) |
+| Windows 10 PC | Planned | Implementation, validation, and asset-specific documentation pending |
+| Mobile phone | Planned | Implementation, validation, and asset-specific documentation pending |
+| Tablet | Planned | Implementation, validation, and asset-specific documentation pending |
+
+Asset identifiers for the remaining devices will be added only after they are confirmed. No control is considered implemented on those devices until it has been applied and validated.
+
+## Completed COC-LT-01 capabilities
 
 - Hardware-backed platform security through verified TPM 2.0 and Secure Boot
 - Microsoft Defender, Tamper Protection, Smart App Control, Controlled Folder Access, and Windows Firewall review
@@ -20,7 +31,7 @@ Establish and validate a defense-in-depth endpoint baseline for COC-LT-01, a roa
 - Hardware security-key protection completed for Microsoft and Bitwarden
 - Removal of unnecessary public HTTP/HTTPS exposure, leaving WireGuard as the remote-access boundary
 
-## Documentation
+## COC-LT-01 documentation
 
 - [COC-LT-01 overview](COC-LT-01/README.md)
 - [Endpoint hardening](COC-LT-01/01-endpoint-hardening.md)
@@ -31,7 +42,16 @@ Establish and validate a defense-in-depth endpoint baseline for COC-LT-01, a roa
 - [Identity security](COC-LT-01/06-identity-security.md)
 - [Firewall changes](COC-LT-01/07-firewall.md)
 - [Validation results](COC-LT-01/08-validation.md)
-- [Completion report](COC-LT-01/PHASE-08-COMPLETION.md)
+- [COC-LT-01 completion report](COC-LT-01/PHASE-08-COMPLETION.md)
+
+## Remaining Phase 8 work
+
+Each remaining workstream requires an approved scope, implementation record, security review, validation results, limitations, and sanitized evidence before it can be marked complete:
+
+- Windows 10 PC
+- Mobile phone
+- Tablet
+- Phase-wide completion review after all endpoint workstreams are complete
 
 ## Related decisions
 
@@ -41,4 +61,4 @@ Establish and validate a defense-in-depth endpoint baseline for COC-LT-01, a roa
 
 ## Scope boundary
 
-This record describes only completed Phase 8 work on COC-LT-01. It does not represent other endpoints as hardened. GitHub, Google, AWS, Amazon, the secondary hardware key, Sysmon, custom detection rules, and endpoint-management work remain deferred.
+The current implementation record applies only to COC-LT-01. It does not represent the Windows 10 PC, mobile phone, tablet, or any other endpoint as hardened. GitHub, Google, AWS, Amazon, the secondary hardware key, Sysmon, custom detection rules, and endpoint-management work also remain deferred.
