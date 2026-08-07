@@ -21,3 +21,6 @@ Proposed, Accepted, Superseded, Deprecated, Rejected.
 - [ADR-004 — Pi-hole group-API kill switch](ADR-004-pihole-group-api-kill-switch.md)
 - [ADR-005 — Backups implemented early](ADR-005-backups-implemented-early.md)
 - [ADR-006 — Core network and security services remain merged](ADR-006-core-network-security-merged.md)
+- [ADR-007 — Require VPN-only remote administration](ADR-007-vpn-only-remote-administration.md)
+- [ADR-008 — Use compensating controls on Windows 11 Home](ADR-008-windows-11-home-compensating-controls.md)
+- [ADR-009 — Use workstation-associated hardware security keys](ADR-009-workstation-associated-hardware-security-keys.md)
