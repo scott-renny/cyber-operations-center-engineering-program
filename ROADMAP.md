@@ -66,7 +66,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 5 | 🟩 Complete | [Backup & Recovery](phases/phase-05-backup-recovery/README.md) |
 | Phase 6 | 🟩 Complete | [NET-WATCH](phases/phase-06-netwatch/README.md) |
 | Phase 7 | 🟩 Complete | [Telemetry Backbone](phases/phase-07-telemetry-backbone/README.md) |
-| Phase 8 | 🟩 Complete | [Endpoint Engineering — COC-LT-01](phases/phase-08-endpoint-engineering/README.md) |
+| Phase 8 | 🟨 In Progress | [Endpoint Engineering](phases/phase-08-endpoint-engineering/README.md) — COC-LT-01 complete; Windows 10 PC, mobile phone, and tablet planned |
 | Phase 9 | ⬜ Planned | Nextcloud Platform |
 | Phase 10 | ⬜ Planned | Identity Services |
 | Phase 11 | ⬜ Planned | Detection Engineering |
@@ -93,9 +93,9 @@ Phase 6 completed the production NET-WATCH deployment with device discovery, pro
 
 Phase 7 completed the telemetry backbone. Zeek now provides rich network metadata; Prometheus, node_exporter, and cAdvisor provide host and container metrics; Grafana consolidates operational dashboards; and Graylog provides searchable aggregation for non-Wazuh logs.
 
-Phase 8 completed the validated endpoint-engineering baseline for COC-LT-01, including Windows security controls, trusted and untrusted WireGuard profiles, Wazuh monitoring, browser hardening, initial hardware-key enrollment, and VPN-only remote administration.
+Phase 8 is in progress. The validated endpoint-engineering baseline for COC-LT-01 is complete, including Windows security controls, trusted and untrusted WireGuard profiles, Wazuh monitoring, browser hardening, initial hardware-key enrollment, and VPN-only remote administration.
 
-The next milestone is **Phase 9 — Nextcloud Platform**.
+Phase 8 will remain in progress until the Windows 10 PC, mobile phone, and tablet workstreams are implemented, validated, and documented. Phase 9 has not started.
 
 ---
 
