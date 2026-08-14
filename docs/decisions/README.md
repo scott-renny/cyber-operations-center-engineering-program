@@ -24,3 +24,4 @@ Proposed, Accepted, Superseded, Deprecated, Rejected.
 - [ADR-007 — Require VPN-only remote administration](ADR-007-vpn-only-remote-administration.md)
 - [ADR-008 — Use compensating controls on Windows 11 Home](ADR-008-windows-11-home-compensating-controls.md)
 - [ADR-009 — Use workstation-associated hardware security keys](ADR-009-workstation-associated-hardware-security-keys.md)
+- [ADR-010 — Defer Windows 10 encryption to the replacement workstation](ADR-010-defer-win10-encryption-to-replacement.md)

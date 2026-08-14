@@ -6,6 +6,31 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 2.0.0 - Phase 8 Endpoint Engineering (2026-08-13)
+
+### Added
+
+- COC-WS-01 Windows 10 hardening, monitoring, remediation, backup, validation, and completion records
+- Galaxy S25 and Galaxy Tab A11 sanitized baseline and validation records
+- Phase-wide endpoint-engineering completion report
+- Phase 8.5 Windows 11 Pro migration plan
+- ADR-010 for the time-bounded legacy-workstation encryption exception
+
+### Changed
+
+- Marked Phase 8 complete across the laptop, workstation, phone, and tablet
+- Set Phase 8.5 as the next planned workstream; Phase 9 remains not started
+- Updated the program README, architecture, roadmap, and ADR index
+
+### Security
+
+- Documented enforced Defender PUA and network protection, all-profile firewall, removal of legacy features, Sysmon, and Wazuh validation
+- Recorded malware remediation from workstation and backup staging data, clean rescans, historical-snapshot warnings, and a restore-tested migration source
+- Documented no-TPM and Controlled Folder Access audit exceptions without broad interpreter allow-listing
+- Excluded live network details, identifiers, keys, account data, recovery material, and raw screenshots
+
+---
+
 ## Version 1.9.0 - Phase 8 COC-LT-01 Workstream (2026-08-07)
 
 ### Added

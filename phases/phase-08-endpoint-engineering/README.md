@@ -1,64 +1,53 @@
 # Phase 8 — Endpoint Engineering
 
-> **Status:** In Progress  
-> **Current completed workstream:** COC-LT-01  
-> **Phase completion date:** Not yet complete  
-> **Next phase:** Phase 9 — Nextcloud Platform (not started)
+> **Status:** Complete  
+> **Completion date:** 2026-08-13  
+> **Next workstream:** [Phase 8.5 — Windows 11 Pro Workstation Migration](../phase-08-5-workstation-migration/README.md)  
+> **Phase 9:** Not started
 
 ## Purpose
 
-Establish and validate defense-in-depth security baselines for the program's user endpoints. Phase 8 is complete only after the Windows 10 PC, mobile phone, and tablet workstreams join the completed COC-LT-01 workstream.
+Establish, validate, and document defense-in-depth security baselines for the program's user endpoints without overstating controls a platform cannot support.
 
 ## Workstream status
 
 | Workstream | Status | Documentation |
 |---|---|---|
-| COC-LT-01 | Complete | [Completed laptop record](COC-LT-01/README.md) |
-| Windows 10 PC | Planned | Implementation, validation, and asset-specific documentation pending |
-| Mobile phone | Planned | Implementation, validation, and asset-specific documentation pending |
-| Tablet | Planned | Implementation, validation, and asset-specific documentation pending |
+| COC-LT-01 | Complete | [Laptop record](COC-LT-01/README.md) |
+| COC-WS-01 | Complete with encryption exception | [Windows 10 record](COC-WS-01/README.md) |
+| Galaxy S25 | Complete; identity-key follow-up deferred | [Phone record](GALAXY-S25/README.md) |
+| Galaxy Tab A11 | Complete; NFC capability not asserted | [Tablet record](GALAXY-TAB-A11/README.md) |
 
-Asset identifiers for the remaining devices will be added only after they are confirmed. No control is considered implemented on those devices until it has been applied and validated.
+Mobile labels are descriptive portfolio labels, not authoritative private inventory identifiers. Addresses, serial numbers, keys, account identifiers, recovery material, and raw screenshots remain outside this repository.
 
-## Completed COC-LT-01 capabilities
+## Phase outcomes
 
-- Hardware-backed platform security through verified TPM 2.0 and Secure Boot
-- Microsoft Defender, Tamper Protection, Smart App Control, Controlled Folder Access, and Windows Firewall review
-- Windows Hello PIN backed by the local TPM
-- WireGuard split-tunnel and full-tunnel profiles, including an untrusted-network kill switch and controlled DNS
-- Wazuh endpoint enrollment, file-integrity monitoring, real-time event validation, Security Configuration Assessment, and MITRE ATT&CK context
-- Firefox privacy and security hardening with uBlock Origin, Cookie AutoDelete, and Bitwarden
-- Hardware security-key protection completed for Microsoft and Bitwarden
-- Removal of unnecessary public HTTP/HTTPS exposure, leaving WireGuard as the remote-access boundary
+- COC-LT-01 retained its validated Windows 11 Home, WireGuard, Wazuh, browser, and hardware-key baseline.
+- COC-WS-01 received a full pre-migration hardening pass, Sysmon, Wazuh, malware remediation, and restore-tested backup approval.
+- Phone and tablet baselines were operator-validated for updates, secure locking, Samsung and Android protections, permissions, recovery, and protected connectivity.
+- Platform differences and deferred identity work are documented explicitly.
+- Phase 8.5 remains separate so the old workstation is a known-good, recoverable migration source.
 
-## COC-LT-01 documentation
+## Documentation
 
-- [COC-LT-01 overview](COC-LT-01/README.md)
-- [Endpoint hardening](COC-LT-01/01-endpoint-hardening.md)
-- [WireGuard](COC-LT-01/02-wireguard.md)
-- [Windows security](COC-LT-01/03-windows-security.md)
-- [Wazuh agent](COC-LT-01/04-wazuh-agent.md)
-- [Browser hardening](COC-LT-01/05-browser-hardening.md)
-- [Identity security](COC-LT-01/06-identity-security.md)
-- [Firewall changes](COC-LT-01/07-firewall.md)
-- [Validation results](COC-LT-01/08-validation.md)
-- [COC-LT-01 completion report](COC-LT-01/PHASE-08-COMPLETION.md)
-
-## Remaining Phase 8 work
-
-Each remaining workstream requires an approved scope, implementation record, security review, validation results, limitations, and sanitized evidence before it can be marked complete:
-
-- Windows 10 PC
-- Mobile phone
-- Tablet
-- Phase-wide completion review after all endpoint workstreams are complete
+- [COC-LT-01 completion](COC-LT-01/PHASE-08-COMPLETION.md)
+- [COC-WS-01 overview](COC-WS-01/README.md)
+- [Galaxy S25 overview](GALAXY-S25/README.md)
+- [Galaxy Tab A11 overview](GALAXY-TAB-A11/README.md)
+- [Phase 8 completion report](PHASE-08-COMPLETION.md)
+- [Phase 8.5 migration plan](../phase-08-5-workstation-migration/README.md)
 
 ## Related decisions
 
 - [ADR-007 — Require VPN-only remote administration](../../docs/decisions/ADR-007-vpn-only-remote-administration.md)
-- [ADR-008 — Use compensating controls on Windows 11 Home](../../docs/decisions/ADR-008-windows-11-home-compensating-controls.md)
-- [ADR-009 — Use workstation-associated hardware security keys](../../docs/decisions/ADR-009-workstation-associated-hardware-security-keys.md)
+- [ADR-008 — Windows 11 Home compensating controls](../../docs/decisions/ADR-008-windows-11-home-compensating-controls.md)
+- [ADR-009 — Workstation-associated hardware security keys](../../docs/decisions/ADR-009-workstation-associated-hardware-security-keys.md)
+- [ADR-010 — Defer Windows 10 encryption](../../docs/decisions/ADR-010-defer-win10-encryption-to-replacement.md)
 
-## Scope boundary
+## Known limitations and deferred work
 
-The current implementation record applies only to COC-LT-01. It does not represent the Windows 10 PC, mobile phone, tablet, or any other endpoint as hardened. GitHub, Google, AWS, Amazon, the secondary hardware key, Sysmon, custom detection rules, and endpoint-management work also remain deferred.
+- COC-WS-01 has no TPM and remains unencrypted under a time-bounded exception.
+- Controlled Folder Access remains in Audit mode on COC-WS-01; PowerShell was not broadly allow-listed.
+- Additional FIDO2 enrollment and account-by-account inventory work are deferred.
+- Tablet NFC availability and NFC security-key use are not claimed.
+- Centralized endpoint management is a later capability.

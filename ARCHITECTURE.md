@@ -168,6 +168,18 @@ Docker Swarm remains disabled because Dockge manages ordinary Compose stacks. A 
 
 ---
 
+# Implemented Endpoint Security Layer
+
+Phase 8 established platform-appropriate baselines for the Windows 11 Home laptop, legacy Windows 10 migration source, Galaxy phone, and Galaxy tablet.
+
+The layer combines native protections and firewalls; current patching; WireGuard for portable-device private access; Wazuh monitoring for Windows; Sysmon on the legacy workstation; validated hardware-key authentication; mobile permission, recovery, and installation controls; and encrypted, restore-tested workstation migration data.
+
+The legacy workstation has no TPM and remains unencrypted under a time-bounded exception. Phase 8.5 requires the Windows 11 Pro replacement to validate TPM 2.0, Secure Boot, and TPM-backed BitLocker before production use.
+
+Public records exclude live addresses, unique identifiers, VPN or agent keys, recovery material, and account details.
+
+---
+
 # Primary Infrastructure Components
 
 ## Network
