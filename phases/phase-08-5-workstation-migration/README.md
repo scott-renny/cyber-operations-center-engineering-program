@@ -19,6 +19,7 @@ This is a cross-platform migration. Fedora will be installed cleanly. Approved u
 - [Fedora disk-encryption guide](https://fedoraproject.org/wiki/Disk_Encryption_User_Guide)
 - [Wazuh Linux-agent deployment](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-linux.html)
 - [Wazuh package list](https://documentation.wazuh.com/current/installation-guide/packages-list.html)
+- [Cerberus Operations Runbooks](https://github.com/scott-renny/project-cerberus-build/tree/main/docs/operations)
 
 Use the current official instructions at implementation time. Commands and release identifiers are intentionally not frozen in this planning record.
 
@@ -34,6 +35,7 @@ Use the current official instructions at implementation time. Commands and relea
 - Required data categories and secret-handling decisions documented privately
 - Installation destination disk positively identified
 - Fedora recovery and rollback plan approved
+- Cerberus update, backup/rebuild, Wazuh, isolation, graphics, and security-key runbooks reviewed
 
 ## Planned sequence
 

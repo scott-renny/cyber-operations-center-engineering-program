@@ -4,9 +4,9 @@
 **Status:** Draft  
 **Owner:** COC Incident Response  
 **Related phases:** 5, 7, 8, and 17  
-**Version:** 0.1  
-**Last reviewed:** 2026-08-04  
-**Next review:** 2026-11-04
+**Version:** 0.2  
+**Last reviewed:** 2026-08-14  
+**Next review:** 2026-11-14
 
 ## Purpose and activation criteria
 
@@ -53,9 +53,22 @@ Coordinate response to suspected encryption, destructive file changes, ransom ar
 ### Recovery
 
 - Apply RB-012 before selecting recovery data.
-- Use RB-013 for selective recovery or RB-014 for staged platform recovery.
+- Use RB-013 for selective recovery or RB-014 for staged COC platform recovery.
+- For Cerberus, use the Fedora backup, encrypted recovery, and trusted rebuild procedure; do not transplant an untrusted Windows profile or Fedora home directory.
 - Restore into isolated locations, scan and validate, then return services gradually.
 - Apply RB-010 and monitor for renewed encryption, suspicious authentication, and beaconing.
+
+## Platform-specific procedures
+
+For a Fedora Cerberus incident, use the governed procedures in Project Cerberus:
+
+- [Endpoint Isolation and Reconnection](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/endpoint-isolation-and-reconnection.md)
+- [Backup, Encrypted Recovery, and Rebuild](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/backup-encrypted-recovery-and-rebuild.md)
+- [Wazuh Agent Health and Re-enrollment](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/wazuh-agent-health.md)
+- [NVIDIA and Display Recovery](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/nvidia-display-recovery.md)
+- [Hardware Security-Key Recovery](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/hardware-security-key-recovery.md)
+
+These procedures provide platform mechanics but do not replace incident-lead authorization, evidence handling, credential rotation, or repository-integrity decisions. They remain Planned until validated on Cerberus.
 
 ## Decision matrix
 
@@ -86,4 +99,5 @@ Coordinate response to suspected encryption, destructive file changes, ransom ar
 
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.2 | 2026-08-14 | COC Incident Response | Linked Fedora containment, telemetry, rebuild, graphics, and identity recovery procedures |
 | 0.1 | 2026-08-04 | COC Incident Response | Initial draft grounded in the validated recovery foundation |

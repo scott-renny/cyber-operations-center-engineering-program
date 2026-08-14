@@ -3,10 +3,10 @@
 **Document ID:** PB-004  
 **Status:** Draft  
 **Owner:** COC Incident Response  
-**Related phase:** 5  
-**Version:** 0.1  
-**Last reviewed:** 2026-08-04  
-**Next review:** 2026-11-04
+**Related phases:** 5 and 8.5  
+**Version:** 0.2  
+**Last reviewed:** 2026-08-14  
+**Next review:** 2026-11-14
 
 ## Purpose and activation criteria
 
@@ -14,7 +14,7 @@ Coordinate investigation, containment, and clean recovery when backup data, repo
 
 ## Scope and authority
 
-- Authorized assets: Phase 5 backup jobs, encrypted repository, protected systems, monitoring, and recovery records.
+- Authorized assets: Phase 5 backup jobs, encrypted repository, protected systems, monitoring, recovery records, and the Fedora Cerberus backup job after Phase 8.5 onboarding.
 - Decision owner: COC Incident Lead.
 - Containment authority: the backup owner may stop repository writes to preserve recovery options; deletion, repair, or reinitialization requires explicit approval.
 - External notification constraints: keep repository locations, contents, credentials, keys, and recovery inventory private.
@@ -56,6 +56,7 @@ Coordinate investigation, containment, and clean recovery when backup data, repo
 - Restore representative data to an isolated destination and compare with trusted source or records.
 - Re-establish jobs with least privilege and monitor the first successful cycles.
 - Confirm backup-age, Wazuh, and collector telemetry.
+- When Cerberus is affected, use its [Backup, Encrypted Recovery, and Rebuild](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/backup-encrypted-recovery-and-rebuild.md) procedure for isolated restoration or trusted rebuild.
 
 ## Decision matrix
 
@@ -85,4 +86,5 @@ Coordinate investigation, containment, and clean recovery when backup data, repo
 
 | Version | Date | Author | Change |
 |---|---|---|---|
+| 0.2 | 2026-08-14 | COC Incident Response | Added Fedora Cerberus backup scope and governed recovery cross-reference |
 | 0.1 | 2026-08-04 | COC Incident Response | Initial draft backup-compromise playbook |
