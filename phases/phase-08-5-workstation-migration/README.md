@@ -1,20 +1,20 @@
-# Phase 8.5 — Fedora Workstation Migration
+# Phase 8.5 — Fedora KDE Workstation Migration
 
 > **Status:** Planned  
 > **Predecessor:** [Phase 8 — Endpoint Engineering](../phase-08-endpoint-engineering/README.md)  
 > **Successor:** Phase 9 — Nextcloud Platform  
-> **Decision:** [ADR-011 — Use Fedora Workstation](../../docs/decisions/ADR-011-use-fedora-for-primary-workstation.md)
+> **Decision:** [ADR-011 — Use Fedora KDE Workstation](../../docs/decisions/ADR-011-use-fedora-for-primary-workstation.md)
 
 ## Purpose
 
-Replace the temporary Windows 10 workstation with a clean, encrypted, monitored Fedora Workstation without weakening the restore-tested state established in Phase 8.
+Replace the temporary Windows 10 workstation with a clean, encrypted, monitored Fedora KDE Workstation without weakening the restore-tested state established in Phase 8.
 
 This is a cross-platform migration. Fedora will be installed cleanly. Approved user data will be restored selectively; Windows applications, profiles, services, registry state, caches, and executables will not be transplanted.
 
 ## Authoritative references
 
-- [Fedora Workstation](https://fedoraproject.org/workstation/)
-- [Fedora Workstation download and verification](https://fedoraproject.org/workstation/download/)
+- [Fedora KDE Workstation](https://fedoraproject.org/workstation/)
+- [Fedora KDE Workstation download and verification](https://fedoraproject.org/workstation/download/)
 - [Fedora Secure Boot](https://fedoraproject.org/wiki/Secureboot)
 - [Fedora disk-encryption guide](https://fedoraproject.org/wiki/Disk_Encryption_User_Guide)
 - [Wazuh Linux-agent deployment](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-linux.html)
@@ -49,7 +49,7 @@ Use the current official instructions at implementation time. Commands and relea
 
 ### 2. Verify installation media
 
-1. Obtain the current supported Fedora Workstation image from the Fedora Project.
+1. Obtain the current supported Fedora KDE Workstation image from the Fedora Project.
 2. Obtain Fedora signing material and the signed checksum through official paths.
 3. Verify the checksum signature.
 4. Verify the image SHA-256 checksum.
@@ -121,7 +121,7 @@ Complete the [migration validation checklist](MIGRATION-VALIDATION-CHECKLIST.md)
 
 Stop and investigate if:
 
-- Fedora media signature or checksum validation fails;
+- Fedora KDE installation media signature or checksum validation fails;
 - the destination disk is uncertain;
 - required hardware cannot operate securely;
 - encryption recovery is untested;
@@ -136,7 +136,7 @@ Stop and investigate if:
 
 ## Completion criteria
 
-- Current supported Fedora Workstation installed from verified media
+- Current supported Fedora KDE Workstation installed from verified media
 - UEFI Secure Boot validated or a narrowly documented hardware exception approved
 - LUKS2-backed encryption and recovery validated
 - SELinux Enforcing
