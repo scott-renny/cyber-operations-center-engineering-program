@@ -130,7 +130,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 6 Completion Record](phases/phase-06-netwatch/README.md) | NET-WATCH discovery, policy enforcement, Pi-hole integration, HTTPS, and Wazuh visibility |
 | [Phase 7 Completion Record](phases/phase-07-telemetry-backbone/README.md) | Zeek metadata, Prometheus metrics, Grafana dashboards, and Graylog aggregation |
 | [Phase 8 Completion Record](phases/phase-08-endpoint-engineering/README.md) | Completed laptop, workstation, phone, and tablet endpoint baselines |
-| [Phase 8.5 Migration Plan](phases/phase-08-5-workstation-migration/README.md) | Planned Windows 10 to Fedora Workstation migration and retirement gate |
+| [Phase 8.5 Migration Plan](phases/phase-08-5-workstation-migration/README.md) | Planned Windows 10 to Fedora KDE Workstation migration and retirement gate |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -141,7 +141,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 **Phase 8 — Endpoint Engineering is complete.** The laptop, legacy workstation, phone, and tablet retain their documented baselines, and the Windows 10 system remains the clean, monitored, restore-tested migration source.
 
-The next controlled workstream is **[Phase 8.5 — Fedora Workstation Migration](phases/phase-08-5-workstation-migration/README.md)**. It will install Fedora from verified media, validate Secure Boot and LUKS2-backed encryption, keep SELinux Enforcing and firewalld active, restore only reviewed data, establish permanent Wazuh monitoring and backups, validate required applications, and retire Windows 10.
+The next controlled workstream is **[Phase 8.5 — Fedora KDE Workstation Migration](phases/phase-08-5-workstation-migration/README.md)**. [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is the hardware and workstation delivery project for this phase. It will install Fedora from verified media, validate Secure Boot and LUKS2-backed encryption, keep SELinux Enforcing and firewalld active, restore only reviewed data, establish permanent Wazuh monitoring and backups, validate required applications, and retire Windows 10.
 
 Phase 9 has not started.
 
@@ -168,7 +168,7 @@ Phase 9 has not started.
 | └─ Windows 10 PC workstream | ✅ Complete with exception |
 | └─ Mobile phone workstream | ✅ Complete |
 | └─ Tablet workstream | ✅ Complete |
-| Phase 8.5 Fedora Workstation Migration | ⏳ Planned |
+| Phase 8.5 Fedora KDE Workstation Migration | ⏳ Planned |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -279,7 +279,7 @@ The following technologies are planned or currently available within the environ
 ### Infrastructure
 
 - Ubuntu Server
-- Fedora Workstation
+- Fedora KDE Workstation
 - Windows 11 Home
 - Docker
 - Docker Compose
