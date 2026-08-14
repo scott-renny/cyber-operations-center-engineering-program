@@ -1,6 +1,6 @@
 # Cyber Operations Center Engineering Program Architecture
 
-> **Version:** 1.2  
+> **Version:** 1.3  
 > **Status:** Active Development
 
 ---
@@ -174,7 +174,7 @@ Phase 8 established platform-appropriate baselines for the Windows 11 Home lapto
 
 The layer combines native protections and firewalls; current patching; WireGuard for portable-device private access; Wazuh monitoring for Windows; Sysmon on the legacy workstation; validated hardware-key authentication; mobile permission, recovery, and installation controls; and encrypted, restore-tested workstation migration data.
 
-The legacy workstation has no TPM and remains unencrypted under a time-bounded exception. Phase 8.5 requires the Windows 11 Pro replacement to validate TPM 2.0, Secure Boot, and TPM-backed BitLocker before production use.
+The legacy workstation has no TPM and remains unencrypted under a time-bounded exception. Phase 8.5 will replace it with Fedora Workstation. Production acceptance requires verified installation media, UEFI Secure Boot, LUKS2-backed system and user-data encryption, SELinux Enforcing, firewalld, current updates, Wazuh Linux telemetry, selective data restoration, and a restore-tested Fedora backup.
 
 Public records exclude live addresses, unique identifiers, VPN or agent keys, recovery material, and account details.
 

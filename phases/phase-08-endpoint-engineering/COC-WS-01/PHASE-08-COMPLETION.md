@@ -30,4 +30,4 @@ COC-WS-01 is now a current, monitored, malware-remediated, restore-tested migrat
 
 ## Completion decision
 
-The Phase 8 hardening objective is complete. Phase 8.5 may begin only from the approved migration source and must end with Windows 11 Pro encryption validation, service re-enrollment, migration verification, and sanitization of the retired Windows 10 system.
+The Phase 8 hardening objective is complete. Phase 8.5 may begin only from the approved migration source and must end with Fedora Secure Boot and LUKS2 validation, SELinux and firewalld verification, Linux Wazuh enrollment, selective restore and application acceptance, a tested Fedora backup, and sanitization of the retired Windows 10 system.
