@@ -2,7 +2,7 @@
 
 ## Installation trust
 
-- [ ] Current supported Fedora Workstation image obtained from the Fedora Project
+- [ ] Current supported Fedora KDE Workstation image obtained from the Fedora Project
 - [ ] Fedora signing material obtained through an independent official path
 - [ ] Signed checksum verified
 - [ ] Image checksum verified
