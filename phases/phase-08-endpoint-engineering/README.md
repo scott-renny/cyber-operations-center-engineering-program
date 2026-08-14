@@ -2,7 +2,7 @@
 
 > **Status:** Complete  
 > **Completion date:** 2026-08-13  
-> **Next workstream:** [Phase 8.5 — Windows 11 Pro Workstation Migration](../phase-08-5-workstation-migration/README.md)  
+> **Next workstream:** [Phase 8.5 — Fedora Workstation Migration](../phase-08-5-workstation-migration/README.md)  
 > **Phase 9:** Not started
 
 ## Purpose
@@ -42,7 +42,8 @@ Mobile labels are descriptive portfolio labels, not authoritative private invent
 - [ADR-007 — Require VPN-only remote administration](../../docs/decisions/ADR-007-vpn-only-remote-administration.md)
 - [ADR-008 — Windows 11 Home compensating controls](../../docs/decisions/ADR-008-windows-11-home-compensating-controls.md)
 - [ADR-009 — Workstation-associated hardware security keys](../../docs/decisions/ADR-009-workstation-associated-hardware-security-keys.md)
-- [ADR-010 — Defer Windows 10 encryption](../../docs/decisions/ADR-010-defer-win10-encryption-to-replacement.md)
+- [ADR-010 — Defer Windows 10 encryption](../../docs/decisions/ADR-010-defer-win10-encryption-to-replacement.md) — superseded
+- [ADR-011 — Use Fedora Workstation for the replacement](../../docs/decisions/ADR-011-use-fedora-for-primary-workstation.md)
 
 ## Known limitations and deferred work
 

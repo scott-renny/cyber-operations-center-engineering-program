@@ -2,7 +2,7 @@
 
 > **Status:** Complete  
 > **Completion date:** 2026-08-13  
-> **Follow-on:** Phase 8.5 — Windows 11 Pro Workstation Migration
+> **Follow-on:** Phase 8.5 — Fedora Workstation Migration
 
 ## Executive summary
 

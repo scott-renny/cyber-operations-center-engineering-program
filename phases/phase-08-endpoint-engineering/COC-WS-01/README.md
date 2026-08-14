@@ -7,7 +7,7 @@
 
 ## Purpose
 
-Place the legacy workstation in a known-good, monitored, recoverable state before any Windows 11 Pro migration begins.
+Place the legacy workstation in a known-good, monitored, recoverable state before the Fedora Workstation migration begins.
 
 ## Completed controls
 
@@ -31,7 +31,7 @@ Place the legacy workstation in a known-good, monitored, recoverable state befor
 
 The legacy motherboard does not expose a TPM. The operating-system volume remains unencrypted. Enabling password-only BitLocker immediately before retirement would add recovery and migration risk without providing the intended hardware-backed trust boundary.
 
-The exception is time-bounded to Phase 8.5 and uses physical control, current host protections, centralized monitoring, a clean encrypted recovery copy, and prompt retirement as compensating controls. See [ADR-010](../../../docs/decisions/ADR-010-defer-win10-encryption-to-replacement.md).
+The exception is time-bounded to Phase 8.5 and uses physical control, current host protections, centralized monitoring, a clean encrypted recovery copy, and prompt retirement as compensating controls. ADR-010 recorded the original deferral and is now superseded by [ADR-011](../../../docs/decisions/ADR-011-use-fedora-for-primary-workstation.md), which selects Fedora Workstation and LUKS2-backed encryption for the replacement.
 
 ### Controlled Folder Access in Audit mode
 

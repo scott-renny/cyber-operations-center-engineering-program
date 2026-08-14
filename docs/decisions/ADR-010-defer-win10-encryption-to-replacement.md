@@ -1,6 +1,6 @@
 # ADR-010: Defer Windows 10 encryption to the replacement workstation
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-011](ADR-011-use-fedora-for-primary-workstation.md)
 - **Date:** 2026-08-13
 - **Owner:** COC Program Owner
 - **Related phase(s):** Phase 8 and Phase 8.5
@@ -33,6 +33,10 @@ Phase 8 can close with a documented exception. Phase 8.5 cannot close until TPM-
 ## Validation
 
 Verify that Windows reports no TPM and that Secure Boot is enabled. Verify the approved encrypted migration snapshot with a representative restore and clean malware scans. Record BitLocker validation and legacy-media disposition in Phase 8.5.
+
+## Supersession
+
+The encryption deferral and temporary Windows 10 compensating controls remain valid, but the Windows 11 Pro and BitLocker destination was replaced by the Fedora Workstation and LUKS2 decision in ADR-011.
 
 ## Review Date or Trigger
 

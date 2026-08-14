@@ -6,6 +6,30 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 2.0.1 - Fedora Workstation Migration Decision (2026-08-13)
+
+### Added
+
+- ADR-011 selecting Fedora Workstation and superseding the Windows 11 Pro assumption
+- Fedora application-compatibility inventory
+- Fedora migration validation checklist
+- Cross-platform migration risk assessment
+
+### Changed
+
+- Replaced the Phase 8.5 Windows 11 Pro plan with a Fedora Workstation clean-install and selective-restore plan
+- Replaced BitLocker, Defender, Windows Firewall, and Sysmon gates with LUKS2-backed encryption, SELinux, firewalld, Wazuh Linux telemetry, and Fedora update validation
+- Updated the program README, roadmap, architecture, Phase 8 follow-on references, and Windows 10 completion gate
+- Kept Phase 8 complete and Phase 9 not started
+
+### Security
+
+- Requires official Fedora media signature and checksum verification
+- Prohibits wholesale restoration of Windows profiles, applications, registry data, services, caches, and unreviewed Downloads
+- Requires explicit application disposition, secret review or rotation, post-restore scanning, Wazuh validation, Fedora backup restore testing, and legacy-media sanitization
+
+---
+
 ## Version 2.0.0 - Phase 8 Endpoint Engineering (2026-08-13)
 
 ### Added
