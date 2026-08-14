@@ -6,6 +6,28 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## Version 2.0.2 - Fedora Operations Runbooks (2026-08-14)
+
+### Added
+
+- Governed Cerberus procedures for Fedora update and rollback, backup and encrypted recovery, trusted rebuild, Wazuh health and re-enrollment, endpoint isolation, NVIDIA/display recovery, and hardware security-key recovery
+- Cross-repository links from the COC runbook and playbook indexes
+- Fedora-specific operating references in PB-003, PB-004, and the Phase 8.5 entry gate
+
+### Changed
+
+- Extended the ransomware and backup-repository-compromise playbooks to cover the Fedora Cerberus workstation without duplicating platform commands
+- Mapped RB-007, RB-016, and RB-018 to their Cerberus implementation procedures
+- Preserved the historical Windows Phase 8 records unchanged
+
+### Security
+
+- Requires positive storage identification, verified installation media, evidence preservation, isolated restores, narrow enrollment windows, and tested backup authentication factors
+- Prohibits publishing recovery material, enrollment credentials, private addressing, raw storage output, or security-key registration details
+- Rejects disabling Secure Boot or SELinux as a graphics-recovery shortcut
+
+---
+
 ## Version 2.0.1 - Fedora Workstation Migration Decision (2026-08-13)
 
 ### Added
