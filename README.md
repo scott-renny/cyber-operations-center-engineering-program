@@ -7,7 +7,7 @@
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
 > **Status:** 🚧 Active Development  
-> **Version:** 1.9.0
+> **Version:** 2.0.0
 > **License:** MIT  
 > **Maintainer:** Scott Renny
 
@@ -129,7 +129,8 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 5 Completion Record](phases/phase-05-backup-recovery/README.md) | Backup automation, encrypted retention, restore validation, and monitoring |
 | [Phase 6 Completion Record](phases/phase-06-netwatch/README.md) | NET-WATCH discovery, policy enforcement, Pi-hole integration, HTTPS, and Wazuh visibility |
 | [Phase 7 Completion Record](phases/phase-07-telemetry-backbone/README.md) | Zeek metadata, Prometheus metrics, Grafana dashboards, and Graylog aggregation |
-| [Phase 8 Progress Record](phases/phase-08-endpoint-engineering/README.md) | Endpoint Engineering progress, including the completed COC-LT-01 workstream |
+| [Phase 8 Completion Record](phases/phase-08-endpoint-engineering/README.md) | Completed laptop, workstation, phone, and tablet endpoint baselines |
+| [Phase 8.5 Migration Plan](phases/phase-08-5-workstation-migration/README.md) | Planned Windows 10 to Windows 11 Pro migration and retirement gate |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -138,25 +139,11 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 ## Current Milestone
 
-The program is currently implementing **Phase 8 — Endpoint Engineering**.
+**Phase 8 — Endpoint Engineering is complete.** The laptop, legacy workstation, phone, and tablet have documented platform-appropriate baselines. Windows telemetry is centralized, portable-device protections were revalidated, unsafe downloads were remediated, and a clean restore-tested migration source was approved.
 
-The **COC-LT-01 workstream is complete**, while the Windows 10 PC, mobile phone, and tablet workstreams remain planned.
+The next controlled workstream is **[Phase 8.5 — Windows 11 Pro Workstation Migration](phases/phase-08-5-workstation-migration/README.md)**. It will validate TPM-backed BitLocker, restore only approved data, establish permanent monitoring and hardware-key identities, and retire Windows 10.
 
-The completed laptop baseline includes:
-
-- verified TPM 2.0 and Secure Boot;
-- Windows Defender, Tamper Protection, Smart App Control, Controlled Folder Access, and Windows Firewall controls;
-- validated split-tunnel and full-tunnel WireGuard profiles with an untrusted-network kill switch;
-- Wazuh agent connectivity, real-time file-integrity monitoring, Security Configuration Assessment, and event validation;
-- Firefox privacy and security hardening;
-- hardware-key enrollment for Microsoft and Bitwarden; and
-- VPN-only remote administration with unnecessary public HTTP/HTTPS forwarding removed.
-
-Review the [Phase 8 progress record](phases/phase-08-endpoint-engineering/README.md) and the [COC-LT-01 completion report](phases/phase-08-endpoint-engineering/COC-LT-01/PHASE-08-COMPLETION.md).
-
-The current milestone remains:
-
-> **Phase 8 — Complete the Windows 10 PC, mobile phone, and tablet workstreams**
+Phase 9 has not started.
 
 ## Repository Status
 
@@ -176,11 +163,12 @@ The current milestone remains:
 | Backup and Recovery | ✅ Complete |
 | NET-WATCH Network Visibility | ✅ Complete |
 | Telemetry Backbone | ✅ Complete |
-| Phase 8 Endpoint Engineering | 🚧 In Progress |
+| Phase 8 Endpoint Engineering | ✅ Complete |
 | └─ COC-LT-01 workstream | ✅ Complete |
-| └─ Windows 10 PC workstream | ⏳ Planned |
-| └─ Mobile phone workstream | ⏳ Planned |
-| └─ Tablet workstream | ⏳ Planned |
+| └─ Windows 10 PC workstream | ✅ Complete with exception |
+| └─ Mobile phone workstream | ✅ Complete |
+| └─ Tablet workstream | ✅ Complete |
+| Phase 8.5 Workstation Migration | ⏳ Planned |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -401,7 +389,7 @@ cyber-operations-center-engineering-program/
         └── evidence/
 ```
 
-This tree shows the governance baseline completed through Phase 7 and the Phase 8 documentation currently in progress. Additional implementation, validation, diagram, evidence, and asset directories will be added as their corresponding phases begin.
+This tree is a compact orientation view. The governance and implementation baseline is complete through Phase 8; Phase 8.5 is the next planned workstream. Detailed endpoint records are indexed from the Phase 8 completion page.
 
 ---
 
