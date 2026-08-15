@@ -1,6 +1,6 @@
 # ADR-011: Use Fedora Workstation for the replacement workstation
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-012](ADR-012-linux-mint-cinnamon-primary-workstation.md)
 - **Date:** 2026-08-13
 - **Owner:** COC Program Owner
 - **Supersedes:** [ADR-010](ADR-010-defer-win10-encryption-to-replacement.md)

@@ -174,7 +174,7 @@ Phase 8 established platform-appropriate baselines for the Windows 11 Home lapto
 
 The layer combines native protections and firewalls; current patching; WireGuard for portable-device private access; Wazuh monitoring for Windows; Sysmon on the legacy workstation; validated hardware-key authentication; mobile permission, recovery, and installation controls; and encrypted, restore-tested workstation migration data.
 
-The legacy workstation has no TPM and remains unencrypted under a time-bounded exception. Phase 8.5 will replace it with Fedora Workstation. Production acceptance requires verified installation media, UEFI Secure Boot, LUKS2-backed system and user-data encryption, SELinux Enforcing, firewalld, current updates, Wazuh Linux telemetry, selective data restoration, and a restore-tested Fedora backup.
+The legacy workstation has no TPM and remains unencrypted under a time-bounded exception. Phase 8.5 will replace it with Linux Mint Cinnamon. Production acceptance requires verified installation media, UEFI Secure Boot, full-disk encryption with tested recovery, AppArmor, UFW, current updates, Wazuh Linux telemetry, selective data restoration, and a restore-tested Mint backup.
 
 Public records exclude live addresses, unique identifiers, VPN or agent keys, recovery material, and account details.
 
@@ -207,6 +207,16 @@ Examples include:
 - Docker
 - Containers
 - Virtual Machines
+
+---
+
+## Administration Workstation
+
+Linux Mint Cinnamon is the primary daily-driver, administration, and learning workstation. It is a client and management endpoint, not a replacement for the Ubuntu Server service host.
+
+The workstation uses Docker and Docker Compose as the beginner-first container workflow, with Podman retained for later comparative learning. KVM/QEMU, libvirt, and virt-manager provide local virtual machines. SSH, Git/GitHub CLI, Python/uv, Ansible, AWS CLI, Terraform or OpenTofu, kubectl, Helm, k9s, Wireshark, Nmap, CyberChef, Remmina, Syncthing, LocalSend, and password-manager/security-key tooling are introduced progressively when required.
+
+Package instructions use Linux Mint/Ubuntu `apt` sources and compatible vendor repositories. Fedora `dnf` and RPM Fusion instructions are historical only; see [ADR-012](docs/decisions/ADR-012-linux-mint-cinnamon-primary-workstation.md).
 
 ---
 

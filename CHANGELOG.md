@@ -10,12 +10,16 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ### Added
 
+- ADR-012 recording Linux Mint Cinnamon as the primary workstation and superseding ADR-011
+- Zero-assumed-knowledge Linux Mint workstation setup and learning roadmap
 - Governed Cerberus procedures for Fedora update and rollback, backup and encrypted recovery, trusted rebuild, Wazuh health and re-enrollment, endpoint isolation, NVIDIA/display recovery, and hardware security-key recovery
 - Cross-repository links from the COC runbook and playbook indexes
 - Fedora-specific operating references in PB-003, PB-004, and the Phase 8.5 entry gate
 
 ### Changed
 
+- Replaced active Fedora KDE Phase 8.5 guidance with Linux Mint Cinnamon and Mint/Ubuntu `apt` equivalents
+- Made Docker the beginner-first container path while retaining Podman for later comparative learning
 - Extended the ransomware and backup-repository-compromise playbooks to cover the Fedora Cerberus workstation without duplicating platform commands
 - Mapped RB-007, RB-016, and RB-018 to their Cerberus implementation procedures
 - Preserved the historical Windows Phase 8 records unchanged

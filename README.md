@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-active%20development-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-Ubuntu%20%7C%20Fedora%20%7C%20Windows%20%7C%20Docker-orange)
+![Platform](https://img.shields.io/badge/platform-Linux%20Mint%20%7C%20Ubuntu%20Server%20%7C%20Windows-blue)
 ![Documentation](https://img.shields.io/badge/documentation-first-success)
 ![Focus](https://img.shields.io/badge/focus-cybersecurity%20engineering-red)
 
@@ -107,6 +107,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Secrets Management](docs/SECRETS-MANAGEMENT.md) | Secrets, certificates, key rotation, and exposure-response standard |
 | [Portfolio Policy](docs/PORTFOLIO-POLICY.md) | Public-release classification and sanitization requirements |
 | [Operational Governance Mapping](docs/OPERATIONAL-GOVERNANCE-MAPPING.md) | Governance controls inherited by runbooks, playbooks, and campaign sequences |
+| [Linux Workstation Setup and Learning Roadmap](docs/WORKSTATION-SETUP.md) | Beginner-first Linux Mint Cinnamon installation, tooling, validation, and learning sequence |
 | [Severity Standard](docs/SEVERITY-STANDARD.md) | Incident severity, priority, escalation, and closure standard |
 | [Evidence Handling Standard](docs/EVIDENCE-HANDLING-STANDARD.md) | Evidence integrity, custody, retention, and sanitization requirements |
 | [Change Management Standard](docs/CHANGE-MANAGEMENT-STANDARD.md) | Change planning, validation, rollback, and closure requirements |
@@ -130,7 +131,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 | [Phase 6 Completion Record](phases/phase-06-netwatch/README.md) | NET-WATCH discovery, policy enforcement, Pi-hole integration, HTTPS, and Wazuh visibility |
 | [Phase 7 Completion Record](phases/phase-07-telemetry-backbone/README.md) | Zeek metadata, Prometheus metrics, Grafana dashboards, and Graylog aggregation |
 | [Phase 8 Completion Record](phases/phase-08-endpoint-engineering/README.md) | Completed laptop, workstation, phone, and tablet endpoint baselines |
-| [Phase 8.5 Migration Plan](phases/phase-08-5-workstation-migration/README.md) | Planned Windows 10 to Fedora KDE Workstation migration and retirement gate |
+| [Phase 8.5 Migration Plan](phases/phase-08-5-workstation-migration/README.md) | Planned Windows 10 to Linux Mint Cinnamon migration and retirement gate |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution and change-management guidelines |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
 | [LICENSE](LICENSE) | MIT License |
@@ -141,7 +142,7 @@ Technology is only one component of cybersecurity. Secure environments are creat
 
 **Phase 8 — Endpoint Engineering is complete.** The laptop, legacy workstation, phone, and tablet retain their documented baselines, and the Windows 10 system remains the clean, monitored, restore-tested migration source.
 
-The next controlled workstream is **[Phase 8.5 — Fedora KDE Workstation Migration](phases/phase-08-5-workstation-migration/README.md)**. [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is the hardware and workstation delivery project for this phase. It will install Fedora from verified media, validate Secure Boot and LUKS2-backed encryption, keep SELinux Enforcing and firewalld active, restore only reviewed data, establish permanent Wazuh monitoring and backups, validate required applications, and retire Windows 10.
+The next controlled workstream is **[Phase 8.5 — Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md)**. [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is the hardware and workstation delivery project for this phase. It will install Mint from verified media, validate Secure Boot and full-disk encryption, keep AppArmor and UFW active, restore only reviewed data, establish permanent Wazuh monitoring and backups, validate required applications, and retire Windows 10.
 
 Phase 9 has not started.
 
@@ -168,7 +169,7 @@ Phase 9 has not started.
 | └─ Windows 10 PC workstream | ✅ Complete with exception |
 | └─ Mobile phone workstream | ✅ Complete |
 | └─ Tablet workstream | ✅ Complete |
-| Phase 8.5 Fedora KDE Workstation Migration | ⏳ Planned |
+| Phase 8.5 Linux Mint Cinnamon Workstation Migration | ⏳ Planned |
 | Infrastructure Deployment | 🚧 In Progress |
 | Security Stack | 🚧 In Progress |
 | Detection Engineering | ⏳ Planned |
@@ -279,10 +280,12 @@ The following technologies are planned or currently available within the environ
 ### Infrastructure
 
 - Ubuntu Server
-- Fedora KDE Workstation
+- Linux Mint Cinnamon workstation
 - Windows 11 Home
 - Docker
 - Docker Compose
+- Podman (later comparative learning)
+- KVM/QEMU, libvirt, and virt-manager
 - WireGuard
 - Omada Networking
 
