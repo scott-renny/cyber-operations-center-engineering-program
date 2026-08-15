@@ -1,9 +1,9 @@
-# Phase 8.5 Fedora Migration Validation Checklist
+# Phase 8.5 Linux Mint Migration Validation Checklist
 
 ## Installation trust
 
-- [ ] Current supported Fedora KDE Workstation image obtained from the Fedora Project
-- [ ] Fedora signing material obtained through an independent official path
+- [ ] Current supported Linux Mint Cinnamon image obtained from the Linux Mint project
+- [ ] Published checksum obtained through an independent official path
 - [ ] Signed checksum verified
 - [ ] Image checksum verified
 - [ ] Installation media created and boot-tested
@@ -18,13 +18,13 @@
 - [ ] Root and user data confirmed on encrypted backing storage
 - [ ] Encryption passphrase and recovery process tested
 - [ ] Recovery material stored outside the workstation and repository
-- [ ] SELinux reports Enforcing
-- [ ] No unexplained SELinux denials were bypassed by disabling enforcement
-- [ ] firewalld enabled and active
+- [ ] AppArmor reports active profiles
+- [ ] No AppArmor denials were bypassed by disabling protection
+- [ ] UFW enabled and active
 - [ ] Active zone and allowed services reviewed
 - [ ] No unnecessary listening services
 - [ ] Screen lock and password-on-resume validated
-- [ ] Firmware, Fedora, and application updates applied
+- [ ] Firmware, Linux Mint, and application updates applied
 
 ## Identity and secrets
 
@@ -40,12 +40,12 @@
 
 - [ ] Supported Wazuh Linux agent installed
 - [ ] Agent version compatible with the manager
-- [ ] Permanent Fedora asset identity approved
+- [ ] Permanent Linux Mint asset identity approved
 - [ ] Wazuh service enabled and active
 - [ ] Centralized connectivity confirmed
 - [ ] Controlled file-integrity event received
 - [ ] System inventory and vulnerability visibility confirmed
-- [ ] Relevant authentication, sudo, SELinux, firewalld, and system logs collected
+- [ ] Relevant authentication, sudo, AppArmor, UFW, and system logs collected
 - [ ] Temporary enrollment exposure closed after registration
 
 ## Selective data restoration
@@ -64,19 +64,19 @@
 
 ## Application acceptance
 
-- [ ] Every required application has a recorded Fedora disposition
+- [ ] Every required application has a recorded Linux Mint disposition
 - [ ] Native or Flatpak applications installed only from reviewed sources
 - [ ] Critical workflows tested
 - [ ] Windows virtual machines isolated and justified
 - [ ] No compatibility layer granted broad host access without review
-- [ ] Backup client and schedule rebuilt for Fedora
-- [ ] First Fedora backup completed and restored successfully
+- [ ] Backup client and schedule rebuilt for Linux Mint
+- [ ] First Linux Mint backup completed and restored successfully
 
 ## Retirement gate
 
-- [ ] User confirms Fedora is the accepted primary workstation
+- [ ] User confirms Linux Mint is the accepted primary workstation
 - [ ] Required data and applications validated
-- [ ] Fedora monitoring and backups healthy
+- [ ] Linux Mint monitoring and backups healthy
 - [ ] Temporary Windows Wazuh identity revoked
 - [ ] Windows-specific VPN or service registrations revoked
 - [ ] Hardware-key registrations updated deliberately

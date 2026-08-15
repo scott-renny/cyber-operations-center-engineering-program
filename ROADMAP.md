@@ -67,7 +67,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 6 | 🟩 Complete | [NET-WATCH](phases/phase-06-netwatch/README.md) |
 | Phase 7 | 🟩 Complete | [Telemetry Backbone](phases/phase-07-telemetry-backbone/README.md) |
 | Phase 8 | 🟩 Complete | [Endpoint Engineering](phases/phase-08-endpoint-engineering/README.md) — laptop, workstation, phone, and tablet baselines complete |
-| Phase 8.5 | ⬜ Planned | [Fedora Workstation Migration](phases/phase-08-5-workstation-migration/README.md) |
+| Phase 8.5 | ⬜ Planned | [Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md) |
 | Phase 9 | ⬜ Planned | Nextcloud Platform |
 | Phase 10 | ⬜ Planned | Identity Services |
 | Phase 11 | ⬜ Planned | Detection Engineering |
@@ -96,7 +96,7 @@ Phase 7 completed the telemetry backbone. Zeek now provides rich network metadat
 
 Phase 8 completed the endpoint-engineering baseline across the laptop, legacy workstation, phone, and tablet. The work includes host hardening, secure connectivity, Wazuh and Sysmon validation, mobile security revalidation, malware remediation, and a clean restore-tested migration source.
 
-Phase 8.5 is the next planned workstream. It will install Fedora Workstation from verified media, validate Secure Boot and LUKS2-backed encryption, preserve SELinux and firewalld protections, selectively restore approved data, re-establish Wazuh and backups, validate application compatibility, and retire the legacy Windows system. Phase 9 has not started.
+Phase 8.5 is the next planned workstream. It will install Linux Mint Cinnamon from verified media, validate Secure Boot and full-disk encryption, preserve AppArmor and UFW protections, selectively restore approved data, re-establish Wazuh and backups, validate application compatibility, and retire the legacy Windows system. Phase 9 has not started. Follow the [zero-assumed-knowledge workstation roadmap](docs/WORKSTATION-SETUP.md) and [ADR-012](docs/decisions/ADR-012-linux-mint-cinnamon-primary-workstation.md).
 
 ---
 

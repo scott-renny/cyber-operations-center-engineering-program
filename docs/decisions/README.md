@@ -25,4 +25,5 @@ Proposed, Accepted, Superseded, Deprecated, Rejected.
 - [ADR-008 — Use compensating controls on Windows 11 Home](ADR-008-windows-11-home-compensating-controls.md)
 - [ADR-009 — Use workstation-associated hardware security keys](ADR-009-workstation-associated-hardware-security-keys.md)
 - [ADR-010 — Defer Windows 10 encryption to the replacement workstation](ADR-010-defer-win10-encryption-to-replacement.md) — Superseded by ADR-011
-- [ADR-011 — Use Fedora Workstation for the replacement workstation](ADR-011-use-fedora-for-primary-workstation.md)
+- [ADR-011 — Use Fedora Workstation for the replacement workstation](ADR-011-use-fedora-for-primary-workstation.md) — Superseded by ADR-012
+- [ADR-012 — Use Linux Mint Cinnamon for the primary workstation](ADR-012-linux-mint-cinnamon-primary-workstation.md)
