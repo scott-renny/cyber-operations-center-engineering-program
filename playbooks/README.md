@@ -38,9 +38,9 @@ Playbooks coordinate decisions and actions for security incidents. A playbook ma
 3. Run a safe DNS disruption scenario for PB-001 and use RB-015 for recovery.
 4. Run a bounded availability simulation for PB-002 after approving containment and rollback controls.
 
-## Fedora workstation procedure integration
+## Linux Mint workstation procedure integration
 
-Phase 8.5 platform mechanics are maintained in the [Cerberus Operations Runbooks](https://github.com/scott-renny/project-cerberus-build/tree/main/docs/operations). PB-003 and PB-004 govern incident decisions; the Cerberus procedures govern Fedora-specific containment, telemetry recovery, selective restoration, trusted rebuild, graphics recovery, and security-key recovery.
+Phase 8.5 platform mechanics are maintained in the [Cerberus Operations Runbooks](https://github.com/scott-renny/project-cerberus-build/tree/main/docs/operations). PB-003 and PB-004 govern incident decisions; the Cerberus procedures govern Linux Mint-specific containment, telemetry recovery, selective restoration, trusted rebuild, graphics recovery, and security-key recovery.
 
 Those linked procedures remain Planned until Cerberus exists and their validation gates pass. A cross-repository link does not promote either document's status.
 
