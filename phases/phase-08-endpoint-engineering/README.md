@@ -2,7 +2,7 @@
 
 > **Status:** Complete  
 > **Completion date:** 2026-08-13  
-> **Next workstream:** [Phase 8.5 — Fedora Workstation Migration](../phase-08-5-workstation-migration/README.md)  
+> **Next workstream:** [Phase 8.5 — Linux Mint Cinnamon Migration](../phase-08-5-workstation-migration/README.md)  
 > **Phase 9:** Not started
 
 ## Purpose
