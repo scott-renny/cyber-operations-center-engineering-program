@@ -54,13 +54,13 @@ Coordinate response to suspected encryption, destructive file changes, ransom ar
 
 - Apply RB-012 before selecting recovery data.
 - Use RB-013 for selective recovery or RB-014 for staged COC platform recovery.
-- For Cerberus, use the Fedora backup, encrypted recovery, and trusted rebuild procedure; do not transplant an untrusted Windows profile or Fedora home directory.
+- For Cerberus, use the Linux Mint backup, encrypted recovery, and trusted rebuild procedure; do not transplant an untrusted Windows profile or Linux Mint home directory.
 - Restore into isolated locations, scan and validate, then return services gradually.
 - Apply RB-010 and monitor for renewed encryption, suspicious authentication, and beaconing.
 
 ## Platform-specific procedures
 
-For a Fedora Cerberus incident, use the governed procedures in Project Cerberus:
+For a Linux Mint Cerberus incident, use the governed procedures in Project Cerberus:
 
 - [Endpoint Isolation and Reconnection](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/endpoint-isolation-and-reconnection.md)
 - [Backup, Encrypted Recovery, and Rebuild](https://github.com/scott-renny/project-cerberus-build/blob/main/docs/operations/backup-encrypted-recovery-and-rebuild.md)
@@ -99,5 +99,5 @@ These procedures provide platform mechanics but do not replace incident-lead aut
 
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 0.2 | 2026-08-14 | COC Incident Response | Linked Fedora containment, telemetry, rebuild, graphics, and identity recovery procedures |
+| 0.2 | 2026-08-14 | COC Incident Response | Linked Linux Mint containment, telemetry, rebuild, graphics, and identity recovery procedures |
 | 0.1 | 2026-08-04 | COC Incident Response | Initial draft grounded in the validated recovery foundation |
