@@ -46,7 +46,7 @@ This directory defines repeatable operational procedures for the COC Engineering
 
 ## Cerberus supporting procedures
 
-The [Cerberus Operations Runbooks](https://github.com/scott-renny/project-cerberus-build/tree/main/docs/operations) additionally govern Fedora updates and rollback, NVIDIA/display recovery, and hardware security-key recovery. These are supporting platform procedures rather than duplicate COC document IDs.
+The [Cerberus Operations Runbooks](https://github.com/scott-renny/project-cerberus-build/tree/main/docs/operations) additionally govern Linux Mint updates and rollback, NVIDIA/display recovery, and hardware security-key recovery. These are supporting platform procedures rather than duplicate COC document IDs.
 
 ## Current validation priorities
 
