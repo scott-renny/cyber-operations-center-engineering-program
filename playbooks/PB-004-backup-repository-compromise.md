@@ -14,7 +14,7 @@ Coordinate investigation, containment, and clean recovery when backup data, repo
 
 ## Scope and authority
 
-- Authorized assets: Phase 5 backup jobs, encrypted repository, protected systems, monitoring, recovery records, and the Fedora Cerberus backup job after Phase 8.5 onboarding.
+- Authorized assets: Phase 5 backup jobs, encrypted repository, protected systems, monitoring, recovery records, and the Linux Mint Cerberus backup job after Phase 8.5 onboarding.
 - Decision owner: COC Incident Lead.
 - Containment authority: the backup owner may stop repository writes to preserve recovery options; deletion, repair, or reinitialization requires explicit approval.
 - External notification constraints: keep repository locations, contents, credentials, keys, and recovery inventory private.
@@ -86,5 +86,5 @@ Coordinate investigation, containment, and clean recovery when backup data, repo
 
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 0.2 | 2026-08-14 | COC Incident Response | Added Fedora Cerberus backup scope and governed recovery cross-reference |
+| 0.2 | 2026-08-14 | COC Incident Response | Added Linux Mint Cerberus backup scope and governed recovery cross-reference |
 | 0.1 | 2026-08-04 | COC Incident Response | Initial draft backup-compromise playbook |
