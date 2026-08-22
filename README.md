@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Linux%20Mint%20%7C%20Ubuntu%20Server%20%7C%20Windows-blue)
 
-> **Version:** 2.0.1  
+> **Version:** 2.0.2  
 > **Status:** Active development  
 > **License:** MIT  
 > **Maintainer:** Scott Renny
@@ -17,9 +17,9 @@ The program covers infrastructure and network security, monitoring and telemetry
 
 ## Current milestone
 
-**Phase 8 — Endpoint Engineering is complete.** Documented baselines are in place for the laptop, legacy workstation, phone, and tablet.
+**Phase 8 — Endpoint Engineering is complete. Phase 9 — Nextcloud Platform is active.**
 
-The next controlled workstream is **[Phase 8.5 — Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md)**. [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is the hardware and workstation delivery project for this phase. Phase 9 has not started.
+**[Phase 8.5 — Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md)** remains open but blocked until [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is funded and physically built. Phase 8.5 is a parallel hardware-dependent workstream rather than a sequential gate, so Phase 9 and later independent phases may proceed while 8.5 remains visibly blocked.
 
 ## Program status
 
@@ -33,7 +33,8 @@ The next controlled workstream is **[Phase 8.5 — Linux Mint Cinnamon Workstati
 | NET-WATCH network visibility | Complete |
 | Telemetry backbone | Complete |
 | Endpoint engineering | Complete |
-| Linux Mint Cinnamon workstation migration | Planned |
+| Linux Mint Cinnamon workstation migration | Blocked — awaiting Cerberus hardware |
+| Nextcloud platform | In progress |
 | Detection engineering | Planned |
 | Incident response | Planned |
 | Cloud integration | Planned |
