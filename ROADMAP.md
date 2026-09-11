@@ -69,7 +69,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 8 | 🟩 Complete | [Endpoint Engineering](phases/phase-08-endpoint-engineering/README.md) — laptop, workstation, phone, and tablet baselines complete |
 | Phase 8.5 | ⏸ Blocked | [Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md) — awaiting Cerberus hardware/funding; tracked in parallel and not a gate on independent later phases |
 | Phase 9 | 🟩 Complete | [File Access & Sync — Nextcloud](phases/phase-09-nextcloud/README.md) |
-| Phase 10 | ⬜ Planned | Identity Services |
+| Phase 10 | 🟨 In Progress | Identity Services — scope and acceptance planning |
 | Phase 11 | ⬜ Planned | Detection Engineering |
 | Phase 12 | ⬜ Planned | Attack Map |
 | Phase 13 | ⬜ Planned | Threat Intelligence |
@@ -98,7 +98,7 @@ Phase 8 completed the endpoint-engineering baseline across the laptop, legacy wo
 
 Phase 8.5 remains open but blocked until Project Cerberus can be funded and physically built. It will install Linux Mint Cinnamon from verified media, validate Secure Boot and full-disk encryption, preserve AppArmor and UFW protections, selectively restore approved data, re-establish Wazuh and backups, validate application compatibility, and retire the legacy Windows system. Because this is a hardware-dependent parallel workstream, it does not block independent later phases.
 
-Phase 9 — File Access & Sync (Nextcloud Platform) is COMPLETE as of September 10, 2026 EDT / September 11 UTC. S25 and A11 onboarding are intentionally deferred and do not block completion. Phase 10 and later phases remain planned until their prerequisites and Definition of Done are explicitly activated. Follow the [zero-assumed-knowledge workstation roadmap](docs/WORKSTATION-SETUP.md) and [ADR-012](docs/decisions/ADR-012-linux-mint-cinnamon-primary-workstation.md) when Phase 8.5 resumes.
+Phase 9 — File Access & Sync (Nextcloud Platform) is COMPLETE as of September 10, 2026 EDT / September 11 UTC. S25 and A11 onboarding are intentionally deferred and do not block completion. Phase 10 — Identity Services is now the active primary build, beginning with scope, requirements, dependencies and acceptance planning before platform selection or deployment. Phase 11 and later phases remain planned. Follow the [zero-assumed-knowledge workstation roadmap](docs/WORKSTATION-SETUP.md) and [ADR-012](docs/decisions/ADR-012-linux-mint-cinnamon-primary-workstation.md) when Phase 8.5 resumes.
 
 ---
 
