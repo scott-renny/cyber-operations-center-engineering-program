@@ -141,6 +141,14 @@ The portal uses Caddy's internal certificate authority. Trust is distributed onl
 
 ---
 
+# Implemented Nextcloud File Access & Sync
+
+Phase 9 completed on September 10, 2026 EDT / September 11 UTC. Nextcloud 34.0.3 file access and sync is complete on Atlas, with Tailscale private access through a canonical HTTPS hostname and Caddy, tested Restic backup and database restore, Wazuh FIM alert validation, EICAR-tested ClamAV, working 2FA and outbound email, configured Windows 11 and Windows 10 clients, and successful reboot persistence. Galaxy S25 and Tab A11 Nextcloud onboarding are intentionally deferred and are not Phase 9 blockers.
+
+The implemented Nextcloud path is Windows client → Tailscale/private DNS → canonical HTTPS hostname → Caddy → loopback-bound Nextcloud Apache, with PostgreSQL, Redis and a separate cron container. This adds the current Nextcloud access path without declaring older WireGuard paths retired. See the [Phase 9 completion record](phases/phase-09-nextcloud/README.md).
+
+---
+
 # Implemented Container Platform
 
 Phase 3 introduced Docker Engine, Docker Compose, and Dockge on `coc-srv-01`.

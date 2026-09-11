@@ -17,7 +17,9 @@ The program covers infrastructure and network security, monitoring and telemetry
 
 ## Current milestone
 
-**Phase 8 — Endpoint Engineering is complete. Phase 9 — Nextcloud Platform is active.**
+**Phase 9 — File Access & Sync (Nextcloud Platform) is COMPLETE — September 10, 2026 EDT / September 11 UTC.**
+
+Nextcloud 34.0.3 file access and sync is complete on Atlas, with Tailscale private access through a canonical HTTPS hostname and Caddy, tested Restic backup and database restore, Wazuh FIM alert validation, EICAR-tested ClamAV, working 2FA and outbound email, configured Windows 11 and Windows 10 clients, and successful reboot persistence. Galaxy S25 and Tab A11 Nextcloud onboarding are intentionally deferred and are not Phase 9 blockers.
 
 **[Phase 8.5 — Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md)** remains open but blocked until [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is funded and physically built. Phase 8.5 is a parallel hardware-dependent workstream rather than a sequential gate, so Phase 9 and later independent phases may proceed while 8.5 remains visibly blocked.
 
@@ -34,7 +36,7 @@ The program covers infrastructure and network security, monitoring and telemetry
 | Telemetry backbone | Complete |
 | Endpoint engineering | Complete |
 | Linux Mint Cinnamon workstation migration | Blocked — awaiting Cerberus hardware |
-| Nextcloud platform | In progress |
+| Nextcloud file access & sync | COMPLETE |
 | Detection engineering | Planned |
 | Incident response | Planned |
 | Cloud integration | Planned |
@@ -80,6 +82,8 @@ Technology names describe the planned program architecture and do not imply comp
 - [Operational templates](templates/README.md)
 
 ### Implementation records
+
+- [Phase 9 — File Access & Sync: COMPLETE](phases/phase-09-nextcloud/README.md)
 
 - [Phase 0 — Program Governance](phases/phase-00-program-governance/README.md)
 - [Phase 1 — Foundation](phases/phase-01-foundation/README.md)

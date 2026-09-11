@@ -6,6 +6,12 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## 2026-09-10 EDT / 2026-09-11 UTC — Phase 9 complete
+
+- Closed Nextcloud file access and sync; updated roadmap, program status and implemented architecture.
+- Recorded private Tailscale/canonical-hostname access, security controls, Windows clients, backup/database restore and reboot acceptance.
+- Documented deliberate S25/A11 deferral and preserved historical portal/Caddy evidence pending live inspection.
+
 ## Version 2.0.2 - Fedora Operations Runbooks (2026-08-14)
 
 ### Added
