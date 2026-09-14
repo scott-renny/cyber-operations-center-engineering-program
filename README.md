@@ -102,6 +102,10 @@ The program emphasizes security by design, defense in depth, least privilege, ob
 
 A phase is complete only when its implementation, security review, validation evidence, and operational knowledge are documented.
 
+## Related cloud engineering
+
+The [Cloud Engineering Portfolio](https://github.com/scott-renny/cloud-engineering-portfolio) now records completed AWS Budgets, EC2 lifecycle, Bedrock evaluation, and [Family IT Help Desk v0.1](https://github.com/scott-renny/cloud-engineering-portfolio/tree/main/aws/projects/family-it-helpdesk). These are standalone cloud outcomes; COC cloud telemetry and Ares integration remain planned. They do not change COC phase acceptance or mark cloud integration complete.
+
 ## Contributing and license
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for change guidelines and [CHANGELOG.md](CHANGELOG.md) for version history. This project is licensed under the [MIT License](LICENSE).
