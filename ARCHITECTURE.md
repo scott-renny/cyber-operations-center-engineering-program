@@ -1,6 +1,6 @@
 # Cyber Operations Center Engineering Program Architecture
 
-> **Version:** 1.3  
+> **Version:** 1.4  
 > **Status:** Active Development
 
 ---
@@ -94,28 +94,28 @@ Examples include:
                            Internet
                                │
                                │
-                        WireGuard VPN
+                        Private Access
                                │
-                     Omada Network Gateway
+                     Network Gateway
                                │
                     ┌──────────┴──────────┐
                     │                     │
                Management LAN        User Network
                     │                     │
              Ubuntu Server         Windows Devices
-                    │
-         Caddy HTTPS Gateway
-                    │
-        Docker Container Platform
+                    │                     │
+         Caddy HTTPS Gateway       Phase 10 Identity Lab
+                    │                     │
+        Docker Container Platform      DC01 / AD DS / DNS
                     │
  ┌──────────────────┼────────────────────┐
  │                  │                    │
  Monitoring     Security Stack      Infrastructure
  │                  │                    │
  Grafana         Wazuh              Nextcloud
- Prometheus      Suricata           Identity
- NET-WATCH       Zeek               Backup
-                 Graylog            Media Server
+ Prometheus      Suricata           Backup
+ NET-WATCH       Zeek               Media Server
+                 Graylog
                  MISP
                  TheHive
                  Cortex
@@ -126,7 +126,7 @@ Examples include:
 
 # Implemented Operations Access Layer
 
-Phase 2 introduced Caddy as the private HTTPS entry point on `coc-srv-01`. It currently serves a static operations portal and will provide reverse-proxy routing for later internal services.
+Phase 2 introduced Caddy as the private HTTPS entry point on `coc-srv-01`. It currently serves a static operations portal and provides reverse-proxy routing for internal services.
 
 The access layer is protected by the host baseline:
 
@@ -145,7 +145,30 @@ The portal uses Caddy's internal certificate authority. Trust is distributed onl
 
 Phase 9 completed on September 10, 2026 EDT / September 11 UTC. Nextcloud 34.0.3 file access and sync is complete on Atlas, with Tailscale private access through a canonical HTTPS hostname and Caddy, tested Restic backup and database restore, Wazuh FIM alert validation, EICAR-tested ClamAV, working 2FA and outbound email, configured Windows 11 and Windows 10 clients, and successful reboot persistence. Galaxy S25 and Tab A11 Nextcloud onboarding are intentionally deferred and are not Phase 9 blockers.
 
-The implemented Nextcloud path is Windows client → Tailscale/private DNS → canonical HTTPS hostname → Caddy → loopback-bound Nextcloud Apache, with PostgreSQL, Redis and a separate cron container. This adds the current Nextcloud access path without declaring older WireGuard paths retired. See the [Phase 9 completion record](phases/phase-09-nextcloud/README.md).
+The implemented Nextcloud path is Windows client → Tailscale/private DNS → canonical HTTPS hostname → Caddy → loopback-bound Nextcloud Apache, with PostgreSQL, Redis and a separate cron container. See the [Phase 9 completion record](phases/phase-09-nextcloud/README.md).
+
+---
+
+# Implemented Phase 10 Identity Baseline
+
+Phase 10 uses an isolated VirtualBox lab on the Windows 11 laptop so the identity environment is portable and attack traffic does not need to traverse the home LAN. The current domain controller is Windows Server 2025 Standard Evaluation running AD DS and DNS for `corp.lab.test`.
+
+The baseline currently includes:
+
+- `DC01` as the authoritative domain controller and DNS server;
+- Windows Server 2025 domain and forest functional levels;
+- repaired and validated AD-integrated `corp.lab.test` and `_msdcs.corp.lab.test` DNS zones;
+- protected organizational units for users, privileged accounts, service accounts, workstations, servers, and groups;
+- Global Security role groups and Domain Local permission groups following an AGDLP-style model;
+- separate everyday, administrative, and Tier-0 identities;
+- Tier-0 membership in Protected Users with delegation disabled;
+- a strengthened password and lockout baseline;
+- a KDS root key and Group Managed Service Account reference design; and
+- a deliberately isolated legacy service identity with an SPN for later Kerberoasting exercises.
+
+The lab keeps secure and intentionally vulnerable identities separate so defensive controls can be compared against realistic legacy attack paths. GPO-based privileged-logon boundaries, the Windows 11 domain client, Kali attacker, Wazuh/Sysmon telemetry, controlled identity attacks, incident-response records, and vulnerability-management work remain in progress.
+
+See the [Phase 10 identity-services record](phases/phase-10-identity-services/README.md).
 
 ---
 
@@ -180,7 +203,7 @@ Docker Swarm remains disabled because Dockge manages ordinary Compose stacks. A 
 
 Phase 8 established platform-appropriate baselines for the Windows 11 Home laptop, legacy Windows 10 migration source, Galaxy phone, and Galaxy tablet.
 
-The layer combines native protections and firewalls; current patching; WireGuard for portable-device private access; Wazuh monitoring for Windows; Sysmon on the legacy workstation; validated hardware-key authentication; mobile permission, recovery, and installation controls; and encrypted, restore-tested workstation migration data.
+The layer combines native protections and firewalls; current patching; private portable-device access; Wazuh monitoring for Windows; Sysmon on the legacy workstation; validated hardware-key authentication; mobile permission, recovery, and installation controls; and encrypted, restore-tested workstation migration data.
 
 The legacy workstation has no TPM and remains unencrypted under a time-bounded exception. Phase 8.5 will replace it with Linux Mint Cinnamon. Production acceptance requires verified installation media, UEFI Secure Boot, full-disk encryption with tested recovery, AppArmor, UFW, current updates, Wazuh Linux telemetry, selective data restoration, and a restore-tested Mint backup.
 
@@ -196,10 +219,10 @@ Responsible for secure connectivity throughout the environment.
 
 Examples include:
 
-- Omada
+- Network gateway and segmentation
 - VLANs
-- Firewall Rules
-- VPN
+- Firewall rules
+- Private remote access
 - DNS
 - DHCP
 
@@ -230,13 +253,27 @@ Package instructions use Linux Mint/Ubuntu `apt` sources and compatible vendor r
 
 ## Identity
 
-Responsible for authentication and authorization.
+Responsible for authentication, authorization, privileged-access design, and identity-focused detection practice.
 
-Future capabilities include:
+Implemented Phase 10 capabilities include:
 
-- Active Directory
-- Identity Management
-- Role-Based Access Control
+- Windows Server 2025 Active Directory Domain Services
+- AD-integrated DNS
+- organizational-unit and security-group design
+- AGDLP-style role and permission nesting
+- separate everyday, administrative, and Tier-0 identities
+- Protected Users and non-delegable Tier-0 credentials
+- Group Managed Service Account foundations
+- controlled legacy service-account attack paths
+
+Planned Phase 10 capabilities include:
+
+- Group Policy hardening and privileged-logon boundaries
+- Windows 11 domain-client administration
+- Wazuh/Sysmon identity telemetry
+- controlled password-spray and Kerberoasting exercises
+- incident-response documentation
+- vulnerability-management validation
 
 ---
 
@@ -300,11 +337,12 @@ Examples include:
 
 Ensures recoverability.
 
-Future capabilities include:
+Capabilities include:
 
-- Automated backups
-- Configuration backups
-- Disaster recovery testing
+- automated backups
+- configuration backups
+- restore validation
+- disaster-recovery testing
 
 ---
 
@@ -380,6 +418,7 @@ The Cyber Operations Center Engineering Program is designed to evolve into a ful
 
 - Infrastructure Engineering
 - Security Operations
+- Identity Security
 - Detection Engineering
 - Threat Hunting
 - Digital Forensics
