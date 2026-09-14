@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Linux%20Mint%20%7C%20Ubuntu%20Server%20%7C%20Windows-blue)
 
-> **Version:** 2.0.2  
+> **Version:** 2.0.3  
 > **Status:** Active development  
 > **License:** MIT  
 > **Maintainer:** Scott Renny
@@ -17,11 +17,17 @@ The program covers infrastructure and network security, monitoring and telemetry
 
 ## Current milestone
 
+**Phase 10 — Identity Services is IN PROGRESS.**
+
+The current identity baseline uses Windows Server 2025 on `DC01` with the `corp.lab.test` forest/domain. AD DS and DNS are operational and validated, including repaired AD-integrated DNS zones and working domain-controller locator records. The lab now has a protected OU and security-group structure, representative users, AGDLP-style administrative nesting, separate everyday/admin/Tier-0 identities, strengthened password and lockout settings, a working KDS/gMSA foundation, and a deliberately isolated legacy service identity for later Kerberoasting detection practice.
+
+The next Phase 10 work is GPO-based privileged-logon control and hardening, followed by the Windows 11 domain client, Kali attacker VM, Wazuh/Sysmon identity telemetry, controlled attack exercises, incident-response documentation, and Greenbone/OpenVAS vulnerability-management practice.
+
 **Phase 9 — File Access & Sync (Nextcloud Platform) is COMPLETE — September 10, 2026 EDT / September 11 UTC.**
 
 Nextcloud 34.0.3 file access and sync is complete on Atlas, with Tailscale private access through a canonical HTTPS hostname and Caddy, tested Restic backup and database restore, Wazuh FIM alert validation, EICAR-tested ClamAV, working 2FA and outbound email, configured Windows 11 and Windows 10 clients, and successful reboot persistence. Galaxy S25 and Tab A11 Nextcloud onboarding are intentionally deferred and are not Phase 9 blockers.
 
-**[Phase 8.5 — Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md)** remains open but blocked until [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is funded and physically built. Phase 8.5 is a parallel hardware-dependent workstream rather than a sequential gate, so Phase 9 and later independent phases may proceed while 8.5 remains visibly blocked.
+**[Phase 8.5 — Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md)** remains open but blocked until [Project Cerberus](https://github.com/scott-renny/project-cerberus-build) is funded and physically built. Phase 8.5 is a parallel hardware-dependent workstream rather than a sequential gate, so later independent phases may proceed while 8.5 remains visibly blocked.
 
 ## Program status
 
@@ -36,7 +42,8 @@ Nextcloud 34.0.3 file access and sync is complete on Atlas, with Tailscale priva
 | Telemetry backbone | Complete |
 | Endpoint engineering | Complete |
 | Linux Mint Cinnamon workstation migration | Blocked — awaiting Cerberus hardware |
-| Nextcloud file access & sync | COMPLETE |
+| Nextcloud file access & sync | Complete |
+| Identity services / Active Directory lab | In progress |
 | Detection engineering | Planned |
 | Incident response | Planned |
 | Cloud integration | Planned |
@@ -47,10 +54,11 @@ Detailed status and sequencing are maintained in [ROADMAP.md](ROADMAP.md).
 
 The documented environment combines:
 
-- Ubuntu Server, Docker, Docker Compose, WireGuard, and Omada networking
+- Ubuntu Server, Docker, Docker Compose, Tailscale/private access, and segmented networking
 - Grafana, Prometheus, and NET-WATCH for monitoring and observability
 - Wazuh, Zeek, Suricata, and Graylog for security operations
-- Planned capabilities including MISP, TheHive, Cortex, Velociraptor, identity services, and cloud expansion
+- Windows Server 2025 AD DS/DNS and an isolated identity attack lab for Phase 10
+- Planned capabilities including MISP, TheHive, Cortex, Velociraptor, broader identity hardening, and cloud expansion
 
 Technology names describe the planned program architecture and do not imply completed implementation unless a phase record and validation evidence support that status. See [ARCHITECTURE.md](ARCHITECTURE.md) for the high-level design.
 
@@ -83,8 +91,8 @@ Technology names describe the planned program architecture and do not imply comp
 
 ### Implementation records
 
+- [Phase 10 — Identity Services: IN PROGRESS](phases/phase-10-identity-services/README.md)
 - [Phase 9 — File Access & Sync: COMPLETE](phases/phase-09-nextcloud/README.md)
-
 - [Phase 0 — Program Governance](phases/phase-00-program-governance/README.md)
 - [Phase 1 — Foundation](phases/phase-01-foundation/README.md)
 - [Phase 2 — Base Hardening](phases/phase-02-base-hardening/README.md)
@@ -104,7 +112,7 @@ A phase is complete only when its implementation, security review, validation ev
 
 ## Related cloud engineering
 
-The [Cloud Engineering Portfolio](https://github.com/scott-renny/cloud-engineering-portfolio) now records completed AWS Budgets, EC2 lifecycle, Bedrock evaluation, and [Family IT Help Desk v0.1](https://github.com/scott-renny/cloud-engineering-portfolio/tree/main/aws/projects/family-it-helpdesk). These are standalone cloud outcomes; COC cloud telemetry and Ares integration remain planned. They do not change COC phase acceptance or mark cloud integration complete.
+The [Cloud Engineering Portfolio](https://github.com/scott-renny/cloud-engineering-portfolio) records completed AWS Budgets, EC2 lifecycle, Bedrock evaluation, and [Family IT Help Desk v0.1](https://github.com/scott-renny/cloud-engineering-portfolio/tree/main/aws/projects/family-it-helpdesk). These are standalone cloud outcomes; COC cloud telemetry and Ares integration remain planned. They do not change COC phase acceptance or mark cloud integration complete.
 
 ## Contributing and license
 
