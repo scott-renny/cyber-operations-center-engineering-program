@@ -120,6 +120,21 @@ At the end of the current work session:
 - `dcdiag /test:Connectivity` — Passed
 - PowerShell 7.6.6 — Verified
 
+## Phase 10 risk controls
+
+Phase 10 directly exercises existing program risks around excessive administrative privilege and intentionally vulnerable lab systems. The current controls are:
+
+- daily, administrative, and Tier-0 identities are separated rather than using one broadly privileged account;
+- Tier-0 authority is assigned through a dedicated role group, with the Tier-0 user placed in Protected Users and marked non-delegable;
+- the deliberately vulnerable `svc_backup` identity is lab-only, is not a general privileged administrator, and exists specifically for controlled Kerberoasting detection work;
+- attack traffic remains confined to the isolated VirtualBox lab network rather than being bridged to the household LAN;
+- synthetic lab identities are used instead of real credentials or production data;
+- password-spray exercises must remain below the configured lockout threshold and use documented stop conditions;
+- offensive testing is not considered complete until telemetry, cleanup, and restored-state validation are recorded; and
+- public documentation excludes passwords, hashes, secrets, recovery material, and sensitive infrastructure details.
+
+These controls reduce the likelihood that the intentionally vulnerable identity path or privileged accounts become an uncontrolled risk while preserving the attack-and-defense learning objective.
+
 ## Security principles demonstrated
 
 - least privilege
