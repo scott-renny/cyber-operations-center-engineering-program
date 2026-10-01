@@ -19,9 +19,9 @@ The program covers infrastructure and network security, monitoring and telemetry
 
 **Phase 10 — Identity Services is IN PROGRESS.**
 
-The current identity baseline uses Windows Server 2025 on `DC01` with the `corp.lab.test` forest/domain. AD DS and DNS are operational and validated, including repaired AD-integrated DNS zones and working domain-controller locator records. The lab now has a protected OU and security-group structure, representative users, AGDLP-style administrative nesting, separate everyday/admin/Tier-0 identities, strengthened password and lockout settings, a working KDS/gMSA foundation, and a deliberately isolated legacy service identity for later Kerberoasting detection practice.
+The current identity baseline uses Windows Server 2025 on `DC01` and a Windows 11 Enterprise domain client in the isolated `corp.lab.test` lab. AD DS/DNS, protected OU/group design, AGDLP-based workstation administration, separate everyday/admin/Tier-0 identities, Tier-0 workstation logon restrictions, hardened password/lockout policy, a KDS/gMSA foundation, advanced audit policy, and a deliberately isolated legacy Kerberoasting identity are implemented and validated. The default machine-account quota was reduced from 10 to 0 and workstation computer administration was explicitly delegated. A multihomed-DC DNS registration issue was also remediated before both Windows VMs were patched, validated and captured as powered-off pre-attack baseline snapshots.
 
-The next Phase 10 work is GPO-based privileged-logon control and hardening, followed by the Windows 11 domain client, Kali attacker VM, Wazuh/Sysmon identity telemetry, controlled attack exercises, incident-response documentation, and Greenbone/OpenVAS vulnerability-management practice.
+The next Phase 10 work begins with the isolated Kali attacker VM and Wazuh/Sysmon telemetry validation, followed by controlled identity attack exercises, investigation/remediation, incident-response documentation, and Greenbone/OpenVAS vulnerability-management practice.
 
 **Phase 9 — File Access & Sync (Nextcloud Platform) is COMPLETE — September 10, 2026 EDT / September 11 UTC.**
 
