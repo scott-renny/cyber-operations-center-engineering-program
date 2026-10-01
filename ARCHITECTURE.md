@@ -153,20 +153,25 @@ The implemented Nextcloud path is Windows client → Tailscale/private DNS → c
 
 Phase 10 uses an isolated VirtualBox lab on the Windows 11 laptop so the identity environment is portable and attack traffic does not need to traverse the home LAN. The current domain controller is Windows Server 2025 Standard Evaluation running AD DS and DNS for `corp.lab.test`.
 
-The baseline currently includes:
+The validated pre-attack baseline includes:
 
-- `DC01` as the authoritative domain controller and DNS server;
+- `DC01` as the authoritative domain controller and DNS server, with DNS listening only on the isolated AD lab interface;
 - Windows Server 2025 domain and forest functional levels;
+- a Windows 11 Enterprise domain client in the protected workstation OU;
 - repaired and validated AD-integrated `corp.lab.test` and `_msdcs.corp.lab.test` DNS zones;
 - protected organizational units for users, privileged accounts, service accounts, workstations, servers, and groups;
 - Global Security role groups and Domain Local permission groups following an AGDLP-style model;
+- validated delegated workstation administration through the AGDLP chain;
 - separate everyday, administrative, and Tier-0 identities;
-- Tier-0 membership in Protected Users with delegation disabled;
+- Tier-0 membership in Protected Users with delegation disabled and GPO-enforced workstation logon restrictions;
 - a strengthened password and lockout baseline;
-- a KDS root key and Group Managed Service Account reference design; and
-- a deliberately isolated legacy service identity with an SPN for later Kerberoasting exercises.
+- `ms-DS-MachineAccountQuota` reduced from 10 to 0 with explicit workstation computer-object delegation;
+- a KDS root key and Group Managed Service Account reference design;
+- a deliberately isolated legacy service identity with an SPN for later Kerberoasting exercises;
+- advanced Windows audit policy on the domain controller and workstation; and
+- powered-off pre-attack snapshots of DC01 and WIN11-CLIENT after patching and final health validation.
 
-The lab keeps secure and intentionally vulnerable identities separate so defensive controls can be compared against realistic legacy attack paths. GPO-based privileged-logon boundaries, the Windows 11 domain client, Kali attacker, Wazuh/Sysmon telemetry, controlled identity attacks, incident-response records, and vulnerability-management work remain in progress.
+The lab keeps secure and intentionally vulnerable identities separate so defensive controls can be compared against realistic legacy attack paths. The build/harden checkpoint is complete. Kali, Wazuh/Sysmon telemetry validation, controlled identity attacks, incident-response records, and vulnerability-management work remain in progress.
 
 See the [Phase 10 identity-services record](phases/phase-10-identity-services/README.md).
 
