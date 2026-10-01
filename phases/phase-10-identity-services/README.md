@@ -1,7 +1,7 @@
 # Phase 10 — Identity Services
 
 > **Status:** 🟨 In Progress  
-> **Platform:** Windows Server 2025 Evaluation, Windows 11 client (planned), Kali Linux (planned)  
+> **Platform:** Windows Server 2025 Evaluation, Windows 11 Enterprise Evaluation, Kali Linux (next)  
 > **Lab domain:** `corp.lab.test`  
 > **Primary DC:** `DC01`
 
@@ -108,6 +108,53 @@ Deliberately vulnerable lab identity:
 
 The vulnerable account is intentionally separate from the secure baseline and is not used as a general privileged administrator.
 
+### Windows 11 domain client and delegated administration
+
+- Built `WIN11-CLIENT` with Windows 11 Enterprise Evaluation and joined it to `corp.lab.test`.
+- Placed the computer in the protected workstation OU and validated Kerberos/DC discovery and the domain secure channel.
+- Verified a normal employee account receives no local administrative privilege.
+- Linked a workstation Local Administrators GPO that applies `DL-Workstation-LocalAdmins` to the built-in Administrators group.
+- Proved the complete AGDLP path: `adm-arivera → GG-Workstation-Admins → DL-Workstation-LocalAdmins → local Administrators`.
+- Preserved a separate local recovery administrator.
+
+### Machine-account quota hardening
+
+During the client join, a normal user credential unexpectedly succeeded. Investigation found the default `ms-DS-MachineAccountQuota` value was 10.
+
+- Reduced `ms-DS-MachineAccountQuota` from 10 to 0.
+- Delegated workstation computer-object administration explicitly to `GG-Workstation-Admins` on the workstation OU.
+- Verified the OU ACL for computer-object creation/deletion, password reset/change, and required read/write properties.
+
+This converted an implicit broad join capability into an intentional role-based administrative path.
+
+### Privileged logon restrictions
+
+Linked a dedicated GPO to the workstation OU that denies `GG-Tier0-Admins`:
+
+- local interactive logon; and
+- Remote Desktop Services logon.
+
+The restriction was validated by denying `da-arivera` at WIN11-CLIENT while `adm-arivera` continued to sign in and administer the workstation.
+
+### Advanced audit policy
+
+Created and linked a dedicated Windows Audit Policy GPO to workstations and domain controllers. The baseline captures authentication, Kerberos, lockout, account/group management, process creation, audit/authentication policy changes, and key system integrity/state events. The advanced subcategory policy is forced to override legacy category settings.
+
+The resulting telemetry supports later analysis of events such as 4624/4625, 4688, 4768, and 4769.
+
+### Patching, DNS remediation, and pre-attack baseline
+
+DC01 and WIN11-CLIENT were patched before adversary simulation. A persistent multihomed-DC DNS issue was then reproduced: the NAT IPv4 and IPv6 addresses were being published alongside the isolated lab address even though ordinary NAT-interface DNS registration was disabled.
+
+The DNS Server listener was restricted to `10.10.10.10`, the service was restarted, and DC registration was deliberately forced with `nltest /dsregdns`. The unwanted NAT records did not return. WIN11-CLIENT was then validated to resolve DC01 only through `10.10.10.10`, with a healthy domain secure channel.
+
+Powered-off VirtualBox restore points were captured:
+
+- `DC01 - Pre-Attack Identity Baseline`
+- `WIN11-CLIENT - Pre-Attack Identity Baseline`
+
+This establishes the clean boundary between the build/harden work and the upcoming controlled attack/detection work.
+
 ## Validation state
 
 At the end of the current work session:
@@ -151,15 +198,13 @@ These controls reduce the likelihood that the intentionally vulnerable identity 
 
 ## Remaining Phase 10 work
 
-1. Apply GPO-based privileged-logon boundaries and additional domain/DC hardening.
-2. Build the Windows 11 domain client and join it to `corp.lab.test`.
-3. Build the Kali attacker VM on the isolated Phase 10 network.
-4. Configure Wazuh/Sysmon collection for relevant Windows Security and identity events.
-5. Perform controlled password-spray, Kerberoasting, and credential-access exercises only inside the owned lab.
-6. Validate detections and document incident-response cases for the attack exercises.
-7. Deploy and use Greenbone/OpenVAS for vulnerability-management practice.
-8. Remediate findings, re-scan, and record validation evidence.
-9. Complete the Phase 10 acceptance checklist and completion record.
+1. Build/configure the Kali attacker VM on the isolated Phase 10 network.
+2. Configure/validate Wazuh and Sysmon collection for relevant Windows Security and identity events.
+3. Perform controlled password-spray, Kerberoasting, and credential-access exercises only inside the owned lab.
+4. Validate detections and document incident-response cases for the attack exercises.
+5. Deploy and use Greenbone/OpenVAS for vulnerability-management practice.
+6. Remediate findings, re-scan, and record validation evidence.
+7. Complete the Phase 10 acceptance checklist and completion record.
 
 ## Scope and safety
 
