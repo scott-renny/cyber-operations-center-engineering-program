@@ -6,6 +6,36 @@ The project follows the principles of keeping changes transparent, traceable, an
 
 ---
 
+## 2026-10-01 — Phase 10 pre-attack identity baseline
+
+### Added
+
+- Windows 11 Enterprise domain client joined to `corp.lab.test` and placed in the workstation OU.
+- AGDLP-based workstation administration with separate everyday, admin, and Tier-0 identities.
+- Dedicated GPOs for workstation local administrators, Tier-0 workstation logon restrictions, and advanced Windows audit policy.
+- Powered-off `DC01 - Pre-Attack Identity Baseline` and `WIN11-CLIENT - Pre-Attack Identity Baseline` restore points.
+
+### Changed
+
+- Hardened `ms-DS-MachineAccountQuota` from the default 10 to 0 after validating that a normal user could otherwise supply credentials during a machine join.
+- Delegated workstation computer-object administration explicitly to the workstation-admin role at the workstation OU.
+- Patched DC01 and WIN11-CLIENT before adversary simulation.
+- Advanced Phase 10 to the clean boundary between Build/Harden and Attack → Detect → Investigate → Remediate.
+
+### Fixed
+
+- Diagnosed persistent multihomed domain-controller DNS publication of NAT IPv4/IPv6 addresses.
+- Restricted the DNS Server listener to the isolated AD lab interface, forced DC DNS registration, and verified that only `10.10.10.10` remained authoritative.
+- Revalidated DC connectivity, core AD/DNS services, client DNS resolution, and the WIN11-CLIENT secure channel before snapshotting.
+
+### Security
+
+- Verified Tier-0 workstation sign-in denial while delegated workstation administration remained functional.
+- Enabled advanced auditing for authentication, Kerberos, account/group management, process creation, policy changes, and key system events in preparation for controlled attack detection.
+- No adversary-simulation results are claimed at this checkpoint; Kali and attack/detection exercises remain next.
+
+---
+
 ## 2026-09-10 EDT / 2026-09-11 UTC — Phase 9 complete
 
 - Closed Nextcloud file access and sync; updated roadmap, program status and implemented architecture.
