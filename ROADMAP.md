@@ -69,7 +69,7 @@ If one of these items is incomplete, the phase remains in progress.
 | Phase 8 | 🟩 Complete | [Endpoint Engineering](phases/phase-08-endpoint-engineering/README.md) — laptop, workstation, phone, and tablet baselines complete |
 | Phase 8.5 | ⏸ Blocked | [Linux Mint Cinnamon Workstation Migration](phases/phase-08-5-workstation-migration/README.md) — awaiting Cerberus hardware/funding; tracked in parallel and not a gate on independent later phases |
 | Phase 9 | 🟩 Complete | [File Access & Sync — Nextcloud](phases/phase-09-nextcloud/README.md) |
-| Phase 10 | 🟨 In Progress | [Identity Services](phases/phase-10-identity-services/README.md) — Server 2025 AD baseline operational; GPO, client, attack, detection and vulnerability-management work remains |
+| Phase 10 | 🟨 In Progress | [Identity Services](phases/phase-10-identity-services/README.md) — Windows Server 2025 + Windows 11 pre-attack identity baseline validated; Kali, detection exercises and vulnerability-management work remain |
 | Phase 11 | ⬜ Planned | Detection Engineering |
 | Phase 12 | ⬜ Planned | Attack Map |
 | Phase 13 | ⬜ Planned | Threat Intelligence |
@@ -100,7 +100,7 @@ Phase 8.5 remains open but blocked until Project Cerberus can be funded and phys
 
 Phase 9 — File Access & Sync (Nextcloud Platform) is COMPLETE as of September 10, 2026 EDT / September 11 UTC. S25 and A11 onboarding are intentionally deferred and do not block completion.
 
-Phase 10 — Identity Services is now the active primary build. The Windows Server 2025 `DC01` domain controller is operational for `corp.lab.test`, with AD DS/DNS repaired and validated, a protected OU/group structure, representative user identities, AGDLP-style administrative groups, separate everyday/admin/Tier-0 identities, a strengthened password and lockout baseline, a validated gMSA foundation, and a deliberately isolated Kerberoastable service account for later attack simulation. The next work is GPO-based privileged-logon control and hardening, followed by the Windows 11 client, Kali attacker, Wazuh/Sysmon detections, controlled identity attacks, incident-response records and Greenbone/OpenVAS vulnerability management.
+Phase 10 — Identity Services is the active primary build. The Windows Server 2025 `DC01` domain controller and Windows 11 Enterprise client now form a validated pre-attack baseline for `corp.lab.test`. The environment includes repaired and hardened AD DS/DNS, protected OU/group design, AGDLP-based workstation administration, separate everyday/admin/Tier-0 identities, Tier-0 workstation logon restrictions, a strengthened password/lockout baseline, `ms-DS-MachineAccountQuota` hardened from 10 to 0 with explicit workstation-admin delegation, a validated gMSA foundation, a deliberately isolated Kerberoastable service account, and advanced Windows audit policy. A multihomed-DC DNS issue was remediated and both Windows VMs were patched, validated, cleanly powered down and snapshotted as the pre-attack restore point. Next is the isolated Kali attacker, Wazuh/Sysmon telemetry validation, controlled identity attacks, incident-response records and Greenbone/OpenVAS vulnerability management.
 
 Phase 11 and later phases remain planned. Follow the [zero-assumed-knowledge workstation roadmap](docs/WORKSTATION-SETUP.md) and [ADR-012](docs/decisions/ADR-012-linux-mint-cinnamon-primary-workstation.md) when Phase 8.5 resumes.
 
