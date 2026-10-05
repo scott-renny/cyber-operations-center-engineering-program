@@ -112,7 +112,7 @@ A phase is complete only when its implementation, security review, validation ev
 
 ## Related cloud engineering
 
-The [Cloud Engineering Portfolio](https://github.com/scott-renny/cloud-engineering-portfolio) records completed AWS Budgets, EC2 lifecycle, Bedrock evaluation, and [Family IT Help Desk v0.1](https://github.com/scott-renny/cloud-engineering-portfolio/tree/main/aws/projects/family-it-helpdesk). These are standalone cloud outcomes; COC cloud telemetry integration remains planned. Controlled adversary testing will use temporary isolated labs only when needed for security-engineering validation. They do not change COC phase acceptance or mark cloud integration complete.
+The [Cloud Engineering Portfolio](https://github.com/scott-renny/cloud-engineering-portfolio) records completed AWS Budgets, EC2 lifecycle, Bedrock evaluation, and [Family IT Help Desk v0.1](https://github.com/scott-renny/cloud-engineering-portfolio/tree/main/aws/projects/family-it-helpdesk). These are standalone cloud outcomes; COC cloud telemetry integration remains planned. Controlled adversary testing is provided by Project Ares, an on-demand isolated virtual range hosted on Cerberus and used only when needed for security-engineering validation. They do not change COC phase acceptance or mark cloud integration complete.
 
 ## Contributing and license
 
