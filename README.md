@@ -1,8 +1,18 @@
-# Cyber Operations Center Engineering Program
+<div align="center">
 
-![Status](https://img.shields.io/badge/status-active%20development-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-Linux%20Mint%20%7C%20Ubuntu%20Server%20%7C%20Windows-blue)
+# Cyber Operations Center
+### Infrastructure · Detection · Incident Response · Identity
+
+![status: active development](https://img.shields.io/badge/status-active%20development-2563eb?style=flat-square)
+![edition: engineering program](https://img.shields.io/badge/edition-engineering%20program-22d3ee?style=flat-square)
+
+[Architecture](ARCHITECTURE.md) · [License](LICENSE)
+
+</div>
+
+[Overview](#overview) · [Current milestone](#current-milestone) · [Program status](#program-status) · [Architecture](#architecture) · [Documentation map](#documentation-map) · [Engineering principles](#engineering-principles)
+
+---
 
 > **Version:** 2.0.3  
 > **Status:** Active development  
