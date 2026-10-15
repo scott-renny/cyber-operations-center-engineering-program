@@ -79,6 +79,8 @@ Technology names describe the planned program architecture and do not imply comp
 
 ### Operational standards and resources
 
+- [COC USB #2 DFIR field toolkit](docs/COC-USB2-DFIR-TOOLKIT.md) — installed/read-back verified; scoped acceptance; no automatic COC enrollment.
+
 - [Operational governance mapping](docs/OPERATIONAL-GOVERNANCE-MAPPING.md)
 - [Severity standard](docs/SEVERITY-STANDARD.md)
 - [Evidence handling standard](docs/EVIDENCE-HANDLING-STANDARD.md)
